@@ -34,8 +34,8 @@
 @prefix dwc:  <http://rs.tdwg.org/dwc/terms/> .
 @base <https://w3id.org/ad4gd/model/> .
 
-<https://w3id.org/iliad/oim> a owl:Ontology ;
-                            owl:versionIRI <https://w3id.org/iliad/oim/1.0> ;
+<https://w3id.org/ad4gd/model> a owl:Ontology ;
+                            owl:versionIRI <https://w3id.org/ad4gd/model/1.0> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
                                               foaf:name "Rob Atkinson"
