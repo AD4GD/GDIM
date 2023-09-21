@@ -16,6 +16,7 @@
 @prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
+@prefix s4watr: <https://saref.etsi.org/saref4watr/> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
 @prefix fiware: <https://smartdatamodels.org/> .
@@ -48,7 +49,7 @@
                                           foaf:name "Raul Palma"
                                         ] ;
                             owl:imports <https://w3id.org/ad4gd/model/crossDomain> ;
-                            dct:description "The GDCommon module is the common ontology module of the  AD4GD - Green Deal Information Model (GDIM) domain layer. This ontology was created by reusing and aligning well-known ontologies and vocabularies, including Darwin Core"@en ;
+                            dct:description "The GDCommon module is the common ontology module of the AD4GD - Green Deal Information Model (GDIM) domain layer. This ontology module was created by reusing and aligning well-known ontologies and vocabularies, including Darwin Core"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "GDIM GDCommon"@en ;
                             rdfs:label "GDIM GDCommon"@en ;
@@ -188,6 +189,11 @@ dct:temporal
 #    Object Properties
 #################################################################
 
+###  https://schema.org/address
+schema:address a owl:ObjectProperty ;
+        rdfs:label "address" ;
+        rdfs:comment "Physical address of the item" ;
+        rdfs:isDefinedBy <https://schema.org/address> .   
 
 ### https://smartdatamodels.org/dataModel.Agrifood/agroVocConcept
 fiware-agrifood:agroVocConcept	a      owl:ObjectProperty ;
@@ -296,13 +302,31 @@ schema:addressRegion a owl:DatatypeProperty ;
 schema:streetAddress a owl:DatatypeProperty ;
         rdfs:label "streetAddress" ;
         rdfs:comment "The street address. For example, 1600 Amphitheatre Pkwy." ;
-        rdfs:isDefinedBy <https://schema.org/streetAddress> .                
+        rdfs:isDefinedBy <https://schema.org/streetAddress> . 
+
+###  https://schema.org/postOfficeBoxNumber
+schema:postOfficeBoxNumber a owl:DatatypeProperty ;
+        rdfs:label "postOfficeBoxNumber" ;
+        rdfs:comment "The post office box number for PO box addresses." ;
+        rdfs:isDefinedBy <https://schema.org/postOfficeBoxNumber> .                        
+
+###  https://schema.org/postalCode
+schema:postalCode a owl:DatatypeProperty ;
+        rdfs:label "postalCode" ;
+        rdfs:comment "The postal code. For example, 94043" ;
+        rdfs:isDefinedBy <https://schema.org/postalCode> .                        
 
 ###  https://schema.org/status
 schema:status a owl:DatatypeProperty ;
         rdfs:label "status" ;
         rdfs:comment "The status of the study (enumerated)" ;
         rdfs:isDefinedBy <https://schema.org/status> .
+
+###  https://schema.org/height
+schema:height a owl:DatatypeProperty ;
+        rdfs:label "height" ;
+        rdfs:comment "The height of the item" ;
+        rdfs:isDefinedBy <https://schema.org/height> .
 
 ## http://rs.tdwg.org/dwc/terms/acceptedNameUsage
 dwc:acceptedNameUsage
