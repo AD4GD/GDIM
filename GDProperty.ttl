@@ -36,6 +36,7 @@
 @prefix cf: <http://purl.oclc.org/NET/ssnx/cf/cf-property#> .
 @prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
 @prefix dim: <http://purl.oclc.org/NET/ssnx/qu/dim#> .
+@prefix m3-lite: <http://purl.org/iot/vocab/m3-lite#> .
 @base <https://w3id.org/ad4gd/model/> .
 
 <https://w3id.org/ad4gd/model/gdProperty> a owl:Ontology ;
@@ -728,6 +729,14 @@ saref:Temperature a owl:Class ;
                                      rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
                                      rdfs:label "Temperature"@en ;
                                      rdfs:isDefinedBy <https://saref.etsi.org/core/> .
+
+###  http://purl.org/iot/vocab/m3-lite#WaterLevel
+m3-lite:WaterLevel a owl:Class ;
+			  rdfs:subClassOf qu:QuantityKind ;
+        rdfs:comment "The height reached by the water in a reservoir, river, storage tank, or similar." ;
+        rdfs:label "Water Level" @en ;
+        rdfs:isDefinedBy <http://purl.org/iot/vocab/m3-lite#WaterLevel>
+
 
 ###  https://saref.etsi.org/saref4watr/AcceptabilityProperty
 s4watr:AcceptabilityProperty rdf:type owl:Class ;

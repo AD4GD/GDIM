@@ -327,6 +327,18 @@ schema:height a owl:DatatypeProperty ;
         rdfs:label "height" ;
         rdfs:comment "The height of the item" ;
         rdfs:isDefinedBy <https://schema.org/height> .
+        
+###  https://schema.org/minValue
+schema:minValue a owl:DatatypeProperty ;
+        rdfs:label "minValue" ;
+        rdfs:comment "The lower value of some characteristic or property" ;
+        rdfs:isDefinedBy <https://schema.org/minValue> .
+        
+###  https://schema.org/maxValue
+schema:maxValue a owl:DatatypeProperty ;
+        rdfs:label "maxValue" ;
+        rdfs:comment "The upper value of some characteristic or property" ;
+        rdfs:isDefinedBy <https://schema.org/maxValue> .                
 
 ## http://rs.tdwg.org/dwc/terms/acceptedNameUsage
 dwc:acceptedNameUsage
