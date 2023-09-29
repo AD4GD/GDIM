@@ -734,8 +734,8 @@ saref:Temperature a owl:Class ;
 m3-lite:WaterLevel a owl:Class ;
 			  rdfs:subClassOf qu:QuantityKind ;
         rdfs:comment "The height reached by the water in a reservoir, river, storage tank, or similar." ;
-        rdfs:label "Water Level" @en ;
-        rdfs:isDefinedBy <http://purl.org/iot/vocab/m3-lite#WaterLevel>
+        rdfs:label "Water Level"@en ;
+        rdfs:isDefinedBy <http://purl.org/iot/vocab/m3-lite#WaterLevel> .
 
 
 ###  https://saref.etsi.org/saref4watr/AcceptabilityProperty
