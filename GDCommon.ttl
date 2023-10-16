@@ -35,7 +35,7 @@
 @prefix dwc:  <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwc-mbg: <http://mmisw.org/ont/ioos/marine_biogeography/> .
 @prefix dwc-hc: <http://rs.tdwg.org/hc/terms/> .
-@base <https://w3id.org/ad4gd/model/> .
+@base <https://w3id.org/ad4gd/model/gdCommon/> .
 
 <https://w3id.org/ad4gd/model/gdCommon> a owl:Ontology ;
                             owl:versionIRI <https://w3id.org/ad4gd/model/gdCommon/1.0> ;
