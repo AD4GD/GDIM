@@ -1,0 +1,515 @@
+{
+  "@context" : {
+    "PhotonFluxDensity" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#PhotonFluxDensity"
+    },
+    "waveLength" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Environment/waveLength"
+    },
+    "cod" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/cod"
+    },
+    "PE" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/PE"
+    },
+    "Ni" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Ni"
+    },
+    "UnitOfMeasure" : {
+      "@id" : "https://saref.etsi.org/core/UnitOfMeasure"
+    },
+    "affiliation" : {
+      "@id" : "https://schema.org/affiliation"
+    },
+    "Unit" : {
+      "@id" : "http://qudt.org/schema/qudt/Unit"
+    },
+    "isControlledByDevice" : {
+      "@id" : "https://saref.etsi.org/core/isControlledByDevice",
+      "@type" : "@id"
+    },
+    "P-PO4" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/P-PO4"
+    },
+    "ChemicalProperty" : {
+      "@id" : "https://saref.etsi.org/saref4watr/ChemicalProperty"
+    },
+    "Cu" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Cu"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "Fe" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Fe"
+    },
+    "SurfaceMediumMedium" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceMediumMedium"
+    },
+    "Humidity" : {
+      "@id" : "https://saref.etsi.org/core/Humidity"
+    },
+    "Concentration" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Concentration"
+    },
+    "Se" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Se"
+    },
+    "pH" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/pH"
+    },
+    "WeatherObserved" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/WeatherObserved"
+    },
+    "WaterQualityObserved" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/WaterQualityObserved"
+    },
+    "tss" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/tss"
+    },
+    "AcceptabilityProperty" : {
+      "@id" : "https://saref.etsi.org/saref4watr/AcceptabilityProperty"
+    },
+    "alkalinity" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/alkalinity"
+    },
+    "waterLevel" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Environment/waterLevel"
+    },
+    "TemperatureDrift" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#TemperatureDrift"
+    },
+    "TreatmentPlant" : {
+      "@id" : "https://saref.etsi.org/saref4watr/TreatmentPlant"
+    },
+    "FeatureOfInterest" : {
+      "@id" : "http://www.w3.org/ns/sosa/FeatureOfInterest"
+    },
+    "measuresProperty" : {
+      "@id" : "https://saref.etsi.org/core/measuresProperty",
+      "@type" : "@id"
+    },
+    "hasValue" : {
+      "@id" : "https://saref.etsi.org/core/hasValue"
+    },
+    "Pb" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Pb"
+    },
+    "snowHeight" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/snowHeight"
+    },
+    "maker" : {
+      "@id" : "http://xmlns.com/foaf/0.1/maker"
+    },
+    "Medium" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium"
+    },
+    "non-ionic-surfactants" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/non-ionic-surfactants"
+    },
+    "madeBySensor" : {
+      "@id" : "http://www.w3.org/ns/sosa/madeBySensor",
+      "@type" : "@id"
+    },
+    "streamGauge" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/streamGauge"
+    },
+    "Feature" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Wind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind"
+    },
+    "turbidity" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/turbidity"
+    },
+    "NO2" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/NO2"
+    },
+    "sulphite" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/sulphite"
+    },
+    "Measurement" : {
+      "@id" : "https://saref.etsi.org/core/Measurement"
+    },
+    "BacterialProperty" : {
+      "@id" : "https://saref.etsi.org/saref4watr/BacterialProperty"
+    },
+    "windDirection" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/windDirection"
+    },
+    "WaterInfrastructure" : {
+      "@id" : "https://saref.etsi.org/saref4watr/WaterInfrastructure"
+    },
+    "swellPeriod" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Environment/swellPeriod"
+    },
+    "MassPerTimePerArea" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"
+    },
+    "Temperature" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "WeatherForecast" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/WeatherForecast"
+    },
+    "Al" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Al"
+    },
+    "cationic-surfactants" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/cationic-surfactants"
+    },
+    "GaugingStation" : {
+      "@id" : "https://saref.etsi.org/saref4watr/GaugingStation"
+    },
+    "hasProperty" : {
+      "@id" : "http://www.w3.org/ns/ssn/hasProperty",
+      "@type" : "@id"
+    },
+    "Cr-VI" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Cr-VI"
+    },
+    "measurementMadeBy" : {
+      "@id" : "https://saref.etsi.org/core/measurementMadeBy",
+      "@type" : "@id"
+    },
+    "EnergyFlux" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"
+    },
+    "StressOrPressure" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"
+    },
+    "resultTime" : {
+      "@id" : "http://www.w3.org/ns/sosa/resultTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "visibility" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/visibility"
+    },
+    "PO4" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/PO4"
+    },
+    "O2" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/O2"
+    },
+    "bod" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/bod"
+    },
+    "total-surfactants" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/total-surfactants"
+    },
+    "Precipitation" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "WaterObserved" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Environment/WaterObserved"
+    },
+    "fluoride" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/fluoride"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "Water" : {
+      "@id" : "https://saref.etsi.org/saref4watr/Water"
+    },
+    "Layer" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer"
+    },
+    "conductivity" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/conductivity"
+    },
+    "Cr" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Cr"
+    },
+    "temperature" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/temperature"
+    },
+    "Zn" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Zn"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "enterococci" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/enterococci"
+    },
+    "swellHeight" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Environment/swellHeight"
+    },
+    "B" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/B"
+    },
+    "Acceleration" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration"
+    },
+    "P-TOT" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/P-TOT"
+    },
+    "QuantityKind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+    },
+    "Distance" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
+    },
+    "dateObserved" : {
+      "@id" : "https://smartdatamodels.org/dateObserved",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Sn" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Sn"
+    },
+    "TO" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/TO"
+    },
+    "relatesToMeasurement" : {
+      "@id" : "https://saref.etsi.org/core/relatesToMeasurement",
+      "@type" : "@id"
+    },
+    "atmosphericPressure" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/atmosphericPressure"
+    },
+    "Radiance" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Radiance"
+    },
+    "WaterAsset" : {
+      "@id" : "https://saref.etsi.org/saref4watr/WaterAsset"
+    },
+    "isMeasuredByDevice" : {
+      "@id" : "https://saref.etsi.org/core/isMeasuredByDevice",
+      "@type" : "@id"
+    },
+    "WaterQualityPredicted" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/WaterQualityPredicted"
+    },
+    "salinity" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/salinity"
+    },
+    "EnvironmentalProperty" : {
+      "@id" : "https://saref.etsi.org/saref4watr/EnvironmentalProperty"
+    },
+    "SourceAsset" : {
+      "@id" : "https://saref.etsi.org/saref4watr/SourceAsset"
+    },
+    "Lagoon" : {
+      "@id" : "https://saref.etsi.org/saref4watr/Lagoon"
+    },
+    "orp" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/orp"
+    },
+    "PC" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/PC"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "MonitoringInfrastructure" : {
+      "@id" : "https://saref.etsi.org/saref4watr/MonitoringInfrastructure"
+    },
+    "Cr-III" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Cr-III"
+    },
+    "sulphate" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/sulphate"
+    },
+    "makesMeasurement" : {
+      "@id" : "https://saref.etsi.org/core/makesMeasurement",
+      "@type" : "@id"
+    },
+    "Ba" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Ba"
+    },
+    "Property" : {
+      "@id" : "https://saref.etsi.org/core/Property"
+    },
+    "pressureTendency" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/pressureTendency"
+    },
+    "NH3" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/NH3"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "Density" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Density"
+    },
+    "Cd" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Cd"
+    },
+    "Hg" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Hg"
+    },
+    "weatherType" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/weatherType"
+    },
+    "anionic-surfactants" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/anionic-surfactants"
+    },
+    "isMeasuredIn" : {
+      "@id" : "https://saref.etsi.org/core/isMeasuredIn",
+      "@type" : "@id"
+    },
+    "dewPoint" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/dewPoint"
+    },
+    "hasFeatureOfInterest" : {
+      "@id" : "https://saref.etsi.org/core/hasFeatureOfInterest",
+      "@type" : "@id"
+    },
+    "THC" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/THC"
+    },
+    "WaterLevel" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterLevel"
+    },
+    "conductance" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/conductance"
+    },
+    "observedProperty" : {
+      "@id" : "http://www.w3.org/ns/sosa/observedProperty",
+      "@type" : "@id"
+    },
+    "NO3" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/NO3"
+    },
+    "Cl-" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Cl-"
+    },
+    "madeObservation" : {
+      "@id" : "http://www.w3.org/ns/sosa/madeObservation",
+      "@type" : "@id"
+    },
+    "N-TOT" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/N-TOT"
+    },
+    "As" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/As"
+    },
+    "solarRadiation" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/solarRadiation"
+    },
+    "unit" : {
+      "@id" : "http://qudt.org/schema/qudt/unit",
+      "@type" : "@id"
+    },
+    "SurfaceMedium" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceMedium"
+    },
+    "isPropertyOf" : {
+      "@id" : "https://saref.etsi.org/core/isPropertyOf",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "relativeHumidity" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/relativeHumidity"
+    },
+    "tds" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/tds"
+    },
+    "swellDirection" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Environment/swellDirection"
+    },
+    "escherichiaColi" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/escherichiaColi"
+    },
+    "relatesToProperty" : {
+      "@id" : "https://saref.etsi.org/core/relatesToProperty",
+      "@type" : "@id"
+    },
+    "airTemperatureForecast" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/airTemperatureForecast"
+    },
+    "Chla" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/Chla"
+    },
+    "NH4" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/NH4"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "controlsProperty" : {
+      "@id" : "https://saref.etsi.org/core/controlsProperty",
+      "@type" : "@id"
+    },
+    "ObservableProperty" : {
+      "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/terms/contributor"
+    },
+    "Lake" : {
+      "@id" : "https://saref.etsi.org/saref4watr/Lake"
+    },
+    "System" : {
+      "@id" : "http://www.w3.org/ns/ssn/System"
+    },
+    "VelocityOrSpeed" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"
+    },
+    "Device" : {
+      "@id" : "https://saref.etsi.org/core/Device"
+    },
+    "flow" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Environment/flow"
+    },
+    "hasTimestamp" : {
+      "@id" : "https://saref.etsi.org/core/hasTimestamp"
+    },
+    "Dimensionless" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"
+    },
+    "MicrobialProperty" : {
+      "@id" : "https://saref.etsi.org/saref4watr/MicrobialProperty"
+    },
+    "precipitation" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/precipitation"
+    },
+    "waterQualityPredictionValue" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/waterQualityPredictionValue"
+    },
+    "WaterProperty" : {
+      "@id" : "https://saref.etsi.org/saref4watr/WaterProperty"
+    },
+    "Surface" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface"
+    },
+    "SurfaceLayer" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "windSpeed" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/windSpeed"
+    },
+    "TKN" : {
+      "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/TKN"
+    },
+    "Observation" : {
+      "@id" : "http://www.w3.org/ns/sosa/Observation"
+    },
+    "illuminance" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/illuminance"
+    },
+    "hasSimpleResult" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasSimpleResult"
+    },
+    "isFeatureOfInterestOf" : {
+      "@id" : "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+      "@type" : "@id"
+    }
+  }
+}
