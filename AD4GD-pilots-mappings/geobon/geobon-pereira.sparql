@@ -1,0 +1,111 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX base: <http://w3id.org/foodie/lucas/lcvalue>
+PREFIX sosa:  <http://www.w3.org/ns/sosa/> 
+PREFIX owl:   <http://www.w3.org/2002/07/owl#> 
+PREFIX glosis_cm: <http://w3id.org/glosis/model/common#>
+PREFIX glosis_lh: <http://w3id.org/glosis/model/layerhorizon#> 
+PREFIX glosis_cl: <http://w3id.org/glosis/model/codelists#> 
+PREFIX glosis_sp: <http://w3id.org/glosis/model/siteplot#> 
+PREFIX glosis_pr: <http://w3id.org/glosis/model/profile#> 
+PREFIX iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> 
+PREFIX iso28258: 	<http://w3id.org/glosis/model/iso28258/2013#> 
+PREFIX qudt: <http://qudt.org/schema/qudt/> 
+PREFIX unit: <http://qudt.org/vocab/unit/> 
+PREFIX sosa:  <http://www.w3.org/ns/sosa/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX oim-jf: <https://w3id.org/iliad/oim/jellyfish>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+PREFIX oim-jf: <http://w3id.org/iliad/oim/jellyfish#>
+PREFIX dwc-mbg: <http://mmisw.org/ont/ioos/marine_biogeography/>
+
+
+### observation collection
+CONSTRUCT {
+  ?obs_col_URI a sosa:ObservationCollection ;
+  	rdfs:label ?obs_col_label ;
+	sosa:observedProperty ?property_URI ;
+	sosa:madeBySensor ?sensor_URI ;
+	sosa:usedProcedure ?procedure_URI ;	
+	sosa:hasMember ?obs_URI ;
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {		
+	BIND (URI('http://w3id.org/ad4gd/geobon/biodiversityprojection/observationCol/BES-SIM_AIM') AS ?obs_col_URI)
+	BIND (STRLANG('Projections from the AIM model from 1900-2050 using LUH2 and SSPs-RCPs, done in the BES-SIM inter-model comparison for IPBES',"en") AS ?obs_col_label)
+	BIND (URI('http://w3id.org/ad4gd/ev/ebv/Communityabundanceandtaxonomicdiversityofpollinatorinsects') AS ?property_URI)
+	BIND (URI('http://w3id.org/ad4gd/geobon/biodiversityprojection/model/BES-SIM_AIM') AS ?sensor_URI)
+	BIND (URI('http://w3id.org/ad4gd/geobon/biodiversityprojection/procedure/BES-SIM_AIM') AS ?procedure_URI)	  
+	BIND (URI(CONCAT('http://w3id.org/ad4gd/geobon/biodiversityprojection/observation/BES-SIM_AIM/', STR(?ROWNUM))) AS ?obs_URI)  
+}
+
+
+### observation 
+CONSTRUCT {
+  ?obs_URI a sosa:Observation ;
+  	rdfs:label ?obs_label ;  	
+  	sosa:phenomenonTime ?propert_date ; 
+  	sosa:resultTime ?result_date ;
+  	sosa:hasSimpleResult ?entity ;
+  	sosa:hasFeatureOfInterest ?feature_URI ;
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {
+  BIND (strdt(concat(?time,'T00:00:00'),xsd:dateTime) AS ?propert_date)
+  BIND (strdt('2022-02-16T00:00:00',xsd:dateTime) AS ?result_date)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/geobon/biodiversityprojection/observation/BES-SIM_AIM/', STR(?ROWNUM))) AS ?obs_URI)  
+  BIND (STRLANG(CONCAT('Projection for point ', ?lon,',',?lat,' time: ',?time),"en") AS ?obs_label)	    	 
+	BIND (URI(CONCAT('http://w3id.org/ad4gd/geobon/biodiversityprojection/feature/', STR(?ROWNUM))) AS ?feature_URI)
+	
+}	
+
+### feature of interest
+CONSTRUCT {
+  ?feature_URI a sosa:FeatureOfInterest, wgs84:Point , dct:Location ;
+  	rdfs:label ?feature_label ;
+  	wgs84:lat ?lat ;
+  	wgs84:long ?lon ;
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/geobon/biodiversityprojection/feature/', STR(?ROWNUM))) AS ?feature_URI)    
+  BIND (STRLANG(CONCAT('Feature of interest for observation #', STR(?ROWNUM)),"en") AS ?feature_label)
+}
+
+### observed property
+CONSTRUCT {
+  ?property_URI a sosa:ObservableProperty ;
+  	rdfs:label ?property_label ;
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {
+  BIND (URI('http://w3id.org/ad4gd/ev/ebv/Communityabundanceandtaxonomicdiversityofpollinatorinsects') AS ?property_URI)
+  BIND (STRLANG('Community abundance and taxonomic diversity of pollinator insects',"en") AS ?property_label)
+}
+
+
+### simulation sensor
+CONSTRUCT {
+  ?sensor_URI a sosa:Sensor ;
+  	rdfs:label ?sensor_label ;
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {
+  BIND (URI('http://w3id.org/ad4gd/geobon/biodiversityprojection/model/BES-SIM_AIM') AS ?sensor_URI)
+  BIND (STRLANG('Simulation model BES-SIM AIM',"en") AS ?sensor_label)
+}
+
+###  procedure 
+CONSTRUCT {
+  ?procedure_URI a sosa:Procedure ;
+  	rdfs:label ?procedure_label ;
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {
+  BIND (URI('http://w3id.org/ad4gd/geobon/biodiversityprojection/procedure/BES-SIM_AIM') AS ?procedure_URI)	  
+  BIND (STRLANG('using LUH2 and SSPs-RCPs, done in the BES-SIM inter-model comparison for IPBES',"en") AS ?procedure_label)
+}
