@@ -79,5 +79,5 @@
     "properties" : {
       "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/properties",
       "@type": "@id"
-    },
+    }
 }    
