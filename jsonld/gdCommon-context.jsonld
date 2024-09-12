@@ -602,7 +602,7 @@
     "georeferenceSources" : {
       "@id" : "http://rs.tdwg.org/dwc/terms/georeferenceSources"
     },
-    "type" : {
+    "resourceType" : {
       "@id" : "http://purl.org/dc/terms/type"
     },
     "MaterialSample" : {

@@ -1,5 +1,7 @@
 {
   "@context" : {
+    "@vocab": "https://w3id.org/ad4gd/gdim/default-context/",
+    "type": "@type",
     "PhotonFluxDensity" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#PhotonFluxDensity"
     },
@@ -1247,7 +1249,7 @@
     "MeasureProperty" : {
       "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
     },
-    "type" : {
+    "resourceType" : {
       "@id" : "http://purl.org/dc/terms/type"
     },
     "Hg" : {
