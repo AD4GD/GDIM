@@ -32,7 +32,7 @@
       "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/featureOfInterestNavigationLink"
     },
     "unitOfMeasurement" : {
-      @id": "http://qudt.org/schema/qudt/unit",
+      "@id": "http://qudt.org/schema/qudt/unit",
       "@type": "@id"
     },
     "observationType" : {
@@ -80,4 +80,5 @@
       "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/properties",
       "@type": "@id"
     }
+  }
 }    
