@@ -1,0 +1,83 @@
+{
+  "@context" : {
+    "@vocab": "http://w3id.org/ad4gd/ogc/sta/terms/default-context/",
+    "type": "@type",
+    "@iot.count" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/count"
+    },
+    "@iot.nextLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/nextLink"
+    },
+    "value" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/value",
+      "@type" : "@id"
+    },
+    "result" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasResult",
+      "@type" : "@id"
+    },
+    "@iot.id" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/id"
+    },
+    "@iot.selfLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/selfLink"
+    },
+    "Datastream@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/datastreamNavigationLink"
+    },
+    "Datastream@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/datastreamNavigationLink"
+    },
+    "FeatureOfInterest@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/featureOfInterestNavigationLink"
+    },
+    "unitOfMeasurement" : {
+      @id": "http://qudt.org/schema/qudt/unit",
+      "@type": "@id"
+    },
+    "observationType" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/observationType"
+    },
+    "Observations@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/observationsNavigationLink"
+    },
+    "ObservedProperty@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/observedPropertyNavigationLink"
+    },
+    "Sensor@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/sensorNavigationLink"
+    },
+    "Thing@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/thingNavigationLink"
+    },
+    "feature": {
+      "@id": "https://saref.etsi.org/core/hasFeatureOfInterest",
+      "@type": "@id"
+    },
+    "coordinates" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/coordinates"
+    },
+    "encodingType" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/encodingType"
+    },
+    "time" : {
+      "@id": "https://saref.etsi.org/core/hasTimestamp"
+    },
+    "Locations@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/locationsNavigationLink"
+    },
+    "HistoricalLocations@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/historicalLocationsNavigationLink"
+    },
+    "Datastreams@iot.navigationLink" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/datastreamsNavigationLink"
+    },
+    "metadata" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/metadata",
+      "@type": "@id"
+    },
+    "properties" : {
+      "@id" : "http://w3id.org/ad4gd/ogc/sta/terms/properties",
+      "@type": "@id"
+    },
+}    
