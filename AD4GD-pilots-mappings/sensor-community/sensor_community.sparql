@@ -43,7 +43,7 @@ CONSTRUCT {
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {		
 	BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/',STR(?timestamp),'/',STR(?sensor_id))) AS ?obs_col_URI)
-	BIND (STRLANG(CONCAT('Sensor community observation collection for sensor: ', STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp)),"en") AS ?obs_col_label)	    	 
+	BIND (STRLANG(CONCAT('Sensor community observation collection on: ', STR(?timestamp), ' for sensor: ', STR(?sensor_id),' at location id: ',STR(?location)),"en") AS ?obs_col_label)	    	 
 	BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/sensor/',STR(?sensor_id))) AS ?sensor_URI)
 	BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/location/',STR(?location))) AS ?feature_URI)
 	BIND (xsd:dateTime(?timestamp) AS ?timestamp_prop)	  

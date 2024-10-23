@@ -1,0 +1,12 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?x ?name  WHERE {
+	?x rdf:type owl:Class .
+	BIND (IF (contains (STR(?x), "#"), 
+	        REPLACE(STR(?x), "(.)*#([a-zA-Z0-9-_]+)$", "$2"), 
+	        REPLACE(STR(?x), "^.*/([^/]*)$", "$1")
+	     ) as ?name)
+	
+}
