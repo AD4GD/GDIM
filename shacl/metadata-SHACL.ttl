@@ -1,0 +1,1378 @@
+@prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/ad4gd/model/metadata/> .
+@prefix qudt:  <http://qudt.org/schema/qudt/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdfg:  <http://www.w3.org/2004/03/trix/rdfg-1/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dqv:   <http://www.w3.org/ns/dqv#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix locn:  <http://www.w3.org/ns/locn#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix geodcat-ap: <http://data.europa.eu/930/> .
+@prefix adms:  <http://www.w3.org/ns/adms#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix ids:   <https://w3id.org/idsa/core/> .
+@prefix odrl:  <http://www.w3.org/ns/odrl/2/> .
+@prefix sdo:   <http://schema.org/> .
+
+<https://astrea.linkeddata.es/shapes#eba6d6a5ea15a0298341f0dbd6f42172>
+        a               sh:PropertyShape ;
+        rdfs:label      "has quality metadata"@en , "Refers to a grouping of quality information such as certificates, policies, measurements and annotations as a named graph. Quality information represented in such a grouping can pertain to any kind of resource (e.g., a dataset, a linkset, a graph, a set of triples). However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution."@en ;
+        sh:class        dqv:QualityMetadata ;
+        sh:description  "Refers to a grouping of quality information such as certificates, policies, measurements and annotations as a named graph. Quality information represented in such a grouping can pertain to any kind of resource (e.g., a dataset, a linkset, a graph, a set of triples). However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution."@en ;
+        sh:name         "has quality metadata"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dqv:hasQualityMetadata .
+
+<https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "page" , "A page or document about this thing." ;
+        sh:description    "A page or document about this thing." ;
+        sh:name           "page" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:page .
+
+<https://astrea.linkeddata.es/shapes#6c49a8c3e7dc37fe125eccde4843c5f5>
+        a               sh:NodeShape ;
+        rdfs:label      "Artifact"@en ;
+        sh:description  "Instance of a Representation materialized at a partiuclar version and point in time. Possesses characteristics like file name, size, creation date etc."@en ;
+        sh:name         "Artifact"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ebe0c675834457dde235ab7bc2dff59f> , <https://astrea.linkeddata.es/shapes#cdb45c8951b52508c16e86da6448fb62> , <https://astrea.linkeddata.es/shapes#57a2d3ca27626e0c64fd98a177c7557d> ;
+        sh:targetClass  ids:Artifact .
+
+<https://astrea.linkeddata.es/shapes#320d138ccb59ba44f07feb254d3d666d>
+        a               sh:NodeShape ;
+        rdfs:label      "Language"@en ;
+        sh:description  "The class of languages potentially being used by textual Data Assets."@en ;
+        sh:name         "Language"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:Language .
+
+<https://astrea.linkeddata.es/shapes#6ac8fdb65970f3a327e6b47b8262af40>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "wasUsedBy" ;
+        sh:class          prov:Activity ;
+        sh:name           "wasUsedBy" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:wasUsedBy .
+
+<https://astrea.linkeddata.es/shapes#6842ffdcf7769408c80058e10b825ba7>
+        a               sh:PropertyShape ;
+        rdfs:label      "Data type"@en , "Indicates the data type of the Representation."@en ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Indicates the data type of the Representation."@en ;
+        sh:name         "Data type"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:dataType ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#ad797533a332b2c5f9400af1afa85b74>
+        a               sh:PropertyShape ;
+        rdfs:label      "endpoint documentation"@en , "IRI reference to a documentation of the endpoint,  e.g., reference to an OpenAPI-based documentation."@en ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "IRI reference to a documentation of the endpoint,  e.g., reference to an OpenAPI-based documentation."@en ;
+        sh:name         "endpoint documentation"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:endpointDocumentation ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#3eb1053bfb8d8e3227c72df7638cd75d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Distribution"@en ;
+        sh:description    "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above)."@en ;
+        sh:name           "Distribution"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c5e9a52e5abdcc530106f263709eff35> , <https://astrea.linkeddata.es/shapes#0556a328ecd5c853afbe2b1554b83a41> , <https://astrea.linkeddata.es/shapes#bbec72e1685e8433f7543165b36ca94d> , <https://astrea.linkeddata.es/shapes#db9ebcedd5b8ad9b79603d480ee1477f> ;
+        sh:targetClass    dcat:Distribution .
+
+<https://astrea.linkeddata.es/shapes#812e5adf6204f03a77eb5abfe7a69850>
+        a               sh:NodeShape ;
+        rdfs:label      "Video Resource"@en ;
+        sh:description  "Resource (at least partially) comprising video content."@en ;
+        sh:name         "Video Resource"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:VideoResource .
+
+<https://astrea.linkeddata.es/shapes#d8b72a4eaaa24d6edb810ff2a4a3379a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "hadPrimarySource" ;
+        sh:class          prov:Entity ;
+        sh:name           "hadPrimarySource" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:hadPrimarySource .
+
+<https://astrea.linkeddata.es/shapes#5b9abad21e6ac4138b9d0e332c6edc25>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  dct: ;
+        rdfs:label        "DCMI Type Vocabulary"@en ;
+        sh:description    "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."@en ;
+        sh:name           "DCMI Type Vocabulary"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dct:DCMIType .
+
+<https://astrea.linkeddata.es/shapes#d2fb53123d92b6dce95d3f27fd17c8d4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  dct: ;
+        rdfs:label        "Provenance Statement"@en ;
+        sh:description    "A statement of any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation."@en ;
+        sh:name           "Provenance Statement"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dct:ProvenanceStatement .
+
+<https://astrea.linkeddata.es/shapes#e20708156843a793b2b77fd3d4c4d04d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-adms> ;
+        rdfs:label        "Asset"@en ;
+        sh:description    "An Asset is an abstract entity that reflects the intellectual content of the asset and represents those characteristics of the asset that are independent of its physical embodiment. This abstract entity combines the FRBR entities work (a distinct intellectual or artistic creation) and expression (the intellectual or artistic realization of a work). Assets can be versioned. Every time the intellectual content of an asset changes, the result is considered to be a new asset that can be linked to previous and next versions of the Asset. The physical embodiment of an Asset is called an Asset Distribution. A particular Asset may have zero or more Asset Distributions.."@en ;
+        sh:name           "Asset"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#558c31c8577de4646a636a322eac7ff4> ;
+        sh:targetClass    adms:Asset .
+
+<https://astrea.linkeddata.es/shapes#1bc257992e4584fa4ec247decbd920d5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "Unit" ;
+        sh:name           "Unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qudt:Unit .
+
+<https://astrea.linkeddata.es/shapes#e0599d95572fe81e4b21d3a2baee101e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "unit" ;
+        sh:class          qudt:Unit ;
+        sh:name           "unit" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qudt:unit .
+
+<https://astrea.linkeddata.es/shapes#11150852202532501195573dee07ec79>
+        a               sh:NodeShape ;
+        rdfs:label      "Frequency"@en ;
+        sh:description  "Class of all frequencies."@en ;
+        sh:name         "Frequency"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:Frequency , dct:Frequency .
+
+<https://astrea.linkeddata.es/shapes#8c724d222923e87e9dbcd9ef36d56358>
+        a               sh:NodeShape ;
+        rdfs:label      "Resource"@en ;
+        sh:description  "Resource is a single digital content or a coherent set of digital contents. Resource content is formalized in Representations and optionally materialized as Artifacts. The Resource's content is exposed via defined Interfaces at various protocol Endpoints."@en ;
+        sh:name         "Resource"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:Resource .
+
+<https://astrea.linkeddata.es/shapes#d55bce606c0526cfdd110cccb06d33c4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "distribution"@en , "An available distribution of the dataset."@en ;
+        sh:class          dcat:Distribution ;
+        sh:description    "An available distribution of the dataset."@en ;
+        sh:name           "distribution"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:distribution .
+
+<https://astrea.linkeddata.es/shapes#3ea4d1b0dbfea5e5e60f2df41820cb86>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "landing page"@en , "A Web page that can be navigated to in a Web browser to gain access to the catalog, a dataset, its distributions and/or additional information."@en ;
+        sh:class          foaf:Document ;
+        sh:description    "A Web page that can be navigated to in a Web browser to gain access to the catalog, a dataset, its distributions and/or additional information."@en ;
+        sh:name           "landing page"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:landingPage .
+
+<https://astrea.linkeddata.es/shapes#91bdb733f5c5f8b68ed72a7c77d5360b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "wasAttributedTo" , "Attribution is the ascribing of an entity to an agent."@en ;
+        sh:class          prov:Agent ;
+        sh:description    "Attribution is the ascribing of an entity to an agent."@en ;
+        sh:name           "wasAttributedTo" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:wasAttributedTo .
+
+<https://astrea.linkeddata.es/shapes#312c6c618cfd2493b8722a1d04ae9e80>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/930> ;
+        rdfs:label        "resource provider"@en , "Party that supplies the resource [[ISO-19115]]."@en ;
+        sh:class          foaf:Agent ;
+        sh:description    "Party that supplies the resource [[ISO-19115]]."@en ;
+        sh:name           "resource provider"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geodcat-ap:resourceProvider .
+
+<https://astrea.linkeddata.es/shapes#1aca4d21dcf2d0aa81a243dc2dbb6877>
+        a               sh:PropertyShape ;
+        rdfs:label      "description of service end-point"@en , "A description of the service end-point, including its operations, parameters etc."@en ;
+        sh:description  "A description of the service end-point, including its operations, parameters etc."@en ;
+        sh:name         "description of service end-point"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#fbe5834a70e68b01655fa50b82870db3>
+        a               sh:PropertyShape ;
+        rdfs:label      "endpoint information"@en , "Human-readable information and description of the endpoint."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Human-readable information and description of the endpoint."@en ;
+        sh:name         "endpoint information"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:endpointInformation ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#3e18b0f9fac2d3bdcd51a2fdadcbda53>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2006/time#TemporalEntity> .
+
+<https://astrea.linkeddata.es/shapes#98b09f903f7c0430de000bc04dfa1705>
+        a               sh:PropertyShape ;
+        rdfs:label      "has address" , "To specify the components of the delivery address for the object" ;
+        sh:description  "To specify the components of the delivery address for the object" ;
+        sh:name         "has address" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         vcard:hasAddress .
+
+<https://astrea.linkeddata.es/shapes#6a12fe06778e62114ece0acb56dbde35>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "qualifiedAttribution" ;
+        sh:class          prov:Attribution ;
+        sh:name           "qualifiedAttribution" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:qualifiedAttribution .
+
+<https://astrea.linkeddata.es/shapes#1603b449fef6f5d8892d9ae530b93325>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  odrl:Asset .
+
+<https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "An agent that  made this thing." , "maker" ;
+        sh:class          foaf:Agent ;
+        sh:description    "An agent that  made this thing." ;
+        sh:equals         dct:creator ;
+        sh:name           "maker" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:maker .
+
+<https://astrea.linkeddata.es/shapes#46354dfb3c12c2efeed509b8dafdc1c0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "specializationOf" ;
+        sh:class          prov:Entity ;
+        sh:name           "specializationOf" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:specializationOf .
+
+<https://astrea.linkeddata.es/shapes#cdfa0f59857ac1938b8483dc41419fa2>
+        a               sh:NodeShape ;
+        rdfs:label      "Representation instance"@en ;
+        sh:description  "A particular instance of given representation."@en ;
+        sh:name         "Representation instance"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:RepresentationInstance .
+
+<https://astrea.linkeddata.es/shapes#cdaad58b24416ae1b81fadbf662cabc9>
+        a               sh:NodeShape ;
+        rdfs:label      "Geometry"@en ;
+        sh:description  "Geometrical shape indicating a spatial area of interest."@en ;
+        sh:name         "Geometry"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:Geometry .
+
+<https://astrea.linkeddata.es/shapes#486a444fa71b7f098668454628136e43>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-adms> ;
+        rdfs:label        "identifier"@en , "adms:identifier is used to link any resource to an instance of adms:Identifier which is its range. N.B. it is not appropriate to use dcterms:identifer to link to the Identifier class as its range is rdfs:Literal. ADMS uses this to provide any identifier for the Asset."@en ;
+        sh:class          adms:Identifier ;
+        sh:description    "adms:identifier is used to link any resource to an instance of adms:Identifier which is its range. N.B. it is not appropriate to use dcterms:identifer to link to the Identifier class as its range is rdfs:Literal. ADMS uses this to provide any identifier for the Asset."@en ;
+        sh:name           "identifier"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           adms:identifier .
+
+<https://astrea.linkeddata.es/shapes#5891b53ece0f55e60da53f65396c857e>
+        a               sh:NodeShape ;
+        rdfs:label      "Type" ;
+        sh:description  "Used for type codes. The URI of the type code must be used as the value for Type." ;
+        sh:name         "Type" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  vcard:Type .
+
+<https://astrea.linkeddata.es/shapes#ba95f7335c866c3ca429b0e686e8c4d1>
+        a               sh:PropertyShape ;
+        rdfs:label      "has email" , "To specify the electronic mail address for communication with the object" ;
+        sh:description  "To specify the electronic mail address for communication with the object" ;
+        sh:name         "has email" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         vcard:hasEmail .
+
+<https://astrea.linkeddata.es/shapes#dc9f3a38b74f664f0891d77a58351843>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/930> ;
+        rdfs:label        "principal investigator"@en , "Key party responsible for gathering information and conducting research [[ISO-19115]]."@en ;
+        sh:class          foaf:Agent ;
+        sh:description    "Key party responsible for gathering information and conducting research [[ISO-19115]]."@en ;
+        sh:name           "principal investigator"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geodcat-ap:principalInvestigator .
+
+<https://astrea.linkeddata.es/shapes#e5a015b1bc617bc66543caa5eadc23f7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "Distribution - spatial resolution "@en , "This property refers to the  minimum spatial separation resolvable in a dataset, measured in meters."@en ;
+        sh:description    "This property refers to the  minimum spatial separation resolvable in a dataset, measured in meters."@en ;
+        sh:name           "Distribution - spatial resolution "@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           dcat:spatialResolutionInMeters .
+
+<https://astrea.linkeddata.es/shapes#d86d39fe22d383728eb67f8caebf5274>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "wasRevisionOf" , "A revision is a derivation that revises an entity into a revised version."@en ;
+        sh:class          prov:Entity ;
+        sh:description    "A revision is a derivation that revises an entity into a revised version."@en ;
+        sh:name           "wasRevisionOf" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:wasRevisionOf .
+
+<https://astrea.linkeddata.es/shapes#dfcd5fc30011d551739f9877c244fb84>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "Entity" ;
+        sh:name           "Entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#cbdd83028fff6b8bbd067d6abd095476> , <https://astrea.linkeddata.es/shapes#801862a4447062a61fb4b0878f0ee581> , <https://astrea.linkeddata.es/shapes#91bdb733f5c5f8b68ed72a7c77d5360b> , <https://astrea.linkeddata.es/shapes#23d0fc727546dee2eb47f5cc8205f898> , <https://astrea.linkeddata.es/shapes#6a12fe06778e62114ece0acb56dbde35> , <https://astrea.linkeddata.es/shapes#6ac8fdb65970f3a327e6b47b8262af40> , <https://astrea.linkeddata.es/shapes#d86d39fe22d383728eb67f8caebf5274> , <https://astrea.linkeddata.es/shapes#46354dfb3c12c2efeed509b8dafdc1c0> , <https://astrea.linkeddata.es/shapes#d8b72a4eaaa24d6edb810ff2a4a3379a> , <https://astrea.linkeddata.es/shapes#eafdf3594e784d85493b04c0a5ed43c9> ;
+        sh:targetClass    prov:Entity .
+
+<https://astrea.linkeddata.es/shapes#b40bd69c6e37ec8343e83dd94a088cd3>
+        a               sh:NodeShape ;
+        rdfs:label      "Quality Measurement"@en ;
+        sh:description  "Represents the evaluation of a given dataset (or dataset distribution) against a specific quality metric."@en ;
+        sh:name         "Quality Measurement"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dqv:QualityMeasurement .
+
+<https://astrea.linkeddata.es/shapes#f0f95546c932a6fae04de76ef5bfadb4>
+        a               sh:NodeShape ;
+        rdfs:label      "Text representation"@en ;
+        sh:description  "Representation of a textual content."@en ;
+        sh:name         "Text representation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:TextRepresentation .
+
+<https://astrea.linkeddata.es/shapes#8b873b8473f2fd91bbd79988dca208e4>
+        a               sh:NodeShape ;
+        rdfs:label      "Individual" ;
+        sh:description  "An object representing a single person or entity" ;
+        sh:name         "Individual" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  vcard:Individual .
+
+<https://astrea.linkeddata.es/shapes#b48dbf981c292003bafa0a24ab2824eb>
+        a               sh:PropertyShape ;
+        rdfs:label      "sampling rate"@en , "Audio sampling rate."@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Audio sampling rate."@en ;
+        sh:name         "sampling rate"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:samplingRate ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#0c7a6782b7789e420087704ad89674ef>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "Agent" ;
+        sh:name           "Agent" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    prov:Agent .
+
+<https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Group" ;
+        sh:description    "A class of Agents" ;
+        sh:name           "Group" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:Group .
+
+<https://astrea.linkeddata.es/report/01199455713>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/metadata.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c5e9a52e5abdcc530106f263709eff35>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "byte size"@en , "The size of a distribution in bytes."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The size of a distribution in bytes."@en ;
+        sh:name           "byte size"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           dcat:byteSize .
+
+<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+<https://astrea.linkeddata.es/shapes#3dc3b84895d32d755cfe68f990e149b1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "bounding box"@en , "The geographic bounding box of a spatial thing [SDW-BP]."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The geographic bounding box of a spatial thing [SDW-BP]."@en ;
+        sh:name           "bounding box"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           dcat:bbox .
+
+<https://astrea.linkeddata.es/shapes#ddd03e8dc0331b63f10ed9a249f8aa99>
+        a               sh:NodeShape ;
+        rdfs:label      "content type"@en ;
+        sh:description  "Detailed type, genre or interpretation of the Digital Content."@en ;
+        sh:name         "content type"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:ContentType .
+
+<https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "name" , "A name for some thing." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A name for some thing." ;
+        sh:name           "name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:name .
+
+<https://astrea.linkeddata.es/shapes#652532405185e960135fcad29b4aac81>
+        a               sh:PropertyShape ;
+        rdfs:label      "service end-point"@en , "The root location or primary endpoint of the service (a web-resolvable IRI)."@en ;
+        sh:class        rdfs:Resource ;
+        sh:description  "The root location or primary endpoint of the service (a web-resolvable IRI)."@en ;
+        sh:name         "service end-point"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dcat:endpointURL .
+
+<https://astrea.linkeddata.es/shapes#3109364275870083dca0800402b7c296>
+        a               sh:NodeShape ;
+        rdfs:label      "GeoFeature"@en ;
+        sh:description  "A location identified by a geonames URL."@en ;
+        sh:name         "GeoFeature"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:GeoFeature .
+
+<https://astrea.linkeddata.es/shapes#0f6835957605b092ea20501ee044bb40>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-3/> ;
+        rdfs:label        "in series"@en , "A dataset series of which the dataset is part."@en ;
+        sh:description    "A dataset series of which the dataset is part."@en ;
+        sh:name           "in series"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:inSeries .
+
+<https://astrea.linkeddata.es/shapes#1ac23d2463412dd173bb845650719608>
+        a               sh:NodeShape ;
+        rdfs:label      "Kind" ;
+        sh:description  "The parent class for all objects" ;
+        sh:name         "Kind" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  vcard:Kind .
+
+<https://astrea.linkeddata.es/shapes#10f91c26a1bc1fc1a751df2deb181103>
+        a               sh:NodeShape ;
+        rdfs:label      "Digital content"@en ;
+        sh:description  "Digital content of a particular type providing hints on its usage, e.g., listening to an Audio, navigating a Structure or accessing a List by an index."@en ;
+        sh:name         "Digital content"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d17c073a2c4e4482470f57dffd7cd246> , <https://astrea.linkeddata.es/shapes#c67c63ec959a59e2e6b87d33a5dddff2> ;
+        sh:targetClass  ids:DigitalContent .
+
+<https://astrea.linkeddata.es/shapes#f1a4974c9d12c93e3d73dba9ec0fc507>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  odrl:Party .
+
+<https://astrea.linkeddata.es/shapes#3c751bd0e15afade7ce17c2ea8b5a559>
+        a               sh:NodeShape ;
+        rdfs:label      "Organization" ;
+        sh:description  "An object representing an organization.  An organization is a single entity, and might represent a business or government, a department or division within a business or government, a club, an association, or the like." ;
+        sh:name         "Organization" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  vcard:Organization .
+
+<https://astrea.linkeddata.es/shapes#558c31c8577de4646a636a322eac7ff4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-adms> ;
+        rdfs:label        "sample"@en , "Links to a sample of an Asset (which is itself an Asset)."@en ;
+        sh:class          adms:Asset ;
+        sh:description    "Links to a sample of an Asset (which is itself an Asset)."@en ;
+        sh:name           "sample"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           adms:sample .
+
+<https://astrea.linkeddata.es/shapes#b5058f72d9f76b4d536b009317669251>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Data structure definition"@en ;
+        sh:description    "Defines the structure of a DataSet or slice"@en ;
+        sh:name           "Data structure definition"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#625bd4edbe377be2d701fd9706a480d1> ;
+        sh:targetClass    qb:DataStructureDefinition .
+
+<https://astrea.linkeddata.es/shapes#da5c9d115ee05a6737637347c17b5b65>
+        a               sh:NodeShape ;
+        rdfs:label      "BoundingPolygon"@en ;
+        sh:description  "Defines an area of interest as a set of connected points."@en ;
+        sh:name         "BoundingPolygon"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:BoundingPolygon .
+
+<https://astrea.linkeddata.es/shapes#d17c073a2c4e4482470f57dffd7cd246>
+        a               sh:PropertyShape ;
+        rdfs:label      "representation"@en , "Representation of the content."@en ;
+        sh:class        dcat:Distribution ;
+        sh:description  "Representation of the content."@en ;
+        sh:name         "representation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         ids:representation .
+
+<https://astrea.linkeddata.es/shapes#665596f7d8d21e97cab489beb19294ac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "temporal resolution"@en , "This property refers to the minimum time period resolvable in the dataset. ."@en ;
+        sh:description    "This property refers to the minimum time period resolvable in the dataset. ."@en ;
+        sh:name           "temporal resolution"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           dcat:temporalResolution .
+
+<https://astrea.linkeddata.es/shapes#e3b75829df79bd6fe62dc81261d218be>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/930> ;
+        rdfs:label        "processor"@en , "Party who has processed the data in a manner such that the resource has been modified [[ISO-19115]]."@en ;
+        sh:class          foaf:Agent ;
+        sh:description    "Party who has processed the data in a manner such that the resource has been modified [[ISO-19115]]."@en ;
+        sh:name           "processor"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geodcat-ap:processor .
+
+<https://astrea.linkeddata.es/shapes#a6424133cb645bfe4f96b660c4300cbb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "keyword"@en , "A keyword or tag describing a resource."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A keyword or tag describing a resource."@en ;
+        sh:name           "keyword"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           dcat:keyword .
+
+<https://astrea.linkeddata.es/shapes#4698b161b7126c42bc4bf967564fffbb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/930> ;
+        rdfs:label        "user"@en , "Party who uses the resource [[ISO-19115]]."@en ;
+        sh:class          foaf:Agent ;
+        sh:description    "Party who uses the resource [[ISO-19115]]."@en ;
+        sh:name           "user"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geodcat-ap:user .
+
+<https://astrea.linkeddata.es/shapes#f98f3dc54a6cd0317708e8b7311e4117>
+        a               sh:NodeShape ;
+        rdfs:label      "Data representation"@en ;
+        sh:description  "Physical representation of (structured) data."@en ;
+        sh:name         "Data representation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d88f22bc265b3ab3ab45b7176a7e350c> , <https://astrea.linkeddata.es/shapes#6842ffdcf7769408c80058e10b825ba7> ;
+        sh:targetClass  ids:DataRepresentation .
+
+<https://astrea.linkeddata.es/shapes#1df71773a15fa4a10af05352e578c30d>
+        a               sh:NodeShape ;
+        rdfs:label      "Image Representation"@en ;
+        sh:description  "Image representation"@en ;
+        sh:name         "Image Representation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#119df62493163a9a997a7c9bb5d5ebc9> , <https://astrea.linkeddata.es/shapes#34aaffd0423881cb5347d04e69a5d860> ;
+        sh:targetClass  ids:ImageRepresentation .
+
+<https://astrea.linkeddata.es/shapes#e153dea00b08484c44b47fa05883a2de>
+        a               sh:PropertyShape ;
+        rdfs:label      "frame rate"@en , "Video frame rate, as frames/second."@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Video frame rate, as frames/second."@en ;
+        sh:name         "frame rate"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:frameRate ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#f4ba1ce949b31498d8dbe5c88cf0065e>
+        a               sh:NodeShape ;
+        rdfs:label      "Work" ;
+        sh:description  "This implies that the property is related to an individual's work place" ;
+        sh:name         "Work" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  vcard:Work .
+
+<https://astrea.linkeddata.es/shapes#f62c00502d8aef0002d44fa309202209>
+        a               sh:NodeShape ;
+        rdfs:label      "Connector Endpoint"@en ;
+        sh:description  "Connector-specific endpoint exposing Artifacts."@en ;
+        sh:name         "Connector Endpoint"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d2c799e3a21f92317899adada8be3292> ;
+        sh:targetClass  ids:ConnectorEndpoint .
+
+<https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "used" , "A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven ."@en ;
+        sh:class          prov:Entity ;
+        sh:description    "A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven ."@en ;
+        sh:name           "used" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:used .
+
+<https://astrea.linkeddata.es/shapes#b7634ac6ad43e6a6f672d45238238cf7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-adms> ;
+        rdfs:label        "schema agency"@en , "The name of the agency that issued the identifier."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The name of the agency that issued the identifier."@en ;
+        sh:name           "schema agency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           adms:schemaAgency .
+
+<https://astrea.linkeddata.es/shapes#cbdd83028fff6b8bbd067d6abd095476>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "wasGeneratedBy" ;
+        sh:class          prov:Activity ;
+        sh:name           "wasGeneratedBy" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:wasGeneratedBy .
+
+<https://astrea.linkeddata.es/shapes#c8e610c7786da56a82e4054c4a9fe588>
+        a               sh:NodeShape ;
+        rdfs:label      "Quality Annotation"@en ;
+        sh:description  "Represents quality annotations, including ratings, quality certificates or feedback that can be associated to datasets or distributions. Quality annotations must have one oa:motivatedBy statement with an instance of oa:Motivation (and skos:Concept) that reflects a quality assessment purpose. We define this instance as dqv:qualityAssessment."@en ;
+        sh:name         "Quality Annotation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dqv:QualityAnnotation .
+
+<https://astrea.linkeddata.es/shapes#4d269b1268c848ae7ee01b9c605dbf3b>
+        a               sh:PropertyShape ;
+        rdfs:label      "content standard"@en , "IRI containing document, which defines the standard for the given Digital Content. The content is assumed to conform to that Standard."@en ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "IRI containing document, which defines the standard for the given Digital Content. The content is assumed to conform to that Standard."@en ;
+        sh:name         "content standard"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:contentStandard ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#0002bc5a8dc4bdcbfea60d89b7cbd6eb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  dct: ;
+        rdfs:label        "Media Type"@en ;
+        sh:description    "A file format or physical medium."@en ;
+        sh:name           "Media Type"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#670891768356e3f6cfe670f012fb5e89> ;
+        sh:targetClass    dct:MediaType .
+
+<https://astrea.linkeddata.es/shapes#b3af1da75f597b75d164281a02a51da0>
+        a               sh:NodeShape ;
+        rdfs:label      "Participant"@en ;
+        sh:description  "Stakeholder in the International Data Spaces, assuming one or more of the predefined roles; every participant is given a unique identity by the Identity Provider."@en ;
+        sh:name         "Participant"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:Participant .
+
+<https://astrea.linkeddata.es/shapes#801862a4447062a61fb4b0878f0ee581>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "generalizationOf" ;
+        sh:class          prov:Entity ;
+        sh:name           "generalizationOf" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:generalizationOf .
+
+<https://astrea.linkeddata.es/shapes#8f49166876b9c2a968ea3f5f0712879d>
+        a               sh:NodeShape ;
+        rdfs:label      "DescribedSemantically"@en ;
+        sh:description  "Entity described semantically."@en ;
+        sh:name         "DescribedSemantically"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:DescribedSemantically .
+
+<https://astrea.linkeddata.es/shapes#1300e4b50895c3a8edf990bfeb6b200c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Data service"@en ;
+        sh:description    "A site or end-point providing operations related to the discovery of, access to, or processing functions on, data or related resources."@en ;
+        sh:name           "Data service"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#652532405185e960135fcad29b4aac81> ;
+        sh:targetClass    dcat:DataService .
+
+<https://astrea.linkeddata.es/shapes#36ca9100fca44af0816e6a13edb27ac4>
+        a               sh:NodeShape ;
+        rdfs:label      "GeoPoint"@en ;
+        sh:description  "A location identified by geo coordinates."@en ;
+        sh:name         "GeoPoint"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:GeoPoint .
+
+<https://astrea.linkeddata.es/shapes#badc33ad6c319f57a588f1c1c5d850ee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "qualified relation"@en , "Link to a description of a relationship with another resource."@en ;
+        sh:class          dcat:Relationship ;
+        sh:description    "Link to a description of a relationship with another resource."@en ;
+        sh:name           "qualified relation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:qualifiedRelation .
+
+<https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e3b75829df79bd6fe62dc81261d218be> , <https://astrea.linkeddata.es/shapes#4698b161b7126c42bc4bf967564fffbb> , <https://astrea.linkeddata.es/shapes#00f083bcf14ba21e04c41230b8a05883> , <https://astrea.linkeddata.es/shapes#61d4fff01cb56c870d95c000cd6a23fe> , <https://astrea.linkeddata.es/shapes#bd5caf804aa4e19a9b908519fe7f7f15> , <https://astrea.linkeddata.es/shapes#312c6c618cfd2493b8722a1d04ae9e80> , <https://astrea.linkeddata.es/shapes#dc9f3a38b74f664f0891d77a58351843> ;
+        sh:targetClass  rdfs:Resource .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Person" ;
+        sh:description    "A person" ;
+        sh:name           "Person" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#acbd70b61efeaf38507ecd9a1490cce5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-adms> ;
+        rdfs:label        "version info"@en , "A description of changes between this version and the previous version of the Asset."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A description of changes between this version and the previous version of the Asset."@en ;
+        sh:name           "version info"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           adms:versionNotes .
+
+<https://astrea.linkeddata.es/shapes#cc968c845a7d6faff1e0c7647ae5136a>
+        a               sh:NodeShape ;
+        rdfs:label      "Data Resource"@en ;
+        sh:description  "Resource (at least partially) comprising data content."@en ;
+        sh:name         "Data Resource"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:DataResource .
+
+<https://astrea.linkeddata.es/shapes#846e48bf811091d3e4f3936008c5bfde>
+        a               sh:NodeShape ;
+        rdfs:label      "Home" ;
+        sh:description  "This implies that the property is related to an individual's personal life" ;
+        sh:name         "Home" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  vcard:Home .
+
+<https://astrea.linkeddata.es/shapes#f675da8d7f9aea0c07a50966d30a55e6>
+        a               sh:PropertyShape ;
+        rdfs:label      "path"@en , "Relative path, topic or queue at which the content is published by the related host."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Relative path, topic or queue at which the content is published by the related host."@en ;
+        sh:name         "path"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:path ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Organization" ;
+        sh:description    "An organization" ;
+        sh:name           "Organization" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:Organization .
+
+<https://astrea.linkeddata.es/shapes#fb6802dcb5981650418c16b60628a52a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Component specification"@en ;
+        sh:description    "Used to define properties of a component (attribute, dimension etc) which are specific to its usage in a DSD."@en ;
+        sh:name           "Component specification"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qb:ComponentSpecification .
+
+<https://astrea.linkeddata.es/shapes#bd5caf804aa4e19a9b908519fe7f7f15>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/930> ;
+        rdfs:label        "distributor"@en , "Party who distributes the resource [[ISO-19115]]."@en ;
+        sh:class          foaf:Agent ;
+        sh:description    "Party who distributes the resource [[ISO-19115]]."@en ;
+        sh:name           "distributor"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geodcat-ap:distributor .
+
+<https://astrea.linkeddata.es/shapes#463c6978bd5a5f66f402c709e2be23ac>
+        a               sh:NodeShape ;
+        rdfs:label      "ManagedEntity"@en ;
+        sh:description  "The class of mutable individuals"@en ;
+        sh:name         "ManagedEntity"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:ManagedEntity .
+
+<https://astrea.linkeddata.es/shapes#ec9a40e8bced0daf60946a1b9873a945>
+        a               sh:NodeShape ;
+        rdfs:label      "Image Resource"@en ;
+        sh:description  "Resource (at least partially) comprising image content."@en ;
+        sh:name         "Image Resource"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:ImageResource .
+
+<https://astrea.linkeddata.es/shapes#78167f782a9c4cdd8108f57dac3f125d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  dct: ;
+        rdfs:label        "Agent"@en ;
+        sh:description    "A resource that acts or has the power to act."@en ;
+        sh:name           "Agent"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dct:Agent .
+
+<https://astrea.linkeddata.es/shapes#36642c2b66e185560b06a3a198c48997>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  dct: ;
+        rdfs:label        "Frequency"@en ;
+        sh:description    "A rate at which something recurs."@en ;
+        sh:name           "Frequency"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dct:Frequency .
+
+<https://astrea.linkeddata.es/shapes#a21892535c4bbed9a2d4c28df481cbf0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "notation"@en ;
+        sh:name           "notation"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           skos:notation .
+
+<https://astrea.linkeddata.es/shapes#670891768356e3f6cfe670f012fb5e89>
+        a               sh:PropertyShape ;
+        rdfs:label      "filenameExtension"@en , "Suffix of a file name, typically separated by a period, indicating the nature and intended processing of the file."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Suffix of a file name, typically separated by a period, indicating the nature and intended processing of the file."@en ;
+        sh:name         "filenameExtension"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:filenameExtension ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#bbec72e1685e8433f7543165b36ca94d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "download URL"@en , "The URL of the downloadable file in a given format. E.g. CSV file or RDF file. The format is indicated by the distribution's dct:format and/or dcat:mediaType."@en ;
+        sh:class          rdfs:Resource ;
+        sh:description    "The URL of the downloadable file in a given format. E.g. CSV file or RDF file. The format is indicated by the distribution's dct:format and/or dcat:mediaType."@en ;
+        sh:name           "download URL"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:downloadURL .
+
+<https://astrea.linkeddata.es/shapes#2abea27d27512362d54d8e126b2293df>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  locn:Geometry .
+
+<https://astrea.linkeddata.es/shapes#34aaffd0423881cb5347d04e69a5d860>
+        a               sh:PropertyShape ;
+        rdfs:label      "height"@en , "Height of the visible frame."@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Height of the visible frame."@en ;
+        sh:name         "height"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:height ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#00f083bcf14ba21e04c41230b8a05883>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/930> ;
+        rdfs:label        "custodian"@en , "Party that accepts accountability and responsibility for the data and ensures appropriate care and maintenance of the resource [[ISO-19115]]."@en ;
+        sh:class          foaf:Agent ;
+        sh:description    "Party that accepts accountability and responsibility for the data and ensures appropriate care and maintenance of the resource [[ISO-19115]]."@en ;
+        sh:name           "custodian"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geodcat-ap:custodian .
+
+<https://astrea.linkeddata.es/shapes#db9ebcedd5b8ad9b79603d480ee1477f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "compression format"@en , "The compression format of the distribution in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file."@en ;
+        sh:class          dct:MediaType ;
+        sh:description    "The compression format of the distribution in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file."@en ;
+        sh:name           "compression format"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:compressFormat .
+
+<https://astrea.linkeddata.es/shapes#a32746ea9ec4ecf22ab3382137097bcc>
+        a               sh:NodeShape ;
+        rdfs:label      "Audio Resource"@en ;
+        sh:description  "Resource (at least partially) comprising audio content."@en ;
+        sh:name         "Audio Resource"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:AudioResource .
+
+<https://astrea.linkeddata.es/shapes#0ce6b231410bfe6db622a3e8ae338a4f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "theme"@en , "A main category of the resource. A resource can have multiple themes."@en ;
+        sh:description    "A main category of the resource. A resource can have multiple themes."@en ;
+        sh:name           "theme"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:theme .
+
+<https://astrea.linkeddata.es/shapes#ebe0c675834457dde235ab7bc2dff59f>
+        a               sh:PropertyShape ;
+        rdfs:label      "byte size"@en , "Size of the Artifact in bytes."@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Size of the Artifact in bytes."@en ;
+        sh:name         "byte size"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:byteSize ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#cdb45c8951b52508c16e86da6448fb62>
+        a               sh:PropertyShape ;
+        rdfs:label      "checksum"@en , "Checksum of the artifact"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Checksum of the artifact"@en ;
+        sh:name         "checksum"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:checkSum ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#fff8ff82c357d4078c23bb7c1a447cda>
+        a               sh:PropertyShape ;
+        rdfs:label      "Access URL of an endpoint."@en , "access URL"@en ;
+        rdfs:seeAlso    <https://tools.ietf.org/html/rfc3986#section-3> ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Access URL of an endpoint."@en ;
+        sh:name         "access URL"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:accessURL ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#119df62493163a9a997a7c9bb5d5ebc9>
+        a               sh:PropertyShape ;
+        rdfs:label      "width"@en , "Width of the visible frame."@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Width of the visible frame."@en ;
+        sh:name         "width"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:width ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#3b8b50bc446b61f210ef58ed3efafb77>
+        a               sh:PropertyShape ;
+        rdfs:label      "formatted name" , "The formatted text corresponding to the name of the object" ;
+        sh:datatype     xsd:string ;
+        sh:description  "The formatted text corresponding to the name of the object" ;
+        sh:name         "formatted name" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         vcard:fn ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#10d3cd5ba94fd6ce3451e82b2db1f140>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/locn> ;
+        rdfs:label        "geometry"@en , "Associates any resource with the corresponding geometry."@en ;
+        sh:class          locn:Geometry ;
+        sh:description    "Associates any resource with the corresponding geometry."@en ;
+        sh:name           "geometry"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           locn:geometry .
+
+<https://astrea.linkeddata.es/shapes#3a96954232692327de72313d73b73112>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Measure property"@en ;
+        sh:description    "The class of components which represent the measured value of the phenomenon being observed"@en ;
+        sh:name           "Measure property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qb:MeasureProperty .
+
+<https://astrea.linkeddata.es/shapes#1a6410ea9f856660837771d16ac5a382>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "dataset"@en , "A collection of data that is listed in the catalog."@en ;
+        sh:class          dcat:Dataset ;
+        sh:description    "A collection of data that is listed in the catalog."@en ;
+        sh:name           "dataset"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:dataset .
+
+<https://astrea.linkeddata.es/shapes#625bd4edbe377be2d701fd9706a480d1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "component specification"@en , "indicates a component specification which is included in the structure of the dataset"@en ;
+        sh:class          qb:ComponentSpecification ;
+        sh:description    "indicates a component specification which is included in the structure of the dataset"@en ;
+        sh:name           "component specification"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:component .
+
+<https://astrea.linkeddata.es/shapes#e84cf0d8d1ac119cc670ebe56711673c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has value"@en , "Used to indicate the resource value of an object property that requires property parameters" ;
+        sh:description  "Used to indicate the resource value of an object property that requires property parameters" ;
+        sh:name         "has value"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         vcard:hasValue .
+
+<https://astrea.linkeddata.es/shapes#caba1d6abfcdf5b1e3085188f4db2a98>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "Activity" ;
+        sh:name           "Activity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7> ;
+        sh:targetClass    prov:Activity .
+
+<https://astrea.linkeddata.es/shapes#e3aae312f686e7f84098f019c4b4c461>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "contact point"@en , "Relevant contact information for the catalogued resource. Use of vCard is recommended."@en ;
+        sh:class          vcard:Kind ;
+        sh:description    "Relevant contact information for the catalogued resource. Use of vCard is recommended."@en ;
+        sh:name           "contact point"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:contactPoint .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#badc33ad6c319f57a588f1c1c5d850ee> , <https://astrea.linkeddata.es/shapes#d2c799e3a21f92317899adada8be3292> , <https://astrea.linkeddata.es/shapes#bd5caf804aa4e19a9b908519fe7f7f15> , <https://astrea.linkeddata.es/shapes#e5a015b1bc617bc66543caa5eadc23f7> , <https://astrea.linkeddata.es/shapes#3ea4d1b0dbfea5e5e60f2df41820cb86> , <https://astrea.linkeddata.es/shapes#6842ffdcf7769408c80058e10b825ba7> , <https://astrea.linkeddata.es/shapes#fb6802dcb5981650418c16b60628a52a> , <https://astrea.linkeddata.es/shapes#f0f95546c932a6fae04de76ef5bfadb4> , <https://astrea.linkeddata.es/shapes#0f6835957605b092ea20501ee044bb40> , <https://astrea.linkeddata.es/shapes#fb236fc0e9a627997bd9930304c31643> , <https://astrea.linkeddata.es/shapes#57a2d3ca27626e0c64fd98a177c7557d> , <https://astrea.linkeddata.es/shapes#f98f3dc54a6cd0317708e8b7311e4117> , <https://astrea.linkeddata.es/shapes#13904451b00b391858b79a23cb071715> , <https://astrea.linkeddata.es/shapes#98b09f903f7c0430de000bc04dfa1705> , <https://astrea.linkeddata.es/shapes#a32746ea9ec4ecf22ab3382137097bcc> , <https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6> , <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca> , <https://astrea.linkeddata.es/shapes#f1a4974c9d12c93e3d73dba9ec0fc507> , <https://astrea.linkeddata.es/shapes#fbe5834a70e68b01655fa50b82870db3> , <https://astrea.linkeddata.es/shapes#34aaffd0423881cb5347d04e69a5d860> , <https://astrea.linkeddata.es/shapes#eafdf3594e784d85493b04c0a5ed43c9> , <https://astrea.linkeddata.es/shapes#8082b03c4908f9fa8c9b24d8b485bc47> , <https://astrea.linkeddata.es/shapes#c67c63ec959a59e2e6b87d33a5dddff2> , <https://astrea.linkeddata.es/shapes#696b9625fb1436453118510d19bfac53> , <https://astrea.linkeddata.es/shapes#cdb45c8951b52508c16e86da6448fb62> , <https://astrea.linkeddata.es/shapes#3eb1053bfb8d8e3227c72df7638cd75d> , <https://astrea.linkeddata.es/shapes#670891768356e3f6cfe670f012fb5e89> , <https://astrea.linkeddata.es/shapes#bbec72e1685e8433f7543165b36ca94d> , <https://astrea.linkeddata.es/shapes#f675da8d7f9aea0c07a50966d30a55e6> , <https://astrea.linkeddata.es/shapes#0ce6b231410bfe6db622a3e8ae338a4f> , <https://astrea.linkeddata.es/shapes#36642c2b66e185560b06a3a198c48997> , <https://astrea.linkeddata.es/shapes#f4ba1ce949b31498d8dbe5c88cf0065e> , <https://astrea.linkeddata.es/shapes#5b9abad21e6ac4138b9d0e332c6edc25> , <https://astrea.linkeddata.es/shapes#e5678f797921a8a3ecc7f84164af530c> , <https://astrea.linkeddata.es/shapes#6a12fe06778e62114ece0acb56dbde35> , <https://astrea.linkeddata.es/shapes#d5c7ac2382b8547f77f4b890d4d958e6> , <https://astrea.linkeddata.es/shapes#a6424133cb645bfe4f96b660c4300cbb> , <https://astrea.linkeddata.es/shapes#665596f7d8d21e97cab489beb19294ac> , <https://astrea.linkeddata.es/shapes#9c8682a712079128ca1c7d9824c29659> , <https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8> , <https://astrea.linkeddata.es/shapes#312c6c618cfd2493b8722a1d04ae9e80> , <https://astrea.linkeddata.es/shapes#320d138ccb59ba44f07feb254d3d666d> , <https://astrea.linkeddata.es/shapes#2abea27d27512362d54d8e126b2293df> , <https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04> , <https://astrea.linkeddata.es/shapes#0c7a6782b7789e420087704ad89674ef> , <https://astrea.linkeddata.es/shapes#1f1193b98c6291c37ba45a855b122dfe> , <https://astrea.linkeddata.es/shapes#d17c073a2c4e4482470f57dffd7cd246> , <https://astrea.linkeddata.es/shapes#c8e610c7786da56a82e4054c4a9fe588> , <https://astrea.linkeddata.es/shapes#dc9f3a38b74f664f0891d77a58351843> , <https://astrea.linkeddata.es/shapes#c5e9a52e5abdcc530106f263709eff35> , <https://astrea.linkeddata.es/shapes#3dc3b84895d32d755cfe68f990e149b1> , <https://astrea.linkeddata.es/shapes#3109364275870083dca0800402b7c296> , <https://astrea.linkeddata.es/shapes#1300e4b50895c3a8edf990bfeb6b200c> , <https://astrea.linkeddata.es/shapes#625bd4edbe377be2d701fd9706a480d1> , <https://astrea.linkeddata.es/shapes#23d0fc727546dee2eb47f5cc8205f898> , <https://astrea.linkeddata.es/shapes#0556a328ecd5c853afbe2b1554b83a41> , <https://astrea.linkeddata.es/shapes#d88f22bc265b3ab3ab45b7176a7e350c> , <https://astrea.linkeddata.es/shapes#1a6410ea9f856660837771d16ac5a382> , <https://astrea.linkeddata.es/shapes#6ac8fdb65970f3a327e6b47b8262af40> , <https://astrea.linkeddata.es/shapes#eba6d6a5ea15a0298341f0dbd6f42172> , <https://astrea.linkeddata.es/shapes#e84cf0d8d1ac119cc670ebe56711673c> , <https://astrea.linkeddata.es/shapes#78167f782a9c4cdd8108f57dac3f125d> , <https://astrea.linkeddata.es/shapes#812e5adf6204f03a77eb5abfe7a69850> , <https://astrea.linkeddata.es/shapes#11150852202532501195573dee07ec79> , <https://astrea.linkeddata.es/shapes#119df62493163a9a997a7c9bb5d5ebc9> , <https://astrea.linkeddata.es/shapes#46354dfb3c12c2efeed509b8dafdc1c0> , <https://astrea.linkeddata.es/shapes#bed21b12435bd1a3b0277246cb92f4d2> , <https://astrea.linkeddata.es/shapes#acbd70b61efeaf38507ecd9a1490cce5> , <https://astrea.linkeddata.es/shapes#0d30180e88607a9b9f3e7efdf6a5a920> , <https://astrea.linkeddata.es/shapes#652532405185e960135fcad29b4aac81> , <https://astrea.linkeddata.es/shapes#3a96954232692327de72313d73b73112> , <https://astrea.linkeddata.es/shapes#e3b75829df79bd6fe62dc81261d218be> , <https://astrea.linkeddata.es/shapes#fff8ff82c357d4078c23bb7c1a447cda> , <https://astrea.linkeddata.es/shapes#6ee70de456486138e203e0bd96789ce3> , <https://astrea.linkeddata.es/shapes#a21892535c4bbed9a2d4c28df481cbf0> , <https://astrea.linkeddata.es/shapes#965775931c87522ab3a6e80205152035> , <https://astrea.linkeddata.es/shapes#4d269b1268c848ae7ee01b9c605dbf3b> , <https://astrea.linkeddata.es/shapes#d2fb53123d92b6dce95d3f27fd17c8d4> , <https://astrea.linkeddata.es/shapes#e0599d95572fe81e4b21d3a2baee101e> , <https://astrea.linkeddata.es/shapes#4ba22da5021d40f50d13d1dcb161b7b5> , <https://astrea.linkeddata.es/shapes#36ca9100fca44af0816e6a13edb27ac4> , <https://astrea.linkeddata.es/shapes#9dedad2c0915fdff8d3e9b6be35111f2> , <https://astrea.linkeddata.es/shapes#1ac23d2463412dd173bb845650719608> , <https://astrea.linkeddata.es/shapes#8c724d222923e87e9dbcd9ef36d56358> , <https://astrea.linkeddata.es/shapes#5891b53ece0f55e60da53f65396c857e> , <https://astrea.linkeddata.es/shapes#8f49166876b9c2a968ea3f5f0712879d> , <https://astrea.linkeddata.es/shapes#463c6978bd5a5f66f402c709e2be23ac> , <https://astrea.linkeddata.es/shapes#e3aae312f686e7f84098f019c4b4c461> , <https://astrea.linkeddata.es/shapes#1d0770434caf34ee3aebad793117868a> , <https://astrea.linkeddata.es/shapes#1aca4d21dcf2d0aa81a243dc2dbb6877> , <https://astrea.linkeddata.es/shapes#2aba20a7a2f5e571b18fc48be8837ca5> , <https://astrea.linkeddata.es/shapes#b40bd69c6e37ec8343e83dd94a088cd3> , <https://astrea.linkeddata.es/shapes#da5c9d115ee05a6737637347c17b5b65> , <https://astrea.linkeddata.es/shapes#dfcd5fc30011d551739f9877c244fb84> , <https://astrea.linkeddata.es/shapes#caba1d6abfcdf5b1e3085188f4db2a98> , <https://astrea.linkeddata.es/shapes#0002bc5a8dc4bdcbfea60d89b7cbd6eb> , <https://astrea.linkeddata.es/shapes#ec9a40e8bced0daf60946a1b9873a945> , <https://astrea.linkeddata.es/shapes#d86d39fe22d383728eb67f8caebf5274> , <https://astrea.linkeddata.es/shapes#d2d6ec1b2c8351002142b79fec459c44> , <https://astrea.linkeddata.es/shapes#91bdb733f5c5f8b68ed72a7c77d5360b> , <https://astrea.linkeddata.es/shapes#d55bce606c0526cfdd110cccb06d33c4> , <https://astrea.linkeddata.es/shapes#b7634ac6ad43e6a6f672d45238238cf7> , <https://astrea.linkeddata.es/shapes#cdfa0f59857ac1938b8483dc41419fa2> , <https://astrea.linkeddata.es/shapes#1bc257992e4584fa4ec247decbd920d5> , <https://astrea.linkeddata.es/shapes#cbdd83028fff6b8bbd067d6abd095476> , <https://astrea.linkeddata.es/shapes#ebe0c675834457dde235ab7bc2dff59f> , <https://astrea.linkeddata.es/shapes#10d3cd5ba94fd6ce3451e82b2db1f140> , <https://astrea.linkeddata.es/shapes#4698b161b7126c42bc4bf967564fffbb> , <https://astrea.linkeddata.es/shapes#ad797533a332b2c5f9400af1afa85b74> , <https://astrea.linkeddata.es/shapes#e153dea00b08484c44b47fa05883a2de> , <https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#b3af1da75f597b75d164281a02a51da0> , <https://astrea.linkeddata.es/shapes#558c31c8577de4646a636a322eac7ff4> , <https://astrea.linkeddata.es/shapes#b5058f72d9f76b4d536b009317669251> , <https://astrea.linkeddata.es/shapes#486a444fa71b7f098668454628136e43> , <https://astrea.linkeddata.es/shapes#3b8b50bc446b61f210ef58ed3efafb77> , <https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7> , <https://astrea.linkeddata.es/shapes#cdaad58b24416ae1b81fadbf662cabc9> , <https://astrea.linkeddata.es/shapes#8233ddcb4652a9ac4c40a2ad8a249f00> , <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1> , <https://astrea.linkeddata.es/shapes#801862a4447062a61fb4b0878f0ee581> , <https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3> , <https://astrea.linkeddata.es/shapes#cc968c845a7d6faff1e0c7647ae5136a> , <https://astrea.linkeddata.es/shapes#c7e7becb820bed6f107f282d3536be27> , <https://astrea.linkeddata.es/shapes#ed3f7d26dfd7661d0a160cd4816f7b8c> , <https://astrea.linkeddata.es/shapes#67225574fb170c7a79d1c168d3fa6e73> , <https://astrea.linkeddata.es/shapes#61d4fff01cb56c870d95c000cd6a23fe> , <https://astrea.linkeddata.es/shapes#74257df18958146703c86975f1855a67> , <https://astrea.linkeddata.es/shapes#14e1902cd20fff659df31d183f851fac> , <https://astrea.linkeddata.es/shapes#6c49a8c3e7dc37fe125eccde4843c5f5> , <https://astrea.linkeddata.es/shapes#3c751bd0e15afade7ce17c2ea8b5a559> , <https://astrea.linkeddata.es/shapes#00f083bcf14ba21e04c41230b8a05883> , <https://astrea.linkeddata.es/shapes#846e48bf811091d3e4f3936008c5bfde> , <https://astrea.linkeddata.es/shapes#1df71773a15fa4a10af05352e578c30d> , <https://astrea.linkeddata.es/shapes#ddd03e8dc0331b63f10ed9a249f8aa99> , <https://astrea.linkeddata.es/shapes#d8b72a4eaaa24d6edb810ff2a4a3379a> , <https://astrea.linkeddata.es/shapes#ba95f7335c866c3ca429b0e686e8c4d1> , <https://astrea.linkeddata.es/shapes#b80ff1642a9e883b52d450aec5ab2752> , <https://astrea.linkeddata.es/shapes#e20708156843a793b2b77fd3d4c4d04d> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> , <https://astrea.linkeddata.es/shapes#10f91c26a1bc1fc1a751df2deb181103> , <https://astrea.linkeddata.es/shapes#8b873b8473f2fd91bbd79988dca208e4> , <https://astrea.linkeddata.es/shapes#1603b449fef6f5d8892d9ae530b93325> , <https://astrea.linkeddata.es/shapes#3e18b0f9fac2d3bdcd51a2fdadcbda53> , <https://astrea.linkeddata.es/shapes#f62c00502d8aef0002d44fa309202209> , <https://astrea.linkeddata.es/shapes#b48dbf981c292003bafa0a24ab2824eb> , <https://astrea.linkeddata.es/shapes#db9ebcedd5b8ad9b79603d480ee1477f> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/01199455713> .
+
+<https://astrea.linkeddata.es/shapes#6ee70de456486138e203e0bd96789ce3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "Relationship"@en ;
+        sh:description    "An association class for attaching additional information to a relationship between DCAT Resources."@en ;
+        sh:name           "Relationship"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dcat:Relationship .
+
+<https://astrea.linkeddata.es/shapes#c7e7becb820bed6f107f282d3536be27>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Component property (abstract)"@en ;
+        sh:description    "Abstract super-property of all properties representing dimensions, attributes or measures"@en ;
+        sh:name           "Component property (abstract)"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d5c7ac2382b8547f77f4b890d4d958e6> ;
+        sh:targetClass    qb:ComponentProperty .
+
+<https://astrea.linkeddata.es/shapes#bed21b12435bd1a3b0277246cb92f4d2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Dataset"@en ;
+        sh:description    "A collection of data, published or curated by a single source, and available for access or download in one or more representations."@en ;
+        sh:name           "Dataset"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#696b9625fb1436453118510d19bfac53> , <https://astrea.linkeddata.es/shapes#d55bce606c0526cfdd110cccb06d33c4> , <https://astrea.linkeddata.es/shapes#eba6d6a5ea15a0298341f0dbd6f42172> , <https://astrea.linkeddata.es/shapes#14e1902cd20fff659df31d183f851fac> ;
+        sh:targetClass    dcat:Dataset .
+
+<https://astrea.linkeddata.es/shapes#965775931c87522ab3a6e80205152035>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "measure"@en , "An alternative to qb:componentProperty which makes explicit that the component is a measure"@en ;
+        sh:class          qb:MeasureProperty ;
+        sh:description    "An alternative to qb:componentProperty which makes explicit that the component is a measure"@en ;
+        sh:name           "measure"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:measure .
+
+<https://astrea.linkeddata.es/shapes#1d0770434caf34ee3aebad793117868a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "Catalogued resource"@en ;
+        sh:description    "Resource published or curated by a single agent."@en ;
+        sh:name           "Catalogued resource"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#badc33ad6c319f57a588f1c1c5d850ee> ;
+        sh:targetClass    dcat:Resource .
+
+<https://astrea.linkeddata.es/shapes#eafdf3594e784d85493b04c0a5ed43c9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "wasDerivedFrom" , "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        sh:class          prov:Entity ;
+        sh:description    "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        sh:name           "wasDerivedFrom" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:wasDerivedFrom .
+
+<https://astrea.linkeddata.es/shapes#e5678f797921a8a3ecc7f84164af530c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-3/> ;
+        rdfs:label        "has version"@en , "This resource has a more specific, versioned resource [PAV]."@en ;
+        sh:description    "This resource has a more specific, versioned resource [PAV]."@en ;
+        sh:name           "has version"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:hasVersion .
+
+<https://astrea.linkeddata.es/shapes#8082b03c4908f9fa8c9b24d8b485bc47>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  dct: ;
+        rdfs:label        "Location"@en ;
+        sh:description    "A spatial region or named place."@en ;
+        sh:name           "Location"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3dc3b84895d32d755cfe68f990e149b1> ;
+        sh:targetClass    dct:Location .
+
+<https://astrea.linkeddata.es/shapes#57a2d3ca27626e0c64fd98a177c7557d>
+        a               sh:PropertyShape ;
+        rdfs:label      "file name"@en , "Name of the Artifact file."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Name of the Artifact file."@en ;
+        sh:name         "file name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         ids:fileName ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#0d30180e88607a9b9f3e7efdf6a5a920>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "homepage" , "A homepage for some thing." ;
+        sh:description    "A homepage for some thing." ;
+        sh:name           "homepage" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:homepage .
+
+<https://astrea.linkeddata.es/shapes#2aba20a7a2f5e571b18fc48be8837ca5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-adms> ;
+        rdfs:label        "Identifier"@en ;
+        sh:description    "This class is based on the UN/CEFACT Identifier complex type defined in See Section 5.8 of Core Components Data Type Catalogue Version 3.1 (http://www.unece.org/fileadmin/DAM/cefact/codesfortrade/CCTS/CCTS-DTCatalogueVersion3p1.pdf) In RDF this is expressed using the following properties: - the content string should be provided using skos:notation, datatyped with the identifier scheme (inclduing the version number if appropriate); - use dcterms:creator to link to a class describing the agency that manages the identifier scheme or adms:schemaAgency to provide the name as a literal. Although not part of the ADMS conceptual model, it may be useful to provide further properties to the Identifier class such as dcterms:created to provide the date on which the identifier was issued."@en ;
+        sh:name           "Identifier"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    adms:Identifier .
+
+<https://astrea.linkeddata.es/shapes#d2c799e3a21f92317899adada8be3292>
+        a               sh:PropertyShape ;
+        rdfs:label      "endpoint artifact"@en , "Content instance mediated via this individual endpoint (1:1 mapping)."@en ;
+        sh:class        ids:Artifact ;
+        sh:description  "Content instance mediated via this individual endpoint (1:1 mapping)."@en ;
+        sh:name         "endpoint artifact"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         ids:endpointArtifact .
+
+<https://astrea.linkeddata.es/shapes#fb236fc0e9a627997bd9930304c31643>
+        a               sh:NodeShape ;
+        rdfs:label      "Video Representation"@en ;
+        sh:description  "Video representation"@en ;
+        sh:name         "Video Representation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e153dea00b08484c44b47fa05883a2de> ;
+        sh:targetClass  ids:VideoRepresentation .
+
+<https://astrea.linkeddata.es/shapes#8233ddcb4652a9ac4c40a2ad8a249f00>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  rdfg:Graph .
+
+<https://astrea.linkeddata.es/shapes#696b9625fb1436453118510d19bfac53>
+        a               sh:PropertyShape ;
+        rdfs:label      "has quality measurement"@en , "Refers to the performed quality measurements. Quality measurements can be performed to any kind of resource (e.g., a dataset, a linkset, a graph, a set of triples). However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution."@en ;
+        sh:class        dqv:QualityMeasurement ;
+        sh:description  "Refers to the performed quality measurements. Quality measurements can be performed to any kind of resource (e.g., a dataset, a linkset, a graph, a set of triples). However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution."@en ;
+        sh:name         "has quality measurement"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dqv:hasQualityMeasurement .
+
+<https://astrea.linkeddata.es/shapes#d2d6ec1b2c8351002142b79fec459c44>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "Attribution" ;
+        sh:description    "An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ]."@en ;
+        sh:name           "Attribution" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    prov:Attribution .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Agent" ;
+        sh:description    "An agent (eg. person, group, software or physical artifact)." ;
+        sh:name           "Agent" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:Agent , dct:Agent .
+
+<https://astrea.linkeddata.es/shapes#74257df18958146703c86975f1855a67>
+        a               sh:NodeShape ;
+        rdfs:label      "Text Resource"@en ;
+        sh:description  "Resource (at least partially) comprising textual content."@en ;
+        sh:name         "Text Resource"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:TextResource .
+
+<https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Document" ;
+        sh:description    "A document." ;
+        sh:name           "Document" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:Document .
+
+<https://astrea.linkeddata.es/shapes#9dedad2c0915fdff8d3e9b6be35111f2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-3/> ;
+        rdfs:label        "version"@en , "The version indicator (name or identifier) of a resource."@en ;
+        sh:description    "The version indicator (name or identifier) of a resource."@en ;
+        sh:name           "version"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           dcat:version .
+
+<https://astrea.linkeddata.es/shapes#67225574fb170c7a79d1c168d3fa6e73>
+        a               sh:NodeShape ;
+        rdfs:label      "Location"@en ;
+        sh:description  "Class of all locations."@en ;
+        sh:name         "Location"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:Location .
+
+<https://astrea.linkeddata.es/shapes#14e1902cd20fff659df31d183f851fac>
+        a               sh:PropertyShape ;
+        rdfs:label      "has quality annotation"@en , "Refers to a quality annotation. Quality annotation can be applied to any kind of resource, e.g., a dataset, a linkset, a graph, a set of triples. However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution."@en ;
+        sh:class        dqv:QualityAnnotation ;
+        sh:description  "Refers to a quality annotation. Quality annotation can be applied to any kind of resource, e.g., a dataset, a linkset, a graph, a set of triples. However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution."@en ;
+        sh:name         "has quality annotation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dqv:hasQualityAnnotation .
+
+<https://astrea.linkeddata.es/shapes#4ba22da5021d40f50d13d1dcb161b7b5>
+        a               sh:NodeShape ;
+        rdfs:label      "Quality Metadata"@en ;
+        sh:description  "Represents quality metadata, it is defined to group quality certificates, policies, measurements and annotations under a named graph."@en ;
+        sh:name         "Quality Metadata"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dqv:QualityMetadata .
+
+<https://astrea.linkeddata.es/shapes#c67c63ec959a59e2e6b87d33a5dddff2>
+        a               sh:PropertyShape ;
+        rdfs:label      "content type"@en , "Detailed type, genre or interpretation of the Digital Content."@en ;
+        sh:class        ids:ContentType ;
+        sh:description  "Detailed type, genre or interpretation of the Digital Content."@en ;
+        sh:name         "content type"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         ids:contentType .
+
+<https://astrea.linkeddata.es/shapes#61d4fff01cb56c870d95c000cd6a23fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/930> ;
+        rdfs:label        "originator"@en , "Party who created the resource [[ISO-19115]]."@en ;
+        sh:class          foaf:Agent ;
+        sh:description    "Party who created the resource [[ISO-19115]]."@en ;
+        sh:name           "originator"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geodcat-ap:originator .
+
+<https://astrea.linkeddata.es/shapes#d5c7ac2382b8547f77f4b890d4d958e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "concept"@en , "gives the concept which is being measured or indicated by a ComponentProperty"@en ;
+        sh:class          skos:Concept ;
+        sh:description    "gives the concept which is being measured or indicated by a ComponentProperty"@en ;
+        sh:name           "concept"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:concept .
+
+<https://astrea.linkeddata.es/shapes#ed3f7d26dfd7661d0a160cd4816f7b8c>
+        a               sh:NodeShape ;
+        rdfs:label      "Audio Representation"@en ;
+        sh:description  "Audio representation"@en ;
+        sh:name         "Audio Representation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b48dbf981c292003bafa0a24ab2824eb> ;
+        sh:targetClass  ids:AudioRepresentation .
+
+<https://astrea.linkeddata.es/shapes#1f1193b98c6291c37ba45a855b122dfe>
+        a               sh:NodeShape ;
+        rdfs:label      "Endpoint"@en ;
+        sh:description  "Access point of data exchange, service interaction and service description"@en ;
+        sh:name         "Endpoint"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f675da8d7f9aea0c07a50966d30a55e6> , <https://astrea.linkeddata.es/shapes#ad797533a332b2c5f9400af1afa85b74> , <https://astrea.linkeddata.es/shapes#fbe5834a70e68b01655fa50b82870db3> , <https://astrea.linkeddata.es/shapes#fff8ff82c357d4078c23bb7c1a447cda> ;
+        sh:targetClass  ids:Endpoint .
+
+<https://astrea.linkeddata.es/shapes#23d0fc727546dee2eb47f5cc8205f898>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "wasQuotedFrom" , "An entity is derived from an original entity by copying, or 'quoting', some or all of it."@en ;
+        sh:class          prov:Entity ;
+        sh:description    "An entity is derived from an original entity by copying, or 'quoting', some or all of it."@en ;
+        sh:name           "wasQuotedFrom" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:wasQuotedFrom .
+
+<https://astrea.linkeddata.es/shapes#0556a328ecd5c853afbe2b1554b83a41>
+        a               sh:PropertyShape ;
+        rdfs:label      "instance"@en , "Reference to an instance of given representation, i.e. inline value or file placeholder."@en ;
+        sh:class        ids:RepresentationInstance ;
+        sh:description  "Reference to an instance of given representation, i.e. inline value or file placeholder."@en ;
+        sh:name         "instance"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         ids:instance .
+
+<https://astrea.linkeddata.es/shapes#d88f22bc265b3ab3ab45b7176a7e350c>
+        a               sh:PropertyShape ;
+        rdfs:label      "Data Type Schema"@en , "Indicates the data type schema of the Representation."@en ;
+        sh:class        ids:Resource ;
+        sh:description  "Indicates the data type schema of the Representation."@en ;
+        sh:name         "Data Type Schema"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         ids:dataTypeSchema .
+
+<https://astrea.linkeddata.es/shapes#13904451b00b391858b79a23cb071715>
+        a               sh:NodeShape ;
+        rdfs:label      "Described"@en ;
+        sh:description  "Entity described by a minimal textual annotation, i.e. a title and description."@en ;
+        sh:name         "Described"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ids:Described .
+
+<https://astrea.linkeddata.es/shapes#9c8682a712079128ca1c7d9824c29659>
+        a               sh:PropertyShape ;
+        rdfs:label      "has telephone" , "To specify the telephone number for telephony communication with the object" ;
+        sh:description  "To specify the telephone number for telephony communication with the object" ;
+        sh:equals       vcard:tel ;
+        sh:name         "has telephone" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         vcard:hasTelephone .
+
+<https://astrea.linkeddata.es/shapes#b80ff1642a9e883b52d450aec5ab2752>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "structure"@en , "Indicates the structure to which this data set conforms"@en ;
+        sh:class          qb:DataStructureDefinition ;
+        sh:description    "Indicates the structure to which this data set conforms"@en ;
+        sh:name           "structure"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:structure .
