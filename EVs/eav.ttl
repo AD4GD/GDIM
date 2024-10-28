@@ -1,0 +1,659 @@
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix base:  <http://w3id.org/ad4gd/ev/> .
+
+base:eav  rdf:type        skos:ConceptScheme ;
+        rdf:type          dcat:Dataset ;
+        dct:description   "Essential Agricultural Variables for GEOGLAM are Earth observation-based building blocks that in combination with one another or with other non-EO information provide insight into the GEOGLAM Agricultural Indicators  which themselves provide actionable information on the state, change, and forecast of agricultural land use and productivity. This list cover Land Use and Productivity EAVs."@en ;
+        dct:identifier    "EAV"^^rdfs:Literal ;
+        dct:title         "Essential Agriculture Variables - codelist scheme"@en ;
+        rdfs:isDefinedBy  <https://www.agvariables.org/full-eav-table> ;
+        skos:definition   "Essential Agricultural Variables for GEOGLAM are Earth observation-based building blocks that in combination with one another or with other non-EO information provide insight into the GEOGLAM Agricultural Indicators  which themselves provide actionable information on the state, change, and forecast of agricultural land use and productivity. This list cover Land Use and Productivity EAVs."@en ;
+        skos:prefLabel    "Essential Agriculture Variables - codelist scheme"@en ;
+        dcat:theme        base: ;
+        rdfs:seeAlso      base:EAV .
+
+base:EAV  rdf:type        owl:Class ;
+        rdfs:subClassOf   skos:Concept ;
+        rdfs:label        "Essential Agriculture Variables - codelist class"@en ;
+        rdfs:comment      "Essential Agricultural Variables for GEOGLAM are Earth observation-based building blocks that in combination with one another or with other non-EO information provide insight into the GEOGLAM Agricultural Indicators  which themselves provide actionable information on the state, change, and forecast of agricultural land use and productivity. This list cover Land Use and Productivity EAVs."@en ;
+        rdfs:isDefinedBy  <https://www.agvariables.org/full-eav-table> ;
+        rdfs:seeAlso      base:eav ;
+        owl:oneOf         ( <http://w3id.org/ad4gd/ev/eav/SeasonalDynamicsofSurfaceWaterAvailability> 
+        <http://w3id.org/ad4gd/ev/eav/ReferenceEvapotranspiration> 
+        <http://w3id.org/ad4gd/ev/eav/ReferenceCropCalendars> 
+        <http://w3id.org/ad4gd/ev/eav/Non-PerennialCoverCropUtilizationMask> 
+        <http://w3id.org/ad4gd/ev/eav/ManagedGrasslandsMask> 
+        <http://w3id.org/ad4gd/ev/eav/LeafAreaIndex> 
+        <http://w3id.org/ad4gd/ev/eav/IrrigatedCroplandMap> 
+        <http://w3id.org/ad4gd/ev/eav/DegreeGrowingDays> 
+        <http://w3id.org/ad4gd/ev/eav/FractionalCover> 
+        <http://w3id.org/ad4gd/ev/eav/FieldBoundaries> 
+        <http://w3id.org/ad4gd/ev/eav/fAPAR> 
+        <http://w3id.org/ad4gd/ev/eav/CurrentCropStage> 
+        <http://w3id.org/ad4gd/ev/eav/CropRotationSequence> 
+        <http://w3id.org/ad4gd/ev/eav/CropResidueCoverPercentage> 
+        <http://w3id.org/ad4gd/ev/eav/ActualEvapotranspiration> 
+        <http://w3id.org/ad4gd/ev/eav/AboveGroundAgriculturalBiomass> 
+        <http://w3id.org/ad4gd/ev/eav/SurfaceSoilMoisture> 
+        <http://w3id.org/ad4gd/ev/eav/RootZoneSoilMoisture> 
+        <http://w3id.org/ad4gd/ev/eav/Precipitation> 
+        <http://w3id.org/ad4gd/ev/eav/LandSurfaceTemperature> 
+        <http://w3id.org/ad4gd/ev/eav/AirTemperature> 
+        <http://w3id.org/ad4gd/ev/eav/WaterProductivity> 
+        <http://w3id.org/ad4gd/ev/eav/SeasonalFallowMask> 
+        <http://w3id.org/ad4gd/ev/eav/RangelandsMask> 
+        <http://w3id.org/ad4gd/ev/eav/RangelandConditionAssessment> 
+        <http://w3id.org/ad4gd/ev/eav/PerennialCroplandMask> 
+        <http://w3id.org/ad4gd/ev/eav/Non-PerennialCroplandMask> 
+        <http://w3id.org/ad4gd/ev/eav/CropYieldForecast> 
+        <http://w3id.org/ad4gd/ev/eav/CropYieldEstimation> 
+        <http://w3id.org/ad4gd/ev/eav/CropTypeAreaEstimate> 
+        <http://w3id.org/ad4gd/ev/eav/CroplandMask> 
+        <http://w3id.org/ad4gd/ev/eav/CropTypeMasks> 
+        <http://w3id.org/ad4gd/ev/eav/IncomingRadiation> 
+        <http://w3id.org/ad4gd/ev/eav/RelativeHumidity> 
+        <http://w3id.org/ad4gd/ev/eav/WindSpeed> 
+        <http://w3id.org/ad4gd/ev/eav/CropConditionAssessment> 
+        <http://w3id.org/ad4gd/ev/eav/AgricultureMask> ).
+
+<http://w3id.org/ad4gd/ev/eav/SeasonalDynamicsofSurfaceWaterAvailability>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              1 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Areas covered by inland water providing a maximum and minimum extent of water surface as well as the seasonal dynamics. Binary map / water / non water Frequency (See CGLS waterbodies)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Seasonal Dynamics of Surface Water Availability" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "All land (product is available over all land)" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Livestock, flood detection, SDG 6, \n The area of water bodies is identified as an Essential Climate Variable (ECV) by the Global Climate Observing System (GCOS)" ;
+        base:updateFrequency        "Daily (ideal); 10 days (feasible)" ;
+        base:spatialResolutionUnit  "30m" ;
+        base:stewards               "Sven Gilliams" .
+
+<http://w3id.org/ad4gd/ev/eav/ReferenceEvapotranspiration>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              2 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "ETo from the reference surface. The reference surface is a hypothetical grass reference crop with an assumed crop height of 0.12 m, a fixed surface resistance of 70 s m-1 and an albedo of 0.23. (FAO)." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Reference Evapotranspiration" ;
+        dcat:keyword                "Land Use, Productivity" ;
+        base:agriLandIncludes       "Agriculture Mask" ;
+        base:categoryGEOGLAM        "Land Use, Productivity" ;
+        base:policySupported        "SDG 6.4, drought, climate adaptation, water & irrigation management" ;
+        base:updateFrequency        "Daily - monthly, within each season" ;
+        base:spatialResolutionUnit  "Field - Watershed" ;
+        base:stewards               "Benjamin Koetz, Bimal Bhattacharya, Jippe Hoogeveen" .
+
+<http://w3id.org/ad4gd/ev/eav/ReferenceCropCalendars>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              3 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Identification of the typical or usual planting and harvesting dates or windows per crop per region." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Reference Crop Calendars" ;
+        dcat:keyword                "Land Use, Productivity" ;
+        base:agriLandIncludes       "For Global Analyses, the target is the same crops covered by the GEOGLAM Crop Monitor for AMIS and Crop Monitor for Early Warning.\n For National Analyses, the target is each nationally relevant crop type, accounting for ~80% of total area under production." ;
+        base:categoryGEOGLAM        "Land Use, Productivity" ;
+        base:policySupported        "Production Outlooks; Crop status anomaly detection, both spatial and temporal; Crop growth simulation modelling; Identifying agriculture practices; UNFCCC; GHG emission monitoring; Disaster risk assessment" ;
+        base:updateFrequency        "Every 5 years unless major events have driven a change in practices or crop utilization in an area." ;
+        base:spatialResolutionUnit  "As stand-alone output, subnational admin unit.\n Rasterized for inputs to analysis (for colocation with other data)." ;
+        base:stewards               "Alyssa Whitcraft, Andrew Nelson, Sven Gilliams" .
+
+<http://w3id.org/ad4gd/ev/eav/Non-PerennialCoverCropUtilizationMask>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              4 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary map that indicates agricultural land which has a permanent, seasonal, or winter cover crop applied and established (vegetation emerged). Cover crops are defined as non-harvestable crops applied to otherwise active (non-fallow) agricultural lands as a management technique to reduce nutrient loss and soil erosion, to promote soil organic matter accumulation and health, and to preserve soil moisture. Cover crops are applied after a target crop has been harvested, or at the same time as the harvestable target crop (permanent cover crop)." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Non-Perennial Cover Crop Utilization Mask" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Non-Perennial Cropland Mask and Perennial Cropland Mask" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Sustainable and Regenerative Agriculture; Climate Adaptation, Climate Mitigation, Carbon and Ecosystem Services Markets, 4perMil" ;
+        base:updateFrequency        "Annual" ;
+        base:spatialResolutionUnit  "Field Scale" .
+
+<http://w3id.org/ad4gd/ev/eav/ManagedGrasslandsMask>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              5 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary map of land seasonally or annually sown with grasses or herbaceous forage for grazing and/or mowing. If there is no sowing or harvesting for more than one year, then the lands are considered rangelands." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Managed Grasslands Mask" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Managed grasslands" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Policy areas supported include: Land cover/use state & change; SDG 2; UNFCCC\n 1. Greenhouse gas reporting\n 2. Farm support programs\n 3. Information for commodity markets\n 4. Early warning for food security\n 5. Changes in the agricultural landscape\n 6. Land degradation" ;
+        base:updateFrequency        "Seasonally updated. Updates occur at the end of the major growing season, so that changes can be detected over multiple growing seasons)" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Juan Pablo Guerschman, Sven Gilliams" .
+
+<http://w3id.org/ad4gd/ev/eav/LeafAreaIndex>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              6 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "One half of the total green leaf area per unit horizontal ground surface area. (WMO/GCOS & Copernicus Land Services)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Leaf Area Index" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Agriculture Mask" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Carbon Modelling Yield" ;
+        base:updateFrequency        "Twice weekly or better" ;
+        base:spatialResolutionUnit  "Field mapping at 10m" ;
+        base:stewards               "Andrew M. Davidson, Heather McNairn" .
+
+<http://w3id.org/ad4gd/ev/eav/IrrigatedCroplandMap>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              7 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary determination of where managed water was applied to aid in the growth of perennial and non-perennial crops as well as managed grasslands." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Irrigated Cropland Map" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Perennial and Non-Perennial Croplands, managed grasslands" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "SDG 6.4, drought, climate adaptation, irrigation management" ;
+        base:updateFrequency        "Generated per cropping cycle for non-perennial crops, or per year in the case of perennial crop types" ;
+        base:spatialResolutionUnit  "Field to county or equivalent admin scale (as percentage)" ;
+        base:stewards               "Jippe Hoogeveen" .
+
+<http://w3id.org/ad4gd/ev/eav/DegreeGrowingDays>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              8 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Growing degree days for a given crop are calculated each day, as the average of the daily maximum and minimum temperatures, minus a certain base temperature, where this base temperature represents the threshold under which that crop will not grow. \"Growing degree days\" are a heuristic tool that measures heat accumulation for crops from sowing through harvest, with phenological transitions occurring after a certain accumulation of growing degree days." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Degree Growing Days" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Non-Perennial Cropland Mask, with priority given to crops (as determined by Non-Perennial Crop Type Map) for whom GDD are a known correlate with phenological development." ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Tracking phenological development, linking to the drought" ;
+        base:updateFrequency        "Daily" ;
+        base:spatialResolutionUnit  "0.10 degree or finer" ;
+        base:stewards               "Belen Franch, Jinlong Fan" .
+
+<http://w3id.org/ad4gd/ev/eav/FractionalCover>
+        rdf:type               skos:Concept ;
+        rdf:type               base:EAV ;
+        dct:identifier         9 ;
+        rdfs:isDefinedBy       <https://www.agvariables.org/full-eav-table> ;
+        skos:definition        "Fractions (of an area or the pixel) of photosynthetic (green) vegetation and non-photosynthetic (dry, litter) vegetation and the remaining fraction of bare soil, including stones and rock." ;
+        skos:inScheme          base:eav ;
+        skos:prefLabel         "Fractional Cover" ;
+        dcat:keyword           "Land Use, Productivity" ;
+        base:agriLandIncludes  "Agriculture Mask" ;
+        base:categoryGEOGLAM   "Land Use, Productivity" ;
+        base:policySupported   "Early warning for food security; Changes in the agricultural landscape; Land degradation" ;
+        base:updateFrequency   "20m - 500m" ;
+        base:stewards          "Juan Pablo Guerschman" .
+
+<http://w3id.org/ad4gd/ev/eav/FieldBoundaries>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              10 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Field boundaries are the geometric borders of agricultural fields. A field in this case is an area of land, enclosed or otherwise, used for agricultural purposes such as cultivating crops." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Field Boundaries" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Cropland Mask" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Area estimation; land use change; evaluation of management practices" ;
+        base:updateFrequency        "Seasonally" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Sven Gilliams" .
+
+<http://w3id.org/ad4gd/ev/eav/fAPAR>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              11 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Fraction of photosynthetically active radiation (ie the radiation in the spectral range of 400 to 700 nm) absorbed by vegetation (GCOS)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "fAPAR" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Agriculture Mask" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Carbon Accounting, Food security, Markets, Productivity" ;
+        base:updateFrequency        "Daily (field)\n (Instantaneous observations must be representative of daily integrated values)" ;
+        base:spatialResolutionUnit  "Field mapping at 10m" ;
+        base:stewards               "Catherine Champagne" .
+
+<http://w3id.org/ad4gd/ev/eav/CurrentCropStage>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              12 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Spatially explicit identification of the stage of growth in which a crop is during the current cropping cycle." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Current Crop Stage" ;
+        dcat:keyword                "Land Use, Productivity" ;
+        base:agriLandIncludes       "For Global Analyses, the target is the same crops covered by the GEOGLAM Crop Monitor for AMIS and Crop Monitor for Early Warning.\n For National Analyses, the target is each nationally relevant crop type, accounting for ~80% of total area under production." ;
+        base:categoryGEOGLAM        "Land Use, Productivity" ;
+        base:policySupported        "Production Outlooks; Crop status anomaly detection, both spatial and temporal; Crop growth simulation modelling; Identifying agriculture practices; UNFCCC; GHG emission monitoring; Disaster risk assessment" ;
+        base:updateFrequency        "Bi-weekly throughout the year" ;
+        base:spatialResolutionUnit  "As stand-alone output: subnational admin unit\n Can be rasterized for use as an input for analysis (for colocation with other data)" ;
+        base:stewards               "Alyssa Whitcraft, Andrew Nelson, Sven Gilliams" .
+
+<http://w3id.org/ad4gd/ev/eav/CropRotationSequence>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              13 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "An expression of crop sequences over multiple cropping cycles and years." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Crop Rotation Sequence" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Perennial and Non-perennial Croplands" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "SDG 2.4.1; SDG 15.3; Carbon accounting; Policy compliance programs; crop insurance; Ag LCLUC;" ;
+        base:updateFrequency        "5 years; more frequent in hotspots of change" ;
+        base:spatialResolutionUnit  "Field or, where relevant, region" ;
+        base:stewards               "Andrew M. Davidson" .
+
+<http://w3id.org/ad4gd/ev/eav/CropResidueCoverPercentage>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              14 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "On a cultivable and cultivated cropland, the percentage of soil covered by non-photosynthetically active vegetation that remains on a field after the harvest of a cash crop or the termination of a seasonal cover crop." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Crop Residue Cover Percentage" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Perennial and non-perennial cropland masks" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Areas supported include UNFCCC (GHG inventories and NDCs), Land Degradation Neutrality (sediment/nutrient runoff and water quality), quantification of ecosystem services (commodity and direct markets), and insurance/risk." ;
+        base:updateFrequency        "Monthly monitored alongside harvestable crop’s calendar and land management calendar" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Alyssa Whitcraft, Andrew M. Davidson" .
+
+<http://w3id.org/ad4gd/ev/eav/ActualEvapotranspiration>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              15 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "ETa estimates the actual water evaporated from the soil and transpired by the vegetation at all stages of crop development and all levels of crop stress. (FAO 1998)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Actual Evapotranspiration" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Each nationally relevant crop type, accounting for ~80% of total area under production, all irrigated crops or water managed crops" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "SDG 6.4, drought, climate adaptation, irrigation management" ;
+        base:updateFrequency        "Daily - monthly, within each season" ;
+        base:spatialResolutionUnit  "Field / administrative unit" ;
+        base:stewards               "Benjamin Koetz, Bimal Bhattacharya, Jippe Hoogeveen" .
+
+<http://w3id.org/ad4gd/ev/eav/AboveGroundAgriculturalBiomass>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              16 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "The mass of live and/or dead organic matter in terrestrial vegetation (excluding roots, litter and dead wood), expressed as a mass or mass per unit area (GCOS)." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Above Ground Agricultural Biomass" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Agriculture Mask" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Carbon Modelling\n Ecosystem Management Yield\n SDG 2 and SDG 15" ;
+        base:updateFrequency        "Twice weekly or better" ;
+        base:spatialResolutionUnit  "Field mapping at 10m" ;
+        base:stewards               "Andrew M. Davidson, Heather McNairn" .
+
+<http://w3id.org/ad4gd/ev/eav/SurfaceSoilMoisture>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              17 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Relative water content of the top few centimeters soil, describing how wet or dry the soil is in its topmost layer, expressed in percent water content" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Surface Soil Moisture" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "All agricultural land" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Early Warning\n Farm Support Programs (Drought, Trafficability, Lodging)\n Water Management\n SDG 6.4" ;
+        base:updateFrequency        "1-3 days over non-frozen soils" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Catherine Champagne" .
+
+<http://w3id.org/ad4gd/ev/eav/RootZoneSoilMoisture>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              18 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Relative water content available to plants, depth depends on landscape/soil but usually ranges 20-200 cm, expressed in percent water content" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Root Zone Soil Moisture" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "All agricultural land" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Early Warning Farm Support Programs (Risk)\n Water Management\n SDG 6.4" ;
+        base:updateFrequency        "1-5 days" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Catherine Champagne" .
+
+<http://w3id.org/ad4gd/ev/eav/Precipitation>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              19 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Integration of solid and liquid precipitation rate reaching the ground over several time intervals. The reference requirement refers to integration over 24h. (https://gcos.wmo.int/en/essential-climate-variables/precipitation/ecv-requirements)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Precipitation" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "All agriculture, rangelands, pastures; especially rainfed agriculture, but is important for determining water resources for irrigated areas." ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "SDG 2, SDG6, Agrometeorological Variables, Irrigation/Water, Rangeland monitoring, Livestock, SDG Indicator 15.3.1" ;
+        base:updateFrequency        "Daily, near real time" ;
+        base:spatialResolutionUnit  "Currently coarse-level raster, much finer (1km) desired" ;
+        base:stewards               "Greg Husak" .
+
+<http://w3id.org/ad4gd/ev/eav/LandSurfaceTemperature>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              20 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "The Land Surface Temperature (LST) is aggregated radiometric surface temperature of the ensemble of components within the sensor field of view." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Land Surface Temperature" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Cropland" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "SDG 6.4 & 2, heat stress, (night) frost damage, monitoring of growing days, climate adaptation, water & irrigation management" ;
+        base:updateFrequency        "Daily Min/max/average LST (including nighttime), within each season" ;
+        base:spatialResolutionUnit  "Field to landscape level" ;
+        base:stewards               "Benjamin Koetz, Shumilo, Leonid" .
+
+<http://w3id.org/ad4gd/ev/eav/AirTemperature>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              21 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Air temperature at a known height above surface (2 m or less)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Air Temperature" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "All agricultural land" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Early Warning\n Farm Support Programs\n Food Security\n Market Support\n Risk Assessment (Frost, Drought)\n SDG 2, 13 & 15\n Crop Disease Monitoring" ;
+        base:updateFrequency        "Hourly" ;
+        base:spatialResolutionUnit  "Landscape" ;
+        base:stewards               "Ian Jarvis" .
+
+<http://w3id.org/ad4gd/ev/eav/WaterProductivity>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              22 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Crop production per unit of water consumed through ET expressed through kg per cubic meter, calculated per crop type." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Water Productivity" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Each nationally relevant crop type, accounting for ~80% of total area under production, All irrigated crops or water managed crops." ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "SDG 6.4; drought monitoring; UNFCCC; UNCCD; climate adaptation; groundwater depletion pollution;Irrigation modernization; Watershed management (Agricultural water foot-printing and agricultural water trading; water allocation; water rights implementation; water saving)" ;
+        base:updateFrequency        "Weekly to monthly, within each cropping cycle" ;
+        base:spatialResolutionUnit  "Field, watershed, and sub-national admin units" ;
+        base:stewards               "Benjamin Koetz, Jippe Hoogeveen" .
+
+<http://w3id.org/ad4gd/ev/eav/SeasonalFallowMask>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              23 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary determination of cultivable cropland that is not seeded (for harvestable crop or seasonal cover crop) for at least one or more cropping cycle(s) in a year. If left uncultivated for more than 1 cultivable cycle, it is eliminated from the Agriculture Mask." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Seasonal Fallow Mask" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Agriculture Mask" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Policy areas supported include:\n 1. Farm support programs\n 2. Changes in the agricultural landscape\n 3. Land degradation / soil restoration\n 4. Eco-system services and biodiversity\n 5. Climate Change (LULUCF sector)\n 6. SDG 15.3, 2.4" ;
+        base:updateFrequency        "Seasonally monitored as input to an annual product update" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Alyssa Whitcraft, Bettina Baruth, Ian Jarvis, Sven Gilliams" .
+
+<http://w3id.org/ad4gd/ev/eav/RangelandsMask>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              24 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary determination of rangelands, which are defined as where wild and domestic animals graze or browse on uncultivated vegetation, being dominated by grasses or shrubs, where tree cover does not exceed 50%." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Rangelands Mask" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Rangelands Mask" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Early warning for food security; Changes in the agricultural landscape; Land degradation; SDG 2 & 15" ;
+        base:updateFrequency        "Annual" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Juan Pablo Guerschman" .
+
+<http://w3id.org/ad4gd/ev/eav/RangelandConditionAssessment>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              25 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Qualitative indicator of rangeland vegetation status relative to short-term reference or potential status* (*definition must be declared)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Rangeland Condition Assessment" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Rangelands Mask" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Early warning for food security; Changes in the agricultural landscape; Land degradation; SDG 2 & 15" ;
+        base:updateFrequency        "Seasonal or monthly" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Juan Pablo Guerschman" .
+
+<http://w3id.org/ad4gd/ev/eav/PerennialCroplandMask>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              26 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary map of land to produce food, fiber, and fuel, where crops are harvestable multiple times without resowing. This includes perennial oil seeds, legumes, forages (multi year managed grasslands) and tree crops. The map must refer to a given reference period (typically a growing season corresponding to the target crops)." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Perennial Cropland Mask" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "For all perennial crops, excluding lands indicated by Managed Grasslands EAV. The map shall follow a common hierarchical typology with common aggregation levels, as proposed by JECAM. Distinction between rainfed and irrigated should be made where possible." ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Policy areas supported include: Land cover/use state & change; SDG 2; UNFCCC\n 1. Greenhouse gas reporting\n 2. Farm support programs\n 3. Information for commodity markets\n 4. Early warning for food security\n 5. Changes in the agricultural landscape\n 6. Land degradation" ;
+        base:updateFrequency        "Annual updates, taking into account growing seasons. Updates occurs at the end of the major growing season, so that changes can be detected over multiple growing seasons)" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Bettina Baruth, Ian Jarvis, Miao Zhang" .
+
+<http://w3id.org/ad4gd/ev/eav/Non-PerennialCroplandMask>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              27 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary map of land to produce food, fiber, and fuel, where at least one crop is sowed/planted and fully harvestable typically within the 12 months after the sowing/planting date (with exceptions made for longer fully harvestable crops like sugarcane and sorghum). The map must refer to a given reference period (typically a growing season corresponding to the target crops)." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Non-Perennial Cropland Mask" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "For all non-perennial (aka “annual crops”, which are sowed and harvested after 1 growing season), excluding lands indicated by Managed Grasslands and Seasonal Fallow EAVs. The map shall follow a common hierarchical typology with common aggregation levels, as proposed by JECAM. Distinction between rainfed and irrigated should be made where possible." ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Policy areas supported include: Land cover/use state & change; SDG 2; UNFCCC\n \n 1. Greenhouse gas reporting\n 2. Farm support programs\n 3. Information for commodity markets\n 4. Early warning for food security\n 5. Changes in the agricultural landscape\n 6. Land degradation" ;
+        base:updateFrequency        "Seasonal updates taking into account major growing seasons per agro-ecological zones (e.g. winter crops, spring, summer, short rainy season, long rainy season, etc.)" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Bettina Baruth, Ian Jarvis, Miao Zhang" .
+
+<http://w3id.org/ad4gd/ev/eav/ManagedGrasslandsMask>
+        dct:identifier         28 ;
+        base:agriLandIncludes  "Managed Grasslands" ;
+        base:policySupported   "Policy areas supported include: Land cover/use state & change; SDG 2; UNFCCC\n \n 1. Greenhouse gas reporting\n 2. Farm support programs\n 3. Information for commodity markets\n 4. Early warning for food security\n 5. Changes in the agricultural landscape\n 6. Land degradation" ;
+        base:updateFrequency   "Annual updates, taking into account growing seasons. Updates occur at the end of the major growing season, so that changes can be detected over multiple growing seasons)" .
+
+<http://w3id.org/ad4gd/ev/eav/CropYieldForecast>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              29 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Within season, pre-harvest forecast of harvestable weight* of commodity per unit area* (*definitions must be declared" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Crop Yield Forecast" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Each nationally relevant crop group or crop type, as appropriate, accounting for ~80% of total area under production." ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Markets & trade, (re)insurance, humanitarian, Industry" ;
+        base:updateFrequency        "Weekly to monthly, within each cropping cycle" ;
+        base:spatialResolutionUnit  "Within-field, Field; subnational admin units; National" ;
+        base:stewards               "Belen Franch, Bettina Baruth, Inbal Becker-Reshef" .
+
+<http://w3id.org/ad4gd/ev/eav/CropYieldEstimation>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              30 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "End of season harvestable weight* of commodity per unit area* (*definitions must be declared)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Crop Yield Estimation" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Each nationally relevant crop type, accounting for ~80% of total area under production" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Policy & Yield Gap Assessments; Changes through time; SDG 2 and 15; UNFCCC; UNCCD; evaluating and guiding policy interventions; statistics; markets & trade; insurance; humanitarian" ;
+        base:updateFrequency        "Once per season as close as possible to harvest time" ;
+        base:spatialResolutionUnit  "Field; subnational admin units; National" ;
+        base:stewards               "Belen Franch, Inbal Becker-Reshef" .
+
+<http://w3id.org/ad4gd/ev/eav/CropTypeAreaEstimate>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              31 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A quantitative determination of the horizontal projection of the area under identified crop types." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Crop Type Area Estimate" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Estimates can be created for non-perennial and perennial crop types, as well as managed grasslands and mosaics (defined as mixed cropping including agroforestry mosaics), where the type is declared. GEOGLAM prioritizes that crop type area estimates should be created for the crops that account for at least 80% of total area under production." ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Land cover/use state & change; agricultural production and trade; agricultural statistics; humanitarian" ;
+        base:updateFrequency        "Seasonally, ideally 1-2 months before the crop’s harvest, and no later than one month after the crop’s harvest" ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Alyssa Whitcraft, Andrew M. Davidson, Bettina Baruth, Pierre Defourny, Sophie Bontemps, Sven Gilliams" .
+
+<http://w3id.org/ad4gd/ev/eav/CroplandMask>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              32 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary map of land devoted to agriculture for the cultivation of perennial crops, non-perennial crops, and managed grasslands. It does not include lands indicated by Rangelands or Seasonal Fallow masks." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Cropland Mask" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Non-Perennial Cropland Mask and Perennial Cropland Mask" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Policy areas supported include: Land cover/use state & change; SDG 2; UNFCCC\n 1. Greenhouse gas reporting\n 2. Farm support programs\n 3. Information for commodity markets\n 4. Early warning for food security\n 5. Changes in the agricultural landscape\n 6. Land degradation" ;
+        base:updateFrequency        "Annual Update" ;
+        base:spatialResolutionUnit  "Standard products at 1 Ha resolution, based on generalization of mapping categories generated at lower levels of the hierarchy developed at higher or similar resolutions" ;
+        base:stewards               "Bettina Baruth, Ian Jarvis, Juan Pablo Guerschman, Miao Zhang" .
+
+<http://w3id.org/ad4gd/ev/eav/CropTypeMasks>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              33 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A spatially-explicit determination of identified types of non-perennial crops, types of perennial crops, managed grasslands, and/or of mixed-crop mosaics, as identified within the Cropland Mask. Types can be grouped into categories and/or hierarchies (for example, aggregation levels following JECAM description). Where categorical or hierarchical classification systems are in use, product should include documentation and definitions." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Crop Type Masks" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Includes non-perennial and perennial crop types, as well as managed grasslands and mosaics (defined as mixed cropping including agroforestry mosaics), where the type is declared. The map shall follow a common hierarchical typology with common aggregation levels, as proposed by JECAM. GEOGLAM prioritizes that crop type masks should be created for the crops that account for at least 80% of total area under production." ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Policy areas supported include: Land cover/use state & change; SDG 2; UNFCCC\n 1. Greenhouse gas reporting\n 2. Farm support programs\n 3. Information for commodity markets\n 4. Early warning for food security\n 5. Changes in the agricultural landscape\n 6. Land degradation" ;
+        base:updateFrequency        "Per growing season for non-perennial crops; annual for managed grasslands and perennial crops. Mosaics either per growing season and annual, as appropriate for mosaic constituents." ;
+        base:spatialResolutionUnit  "Field Scale" ;
+        base:stewards               "Alyssa Whitcraft, Hongwei Zeng, Ian Jarvis, Mykola Lavreniuk, Pierre Defourny, Sophie Bontemps, Sven Gilliams" .
+
+<http://w3id.org/ad4gd/ev/eav/IncomingRadiation>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              34 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Incoming radiation represents the amount of energy radiating from the sun to the land surface, including direct radiation and diffuse radiation." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Incoming Radiation" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Agricultural Mask" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Food security and market phenology, yield" ;
+        base:updateFrequency        "Daily" ;
+        base:spatialResolutionUnit  "Landscape" ;
+        base:stewards               "Belen Franch, Jinlong Fan" .
+
+<http://w3id.org/ad4gd/ev/eav/RelativeHumidity>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              35 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Relative humidity is the ratio of the amount of atmospheric moisture present relative to the amount that would be present if the air were saturated with respect to water or ice to be specified in the metadata (%)." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Relative Humidity" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Agricultural Mask" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Food security, yield, pest, and crop disease" ;
+        base:updateFrequency        "Hourly" ;
+        base:spatialResolutionUnit  "Landscape" ;
+        base:stewards               "Jinlong Fan" .
+
+<http://w3id.org/ad4gd/ev/eav/WindSpeed>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              36 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Speed of air at a known height above the surface which is to be specified in the metadata (m/s). Direction from which wind is blowing at a known height above the surface which is to be specified in the metadata (degree true)." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Wind Speed" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Agricultural Mask" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "SDG, Crop production, Crop monitoring, food security, water balance, evapotranspiration, lodging and crop damage" ;
+        base:updateFrequency        "3 Hours" ;
+        base:spatialResolutionUnit  "Landscape, 10km" ;
+        base:stewards               "Jinlong Fan" .
+
+<http://w3id.org/ad4gd/ev/eav/CropConditionAssessment>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              37 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "Qualitative indicator of crop health status relative to short-term reference* (*definition must be declared)" ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Crop Condition Assessment" ;
+        dcat:keyword                "Productivity" ;
+        base:agriLandIncludes       "Each nationally relevant crop type, accounting for ~80% of total area under production" ;
+        base:categoryGEOGLAM        "Productivity" ;
+        base:policySupported        "Markets & trade, insurance, humanitarian, pest and disease impact monitoring" ;
+        base:updateFrequency        "Weekly to monthly, within each cropping cycle" ;
+        base:spatialResolutionUnit  "Field and sub-national admin units" ;
+        base:stewards               "Ian Jarvis, Inbal Becker-Reshef, Felix Rembold, Shumilo, Leonid, Mario Zappacosta, Miao Zhang, Rogerio Bonifacio" .
+
+<http://w3id.org/ad4gd/ev/eav/AgricultureMask>
+        rdf:type                    skos:Concept ;
+        rdf:type                    base:EAV ;
+        dct:identifier              38 ;
+        rdfs:isDefinedBy            <https://www.agvariables.org/full-eav-table> ;
+        skos:definition             "A binary map of land devoted to agriculture, defined as the systematic and controlled use of land and livestock to produce food, fiber, and fuel. This includes croplands (as defined in the Cropland Mask), rangelands (as defined in the Rangeland Mask), and seasonally fallow lands (as defined by the Seasonal Fallow Mask)." ;
+        skos:inScheme               base:eav ;
+        skos:prefLabel              "Agriculture Mask" ;
+        dcat:keyword                "Land Use" ;
+        base:agriLandIncludes       "Cropland Mask, Rangeland Mask, and Seasonal Fallow Mask" ;
+        base:categoryGEOGLAM        "Land Use" ;
+        base:policySupported        "Policy areas supported include: Land cover/use state & change; SDG 2; UNFCCC\n 1. Greenhouse gas reporting\n 2. Farm support programs\n 3. Information for commodity markets\n 4. Early warning for food security\n 5. Changes in the agricultural landscape\n 6. Land degradation" ;
+        base:updateFrequency        "Annual update" ;
+        base:spatialResolutionUnit  "Standard products at 1 Ha resolution, based on generalization of mapping categories generated at lower levels of the hierarchy developed at higher or similar resolutions" ;
+        base:stewards               "Ian Jarvis, Juan Pablo Guerschman, Bettina Baruth" .

@@ -1,0 +1,1065 @@
+@prefix base: <http://w3id.org/ad4gd/ev/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/ad4gd/ev/ebv/Aerialbiomassofmigratingbirds,batsandinsects> a base:EBV,
+        skos:Concept ;
+    dct:identifier "63" ;
+    base:TaxonomicEcosystemFocusGroup "All migratory bird, bat and insect species (by size class)" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 day" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Aerial biomass of migrating birds, bats and insects" .
+
+<http://w3id.org/ad4gd/ev/ebv/Communityabundanceandtaxonomicdiversityofpollinatorinsects> a base:EBV,
+        skos:Concept ;
+    dct:identifier "62" ;
+    base:TaxonomicEcosystemFocusGroup "All pollinator insects as proposed in the species lists of butterflies, wild bees and hoverflies of the EU Pollinator Monitoring Scheme (EUPoMS)" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "Small regions within countries based on nomenclature of territorial units for statistics (NUTS) from Eurostat (1166 regions at NUTS 3 level)" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1-5 years (rotation across years)" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Community abundance and taxonomic diversity of pollinator insects" .
+
+<http://w3id.org/ad4gd/ev/ebv/Communitybiomassofselectedfunctionalgroupsofterrestrialarthropods(e.g.predator,decomposer)> a base:EBV,
+        skos:Concept ;
+    dct:identifier "59/60" ;
+    base:TaxonomicEcosystemFocusGroup "The taxonomical scope should be defined with the help of experts" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "#NAME?" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Community biomass of selected functional groups of terrestrial arthropods (e.g. predator, decomposer)" .
+
+<http://w3id.org/ad4gd/ev/ebv/Communitybiomassofsoilmicrobes> a base:EBV,
+        skos:Concept ;
+    dct:identifier "61" ;
+    base:TaxonomicEcosystemFocusGroup "Soil microbial species" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "3 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Community biomass of soil microbes" .
+
+<http://w3id.org/ad4gd/ev/ebv/Connectivityofterrestrialecosystemhabitattypes> a base:EBV,
+        skos:Concept ;
+    dct:identifier "67" ;
+    base:TaxonomicEcosystemFocusGroup "EUNIS habitats" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemstructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Connectivity of terrestrial ecosystem habitat types" .
+
+<http://w3id.org/ad4gd/ev/ebv/Degreeofseabeddisturbance> a base:EBV,
+        skos:Concept ;
+    dct:identifier "36" ;
+    base:TaxonomicEcosystemFocusGroup "Seabed zones defined at the Marine Strategy Framework Directive â Review and analysis of EU Member Statesâ 2018 reports â Descriptor 6: Sea-floor integrity and Descriptor 1: Benthic habitats" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Degree of seabed disturbance" .
+
+<http://w3id.org/ad4gd/ev/ebv/Distributionsofmarineturtlespeciesnestinggrounds> a base:EBV,
+        skos:Concept ;
+    dct:identifier "27" ;
+    base:TaxonomicEcosystemFocusGroup "Turtle species indicated in the Habitats Directive and the Review and analysis of Member Statesâ 2018 reports Descriptor 1: Species biological diversity: Caretta caretta (Loggerhead turtle), Chelonia mydas (Green turtle), Dermochelys coriacea (Leatherback turtle), Eretmochelys imbricata (Hawksbill turtle), Lepidochelys kempii (Kempâs Ridley turtle)" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Distributions of marine turtle species nesting grounds" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)ofbenthicfreshwaterinvertebrates> a base:EBV,
+        skos:Concept ;
+    dct:identifier "12" ;
+    base:TaxonomicEcosystemFocusGroup "Benthic invertebrate species with indicator values as defined in the Water Framework Directive Intercalibration Technical Reports (Part 1, Rivers)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "River catchments as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "2-3 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecological Quality Ratio (EQR) of benthic freshwater invertebrates" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterfish> a base:EBV,
+        skos:Concept ;
+    dct:identifier "13" ;
+    base:TaxonomicEcosystemFocusGroup "Freshwater fish species with indicator values defined in the Water Framework Directive Intercalibration Technical Reports (Part 1, Rivers; Part 2, Lakes)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes and river catchments as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3-6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecological Quality Ratio (EQR) of freshwater fish" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwatermacrophytes> a base:EBV,
+        skos:Concept ;
+    dct:identifier "10" ;
+    base:TaxonomicEcosystemFocusGroup "All macrophytes species with indicator values as defined in the Water Framework Directive Intercalibration Technical Reports (Part 2, Lakes)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecological Quality Ratio (EQR) of freshwater macrophytes" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterphytobenthos> a base:EBV,
+        skos:Concept ;
+    dct:identifier "11" ;
+    base:TaxonomicEcosystemFocusGroup "Phytobenthic species with indicator values as defined in the Water Framework Directive Intercalibration Technical Reports (Part 1, Rivers)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "River catchments as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1-3 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecological Quality Ratio (EQR) of freshwater phytobenthos" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterzooplankton> a base:EBV,
+        skos:Concept ;
+    dct:identifier "14" ;
+    base:TaxonomicEcosystemFocusGroup "Lake zooplankton species with indicator values" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "1-3 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecological Quality Ratio (EQR) of freshwater zooplankton" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)ofphytoplanktoninlakes> a base:EBV,
+        skos:Concept ;
+    dct:identifier "9" ;
+    base:TaxonomicEcosystemFocusGroup "Phytoplankton indicator taxa and reference taxa as described in the Water Framework Directive Intercalibration Technical Reports (Part 2, Lakes)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year, weekly-monthly during growing season" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecological Quality Ratio (EQR) of phytoplankton in lakes" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcosystemdistributionoffreshwaterEUNISHabitats> a base:EBV,
+        skos:Concept ;
+    dct:identifier "16" ;
+    base:TaxonomicEcosystemFocusGroup "Freshwater EUNIS Habitats (level 3)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "100Ã100m - 1 kmÃ1km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemstructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecosystem distribution of freshwater EUNIS Habitats" .
+
+<http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofhardcoralshabitats> a base:EBV,
+        skos:Concept ;
+    dct:identifier "32" ;
+    base:TaxonomicEcosystemFocusGroup "Live hard coral covers defined by EMODnet Seabed Habitats" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10m - 300x300m" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/EcosystemStructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecosystem distribution of hard corals habitats" .
+
+<http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofmarinemacroalgaecanopycover> a base:EBV,
+        skos:Concept ;
+    dct:identifier "33" ;
+    base:TaxonomicEcosystemFocusGroup "Macroalgae canopy covers defined by EMODnet Seabed Habitats" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10m - 300x300m" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/EcosystemStructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecosystem distribution of marine macroalgae canopy cover" .
+
+<http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofmarineseagrasshabitats> a base:EBV,
+        skos:Concept ;
+    dct:identifier "34" ;
+    base:TaxonomicEcosystemFocusGroup "Seagrass covers defined by EMODnet Seabed Habitats" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10m - 300x300m" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/EcosystemStructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecosystem distribution of marine seagrass habitats" .
+
+<http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofoysterreefhabitats> a base:EBV,
+        skos:Concept ;
+    dct:identifier "35" ;
+    base:TaxonomicEcosystemFocusGroup "Oyster reefs in the EU's marine waters" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10m - 300x300m" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/EcosystemStructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecosystem distribution of oyster reef habitats" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcosystemdistributionofterrestrialEUNISHabitats> a base:EBV,
+        skos:Concept ;
+    dct:identifier "66" ;
+    base:TaxonomicEcosystemFocusGroup "EUNIS terrestrial habitats (e.g. level 3 or 4)" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemstructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecosystem distribution of terrestrial EUNIS Habitats" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcosystemdisturbanceasmeasuredbyHANPP> a base:EBV,
+        skos:Concept ;
+    dct:identifier "71" ;
+    base:TaxonomicEcosystemFocusGroup "European terrestrial land areas" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10m" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "10 days" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Ecosystem disturbance as measured by HANPP" .
+
+<http://w3id.org/ad4gd/ev/ebv/Firedisturbanceperhabitattype> a base:EBV,
+        skos:Concept ;
+    dct:identifier "70" ;
+    base:TaxonomicEcosystemFocusGroup "European terrestrial land areas and EUNIS forest habitats (e.g. level 3 or 4)" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10m" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "10 days" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Fire disturbance per habitat type" .
+
+<http://w3id.org/ad4gd/ev/ebv/Freshwaterprimaryproductivity> a base:EBV,
+        skos:Concept ;
+    dct:identifier "20" ;
+    base:TaxonomicEcosystemFocusGroup "EUNIS freshwater habitats (except small rivers)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes and large river catchments as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Freshwater primary productivity" .
+
+<http://w3id.org/ad4gd/ev/ebv/Functionalcompositionofmarinephyto/zooplankton(basedontraits)> a base:EBV,
+        skos:Concept ;
+    dct:identifier "31" ;
+    base:TaxonomicEcosystemFocusGroup "Phytoplankton and zooplankton in EU's marine waters defined in the Marine Strategy Framework Directive - Review and analysis of EU Member Statesâ 2018 reports - Descriptor 1: Pelagic habitats" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "Seasonal-1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Functional composition of marine phyto/zooplankton (based on traits)" .
+
+<http://w3id.org/ad4gd/ev/ebv/Functionalcompositionofsoilbiota> a base:EBV,
+        skos:Concept ;
+    dct:identifier "64" ;
+    base:TaxonomicEcosystemFocusGroup "Bacteria, fungi, protozoa, nematodes, collembola, mites, earthworms, larval and adult insects (e.g. Hymenoptera, Coleoptera and Diptera larvae), myriapods, spiders, molluscs and crustaceans" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1m" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Communitycomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Functional composition of soil biota" .
+
+<http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedfreshwatertaxa> a base:EBV,
+        skos:Concept ;
+    dct:identifier "43b" ;
+    base:TaxonomicEcosystemFocusGroup "Selected species of birds, mammals, reptiles, amphibians or other taxonomic groups which are categorized as threatened by the European Red List." ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Sample sites (populations) across the geographic range of selected taxa" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "10 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Geneticcomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Genetic diversity of selected freshwater taxa" .
+
+<http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedmarinetaxa> a base:EBV,
+        skos:Concept ;
+    dct:identifier "42c" ;
+    base:TaxonomicEcosystemFocusGroup "Selected species of birds, mammals, reptiles, or other taxonomic groups which are categorized as threatened by the European Red List" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "Sample sites (populations) across the geographic range of selected taxa" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "10 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Geneticcomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Genetic diversity of selected marine taxa" .
+
+<http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedterrestrialtaxa> a base:EBV,
+        skos:Concept ;
+    dct:identifier "42a" ;
+    base:TaxonomicEcosystemFocusGroup "Selected species of birds, mammals, reptiles, amphibians or other taxonomic groups which are categorized as threatened by the European Red List." ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "Sample sites (populations) across the geographic range of selected taxa" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "10 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Geneticcomposition> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Genetic diversity of selected terrestrial taxa" .
+
+<http://w3id.org/ad4gd/ev/ebv/Harmfulfreshwateralgalblooms> a base:EBV,
+        skos:Concept ;
+    dct:identifier "19" ;
+    base:TaxonomicEcosystemFocusGroup "ECRINS lakes" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "Real-time, weekly-monthly during the growing season" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Harmful freshwater algal blooms" .
+
+<http://w3id.org/ad4gd/ev/ebv/Harmfulmarinealgalblooms> a base:EBV,
+        skos:Concept ;
+    dct:identifier "37" ;
+    base:TaxonomicEcosystemFocusGroup "EUNIS marine and coastal habitats" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "300x300m" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "Real-time, weekly-monthly during the growing season" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Harmful marine algal blooms" .
+
+<http://w3id.org/ad4gd/ev/ebv/Marineprimaryproductivity> a base:EBV,
+        skos:Concept ;
+    dct:identifier "39" ;
+    base:TaxonomicEcosystemFocusGroup "#NAME?" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Marine primary productivity" .
+
+<http://w3id.org/ad4gd/ev/ebv/Phenologyoffloweringandleafsenescence> a base:EBV,
+        skos:Concept ;
+    dct:identifier "57" ;
+    base:TaxonomicEcosystemFocusGroup "Flowering plants and deciduous trees" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 week-1 month" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciestraits> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Phenology of flowering and leaf senescence" .
+
+<http://w3id.org/ad4gd/ev/ebv/Phenologyoffructificationofmushroomsandwildfruits> a base:EBV,
+        skos:Concept ;
+    dct:identifier "56" ;
+    base:TaxonomicEcosystemFocusGroup "#NAME?" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 week" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciestraits> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Phenology of fructification of mushrooms and wild fruits" .
+
+<http://w3id.org/ad4gd/ev/ebv/Phenologyofmarinespringphytoplanktonbloom> a base:EBV,
+        skos:Concept ;
+    dct:identifier "38" ;
+    base:TaxonomicEcosystemFocusGroup "All marine phytoplankton" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Phenology of marine spring phytoplankton bloom" .
+
+<http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofmarinebirdsandmammals> a base:EBV,
+        skos:Concept ;
+    dct:identifier "30" ;
+    base:TaxonomicEcosystemFocusGroup "Marine migratory birds (taxonomy based on the Handbook of the Birds of the World and the BirdLife Taxonomic Checklist), with focus on those bird species that are officially recognized in the List of birds of the European Union, and defined as full migrants in the European Red List. Migratory mammal species defined as full migrants in the European Red List" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciestraits> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Phenology of migration of marine birds and mammals" .
+
+<http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofterrestrialbirds> a base:EBV,
+        skos:Concept ;
+    dct:identifier "58a" ;
+    base:TaxonomicEcosystemFocusGroup "Migratory bird species defined as full migrants in the European Red List" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "1 week (traits derived from weekly distribution data)" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciestraits> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Phenology of migration of terrestrial birds" .
+
+<http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofwetlandbirds> a base:EBV,
+        skos:Concept ;
+    dct:identifier "58c" ;
+    base:TaxonomicEcosystemFocusGroup "Migratory bird species defined as full migrants in the European Red List" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "10x10km" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "1 week (traits derived from weekly distribution data)" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciestraits> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Phenology of migration of wetland birds" .
+
+<http://w3id.org/ad4gd/ev/ebv/Phenologyoftheemergenceofbutterflies> a base:EBV,
+        skos:Concept ;
+    dct:identifier "58b" ;
+    base:TaxonomicEcosystemFocusGroup "Priority butterfly species listed in the Annex II and Annex IV of the Habitats Directive" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "1 week (traits derived from weekly distribution data)" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciestraits> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Phenology of the emergence of butterflies" .
+
+<http://w3id.org/ad4gd/ev/ebv/RiverConnectivity/Freeriverflow> a base:EBV,
+        skos:Concept ;
+    dct:identifier "15" ;
+    base:TaxonomicEcosystemFocusGroup "Broad types of rivers or level 3 EUNIS river habitats" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "0.1Ã0.1km - 1Ã1km or per river segment" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemstructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "River Connectivity/Free river flow" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofbutterflies> a base:EBV,
+        skos:Concept ;
+    dct:identifier "49" ;
+    base:TaxonomicEcosystemFocusGroup "Current list of butterfly species underlying the European grassland butterfly indicator, with extension to butterfly species from other habitats." ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species abundances of butterflies" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofmarinecommercialfishspeciesandlong-distancemigratoryfishes> a base:EBV,
+        skos:Concept ;
+    dct:identifier "24" ;
+    base:TaxonomicEcosystemFocusGroup "Commercial marine fish species listed in the Common Fisheries Policy" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "50x50km - 200x200km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species abundances of marine commercial fish species and long-distance migratory fishes" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialcroppests> a base:EBV,
+        skos:Concept ;
+    dct:identifier "55b" ;
+    base:TaxonomicEcosystemFocusGroup "The taxonomic scope for crop pests is defined in EU list of priority pests" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "100x100m - 1x1km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "Strongly species-dependent" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species abundances of selected terrestrial crop pests" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialdiseasevectors> a base:EBV,
+        skos:Concept ;
+    dct:identifier "55a" ;
+    base:TaxonomicEcosystemFocusGroup "The taxonomic scope for disease vectors is defined by the European Centre for Disease Prevention and Control (ECDPC)" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "Real-time" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species abundances of selected terrestrial disease vectors" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialmammals> a base:EBV,
+        skos:Concept ;
+    dct:identifier "46" ;
+    base:TaxonomicEcosystemFocusGroup "Terrestrial Carnivora, Artiodactyla and Chiroptera species included in the European Red List." ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species abundances of selected terrestrial mammals" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofterrestrialbirds> a base:EBV,
+        skos:Concept ;
+    dct:identifier "45a" ;
+    base:TaxonomicEcosystemFocusGroup "- Taxonomy based on the Handbook of the Birds of the World and the BirdLife Taxonomic Checklist- Rare bird species as included in the Annex 1 of the Birds Directive (i.e. species with small populations or restricted local distribution)- Priority bird species as included in Annex 1 of the Birds Directive (i.e. in danger of extinction, vulnerable to specific changes in their habitat or requiring particular attention for reasons of the specific nature of the habitat)- Common bird species as included in the Pan-European Common Bird Monitoring Scheme (PECBMS)" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species abundances of terrestrial birds" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofterrestrialmigratorybirds> a base:EBV,
+        skos:Concept ;
+    dct:identifier "45b" ;
+    base:TaxonomicEcosystemFocusGroup "#NAME?" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "Real-time" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species abundances of terrestrial migratory birds" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofwetlandbirds> a base:EBV,
+        skos:Concept ;
+    dct:identifier "1" ;
+    base:TaxonomicEcosystemFocusGroup "Wetland birds (taxonomy based on the Handbook of the Birds of the World and the BirdLife Taxonomic Checklist, with focus on those bird species that are officially recognized in the List of birds of the European Union, and wetland affiliation defined as the linkages of species and habitat types to MAES [wetland] ecosystems)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Wetlands as defined by The Critical Site Network (CSN) Tool which is an online resource for the conservation of 312 species of waterbirds and the important sites upon which they depend in Africa and Western Eurasia (http://criticalsites.wetlands.org/en/sites)." ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species abundances of wetland birds" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofallterrestrialmammals> a base:EBV,
+        skos:Concept ;
+    dct:identifier "47" ;
+    base:TaxonomicEcosystemFocusGroup "European terrestrial mammal species included in the European Red List." ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of all terrestrial mammals" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofamphibiansandfreshwaterreptiles> a base:EBV,
+        skos:Concept ;
+    dct:identifier "3" ;
+    base:TaxonomicEcosystemFocusGroup "All European amphibians and freshwater reptiles" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "10Ã10km - 50Ã50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3-6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of amphibians and freshwater reptiles" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofbenthicmarineinvertebrates> a base:EBV,
+        skos:Concept ;
+    dct:identifier "28" ;
+    base:TaxonomicEcosystemFocusGroup "Benthic invertebrate species indicated in the Review and analysis of EU Member Statesâ 2018 reports â Descriptor 6: Sea-floor integrity and Descriptor 1: Benthic habitats" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "Seasonal-1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of benthic marine invertebrates" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwaterfishes> a base:EBV,
+        skos:Concept ;
+    dct:identifier "2" ;
+    base:TaxonomicEcosystemFocusGroup "Freshwater fishes listed in the European Red List of Freshwater Fishes (currently 531 native and described European species)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3-6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of freshwater fishes" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwaterinvertebrates> a base:EBV,
+        skos:Concept ;
+    dct:identifier "5" ;
+    base:TaxonomicEcosystemFocusGroup "Freshwater invertebrate species listed in the Habitats Directive Annex II: Dragonflies: Coenagrion hylas, C. mercuriale, Cordulegaster trinacriae, Gomphus graslinii, Leucorrhina pectoralis, Lindenia tetraphylla, Macromia splendens, Ophiogomphus cecilia, Oxygastra curtisii. Bivalves: Margaritifera margaritifera and Unio crassusFreshwater invertebrate species listed in the Habitats Directive Annex IV: Dragonflies: Aeshna viridis, Cordulegaster trinacriae, Gomphus graslinii, Leucorrhina albifrons, L. caudalis, L. pectoralis, Lindenia tetraphylla, Macromia splendens, Ophiogomphus cecilia, Oxygastra curtisii, Stylurus flavipes and Sympecma braueri. Bivalves: Lithophaga lithophaga, Pinna nobilis, Margaritifera auricularia and Unio crassus Pollution-sensitive benthic invertebrates that are monitored for the Water Framework Directive: Mayflies (Ephemeroptera), Stoneflies (Plecoptera), Caddisflies (Trichoptera)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes and river catchments as delineated in ECRINS (European catchments and Rivers network system)" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "3-6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of freshwater invertebrates" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwatermacrophytes> a base:EBV,
+        skos:Concept ;
+    dct:identifier "6" ;
+    base:TaxonomicEcosystemFocusGroup "European macrophytes" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "3-6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of freshwater macrophytes" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwatermammals> a base:EBV,
+        skos:Concept ;
+    dct:identifier "4" ;
+    base:TaxonomicEcosystemFocusGroup "Freshwater mammal species listed in the Habitats Directive (Lutra lutra, Galemys pyrenaicus, Mustela lutreola)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3-6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of freshwater mammals" .
+
+<http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienfreshwatertaxaofEuropeanconcern> a base:EBV,
+        skos:Concept ;
+    dct:identifier "7" ;
+    base:TaxonomicEcosystemFocusGroup "Freshwater species specified in the Consolidated List of Invasive Alien Species of Union Concern" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "Lakes and river catchments as delineated in ECRINS (European catchments and rivers network system)" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3-6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of invasive alien freshwater taxa of European concern" .
+
+<http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienmarinetaxaofEuropeanconcern> a base:EBV,
+        skos:Concept ;
+    dct:identifier "29" ;
+    base:TaxonomicEcosystemFocusGroup "Coastal marine taxa of invasive concern within 1-5 km from the shore" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of invasive alien marine taxa of European concern" .
+
+<http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienterrestrialtaxaofEuropeanconcern> a base:EBV,
+        skos:Concept ;
+    dct:identifier "54" ;
+    base:TaxonomicEcosystemFocusGroup "Species specified in the List of Invasive Alien Species of Union Concern" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of invasive alien terrestrial taxa of European concern" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoflichens(asindicatorsofpollution)> a base:EBV,
+        skos:Concept ;
+    dct:identifier "53" ;
+    base:TaxonomicEcosystemFocusGroup "Ecological quality indicator lichens as defined in POPLAIR and other sources" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of lichens (as indicators of pollution)" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmaintrees> a base:EBV,
+        skos:Concept ;
+    dct:identifier "52" ;
+    base:TaxonomicEcosystemFocusGroup "Tree species included in the EU-Trees4F dataset (67 species)" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of main trees" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinebirds> a base:EBV,
+        skos:Concept ;
+    dct:identifier "25" ;
+    base:TaxonomicEcosystemFocusGroup "Marine bird species indicated in the Review and analysis of Member Statesâ 2018 reports Descriptor 1: Species biological diversity" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of marine birds" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinefishes> a base:EBV,
+        skos:Concept ;
+    dct:identifier "23" ;
+    base:TaxonomicEcosystemFocusGroup "Marine fish species indicated in the Review and analysis of Member Statesâ 2018 reports Descriptor 1: Species biological diversity" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "50x50km - 200x200km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of marine fishes" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinemammals> a base:EBV,
+        skos:Concept ;
+    dct:identifier "26" ;
+    base:TaxonomicEcosystemFocusGroup "Marine mammal species indicated in the Review and analysis of Member Statesâ 2018 reports Descriptor 1: Species biological diversity" ;
+    base:realm "Marine" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of marine mammals" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialbirds> a base:EBV,
+        skos:Concept ;
+    dct:identifier "44" ;
+    base:TaxonomicEcosystemFocusGroup "All terrestrial birds of the EU (taxonomy based on the Handbook of the Birds of the World and the BirdLife Taxonomic Checklist, with focus on those bird species that are officially recognized in the List of birds of the European Union." ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of terrestrial birds" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialplants> a base:EBV,
+        skos:Concept ;
+    dct:identifier "51" ;
+    base:TaxonomicEcosystemFocusGroup "#NAME?" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "- Priority species: 1 Ã 1 km â 10 Ã 10 km - All vascular plant species: 10 Ã 10 km â 50 Ã 50 km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "- Priority species: 1 year- All vascular plant species: 3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of terrestrial plants" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialpriorityinvertebratesandkeypollinators> a base:EBV,
+        skos:Concept ;
+    dct:identifier "50" ;
+    base:TaxonomicEcosystemFocusGroup "#NAME?" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10km - 50x50km" ;
+    base:stepInIdentificationProcess "Internal review process" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of terrestrial priority invertebrates and key pollinators" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialreptiles> a base:EBV,
+        skos:Concept ;
+    dct:identifier "48" ;
+    base:TaxonomicEcosystemFocusGroup "European terrestrial reptile species included in the European Red List." ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1km - 10x10km" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "3 or 6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Speciespopulations> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Species distributions of terrestrial reptiles" .
+
+<http://w3id.org/ad4gd/ev/ebv/Standingandlyingdeadwood> a base:EBV,
+        skos:Concept ;
+    dct:identifier "73" ;
+    base:TaxonomicEcosystemFocusGroup "EUNIS forest habitats (e.g. level 3 or 4)" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "100x100m" ;
+    base:stepInIdentificationProcess "KCBD ad hoc monitoring group meeting" ;
+    base:temporalResolutionUnit "3 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Standing and lying deadwood" .
+
+<http://w3id.org/ad4gd/ev/ebv/Structuralcomplexityofriparianhabitats> a base:EBV,
+        skos:Concept ;
+    dct:identifier "17" ;
+    base:TaxonomicEcosystemFocusGroup "Riparian habitats (or distance defined from river)" ;
+    base:realm "Freshwater" ;
+    base:spatialResolutionUnit "10Ã10m (if derived from airborne laser scanning data)100Ã100m (modeled from in-situ data)" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "6 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemstructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Structural complexity of riparian habitats" .
+
+<http://w3id.org/ad4gd/ev/ebv/Terrestrialecosystemphenology> a base:EBV,
+        skos:Concept ;
+    dct:identifier "72" ;
+    base:TaxonomicEcosystemFocusGroup "European terrestrial land areas" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10m" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "1 year" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Terrestrial ecosystem phenology" .
+
+<http://w3id.org/ad4gd/ev/ebv/Terrestrialprimaryproductivity> a base:EBV,
+        skos:Concept ;
+    dct:identifier "69" ;
+    base:TaxonomicEcosystemFocusGroup "European terrestrial land areas" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "10x10m" ;
+    base:stepInIdentificationProcess "User & Policy Needs Assessment" ;
+    base:temporalResolutionUnit "10 days" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Terrestrial primary productivity" .
+
+<http://w3id.org/ad4gd/ev/ebv/Verticalstructureofterrestrialvegetation> a base:EBV,
+        skos:Concept ;
+    dct:identifier "65" ;
+    base:TaxonomicEcosystemFocusGroup "European terrestrial land areas" ;
+    base:realm "Terrestrial" ;
+    base:spatialResolutionUnit "1x1m-10x10m" ;
+    base:stepInIdentificationProcess "Expert workshop" ;
+    base:temporalResolutionUnit "5 years" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:broader <http://w3id.org/ad4gd/ev/ebv/Ecosystemstructure> ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel "Vertical structure of terrestrial vegetation" .
+
+<http://w3id.org/ad4gd/ev/ebv/Geneticcomposition> a base:EBV,
+        skos:Concept ;
+    dct:identifier "Genetic composition" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ;
+    skos:narrower <http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedfreshwatertaxa>,
+        <http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedmarinetaxa>,
+        <http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedterrestrialtaxa> ;
+    skos:prefLabel "Genetic composition" .
+
+<http://w3id.org/ad4gd/ev/ebv/EcosystemStructure> a base:EBV,
+        skos:Concept ;
+    dct:identifier "Ecosystem Structure" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ;
+    skos:narrower <http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofhardcoralshabitats>,
+        <http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofmarinemacroalgaecanopycover>,
+        <http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofmarineseagrasshabitats>,
+        <http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofoysterreefhabitats> ;
+    skos:prefLabel "Ecosystem Structure" .
+
+<http://w3id.org/ad4gd/ev/ebv/Ecosystemstructure> a base:EBV,
+        skos:Concept ;
+    dct:identifier "Ecosystem structure" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ;
+    skos:narrower <http://w3id.org/ad4gd/ev/ebv/Connectivityofterrestrialecosystemhabitattypes>,
+        <http://w3id.org/ad4gd/ev/ebv/EcosystemdistributionoffreshwaterEUNISHabitats>,
+        <http://w3id.org/ad4gd/ev/ebv/EcosystemdistributionofterrestrialEUNISHabitats>,
+        <http://w3id.org/ad4gd/ev/ebv/RiverConnectivity/Freeriverflow>,
+        <http://w3id.org/ad4gd/ev/ebv/Structuralcomplexityofriparianhabitats>,
+        <http://w3id.org/ad4gd/ev/ebv/Verticalstructureofterrestrialvegetation> ;
+    skos:prefLabel "Ecosystem structure" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciestraits> a base:EBV,
+        skos:Concept ;
+    dct:identifier "Species traits" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ;
+    skos:narrower <http://w3id.org/ad4gd/ev/ebv/Phenologyoffloweringandleafsenescence>,
+        <http://w3id.org/ad4gd/ev/ebv/Phenologyoffructificationofmushroomsandwildfruits>,
+        <http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofmarinebirdsandmammals>,
+        <http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofterrestrialbirds>,
+        <http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofwetlandbirds>,
+        <http://w3id.org/ad4gd/ev/ebv/Phenologyoftheemergenceofbutterflies> ;
+    skos:prefLabel "Species traits" .
+
+<http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction> a base:EBV,
+        skos:Concept ;
+    dct:identifier "Ecosystem function" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ;
+    skos:narrower <http://w3id.org/ad4gd/ev/ebv/Degreeofseabeddisturbance>,
+        <http://w3id.org/ad4gd/ev/ebv/EcosystemdisturbanceasmeasuredbyHANPP>,
+        <http://w3id.org/ad4gd/ev/ebv/Firedisturbanceperhabitattype>,
+        <http://w3id.org/ad4gd/ev/ebv/Freshwaterprimaryproductivity>,
+        <http://w3id.org/ad4gd/ev/ebv/Harmfulfreshwateralgalblooms>,
+        <http://w3id.org/ad4gd/ev/ebv/Harmfulmarinealgalblooms>,
+        <http://w3id.org/ad4gd/ev/ebv/Marineprimaryproductivity>,
+        <http://w3id.org/ad4gd/ev/ebv/Phenologyofmarinespringphytoplanktonbloom>,
+        <http://w3id.org/ad4gd/ev/ebv/Standingandlyingdeadwood>,
+        <http://w3id.org/ad4gd/ev/ebv/Terrestrialecosystemphenology>,
+        <http://w3id.org/ad4gd/ev/ebv/Terrestrialprimaryproductivity> ;
+    skos:prefLabel "Ecosystem function" .
+
+<http://w3id.org/ad4gd/ev/ebv/Communitycomposition> a base:EBV,
+        skos:Concept ;
+    dct:identifier "Community composition" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ;
+    skos:narrower <http://w3id.org/ad4gd/ev/ebv/Aerialbiomassofmigratingbirds,batsandinsects>,
+        <http://w3id.org/ad4gd/ev/ebv/Communityabundanceandtaxonomicdiversityofpollinatorinsects>,
+        <http://w3id.org/ad4gd/ev/ebv/Communitybiomassofselectedfunctionalgroupsofterrestrialarthropods(e.g.predator,decomposer)>,
+        <http://w3id.org/ad4gd/ev/ebv/Communitybiomassofsoilmicrobes>,
+        <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)ofbenthicfreshwaterinvertebrates>,
+        <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterfish>,
+        <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwatermacrophytes>,
+        <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterphytobenthos>,
+        <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterzooplankton>,
+        <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)ofphytoplanktoninlakes>,
+        <http://w3id.org/ad4gd/ev/ebv/Functionalcompositionofmarinephyto/zooplankton(basedontraits)>,
+        <http://w3id.org/ad4gd/ev/ebv/Functionalcompositionofsoilbiota> ;
+    skos:prefLabel "Community composition" .
+
+<http://w3id.org/ad4gd/ev/ebv/Speciespopulations> a base:EBV,
+        skos:Concept ;
+    dct:identifier "Species populations" ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ;
+    skos:narrower <http://w3id.org/ad4gd/ev/ebv/Distributionsofmarineturtlespeciesnestinggrounds>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofbutterflies>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofmarinecommercialfishspeciesandlong-distancemigratoryfishes>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialcroppests>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialdiseasevectors>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialmammals>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofterrestrialbirds>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofterrestrialmigratorybirds>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofwetlandbirds>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofallterrestrialmammals>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofamphibiansandfreshwaterreptiles>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofbenthicmarineinvertebrates>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwaterfishes>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwaterinvertebrates>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwatermacrophytes>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwatermammals>,
+        <http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienfreshwatertaxaofEuropeanconcern>,
+        <http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienmarinetaxaofEuropeanconcern>,
+        <http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienterrestrialtaxaofEuropeanconcern>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoflichens(asindicatorsofpollution)>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmaintrees>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinebirds>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinefishes>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinemammals>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialbirds>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialplants>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialpriorityinvertebratesandkeypollinators>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialreptiles> ;
+    skos:prefLabel "Species populations" .
+
+base:EBV a owl:Class ;
+    rdfs:label "Essential Biodiversity Variables - codelist class"@en ;
+    rdfs:comment "Essential Biodiversity Variables (EBVs) are defined as a minimum set of measurements, complementary to one another, that can capture major dimensions of biodiversity change. EBVs are organized in six classes (Genetic composition, Species populations, Species traits, Community composition, Ecosystem functioning, Ecosystem structure) and cover the three realms (Marine/coastal, Terrestrial and Freshwater)"@en ;
+    rdfs:isDefinedBy <https://geobon.org/ebvs> ;
+    rdfs:seeAlso base:ebv ;
+    rdfs:subClassOf skos:Concept ;
+    owl:oneOf ( <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwatermacrophytes> <http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedterrestrialtaxa> <http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedmarinetaxa> <http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofterrestrialbirds> <http://w3id.org/ad4gd/ev/ebv/Communityabundanceandtaxonomicdiversityofpollinatorinsects> <http://w3id.org/ad4gd/ev/ebv/EcosystemdisturbanceasmeasuredbyHANPP> <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofmarinecommercialfishspeciesandlong-distancemigratoryfishes> <http://w3id.org/ad4gd/ev/ebv/Distributionsofmarineturtlespeciesnestinggrounds> <http://w3id.org/ad4gd/ev/ebv/EcosystemdistributionoffreshwaterEUNISHabitats> <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialcroppests> <http://w3id.org/ad4gd/ev/ebv/RiverConnectivity/Freeriverflow> <http://w3id.org/ad4gd/ev/ebv/EcosystemdistributionofterrestrialEUNISHabitats> <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterzooplankton> <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialmammals> <http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienmarinetaxaofEuropeanconcern> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoflichens(asindicatorsofpollution)> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialplants> <http://w3id.org/ad4gd/ev/ebv/Communitybiomassofselectedfunctionalgroupsofterrestrialarthropods(e.g.predator,decomposer)> <http://w3id.org/ad4gd/ev/ebv/Terrestrialecosystemphenology> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialpriorityinvertebratesandkeypollinators> <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofterrestrialbirds> <http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienfreshwatertaxaofEuropeanconcern> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofbenthicmarineinvertebrates> <http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofmarinemacroalgaecanopycover> <http://w3id.org/ad4gd/ev/ebv/Standingandlyingdeadwood> <http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofmarineseagrasshabitats> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofamphibiansandfreshwaterreptiles> <http://w3id.org/ad4gd/ev/ebv/Communitybiomassofsoilmicrobes> <http://w3id.org/ad4gd/ev/ebv/Degreeofseabeddisturbance> <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofselectedterrestrialdiseasevectors> <http://w3id.org/ad4gd/ev/ebv/Phenologyofmarinespringphytoplanktonbloom> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinebirds> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmaintrees> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwaterinvertebrates> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialreptiles> <http://w3id.org/ad4gd/ev/ebv/Aerialbiomassofmigratingbirds,batsandinsects> <http://w3id.org/ad4gd/ev/ebv/Freshwaterprimaryproductivity> <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)ofbenthicfreshwaterinvertebrates> <http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofhardcoralshabitats> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofterrestrialbirds> <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofterrestrialmigratorybirds> <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofwetlandbirds> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinemammals> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwaterfishes> <http://w3id.org/ad4gd/ev/ebv/Terrestrialprimaryproductivity> <http://w3id.org/ad4gd/ev/ebv/Phenologyoffructificationofmushroomsandwildfruits> <http://w3id.org/ad4gd/ev/ebv/Firedisturbanceperhabitattype> <http://w3id.org/ad4gd/ev/ebv/Functionalcompositionofmarinephyto/zooplankton(basedontraits)> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwatermacrophytes> <http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofwetlandbirds> <http://w3id.org/ad4gd/ev/ebv/Geneticdiversityofselectedfreshwatertaxa> <http://w3id.org/ad4gd/ev/ebv/Speciesabundancesofbutterflies> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofmarinefishes> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsofallterrestrialmammals> <http://w3id.org/ad4gd/ev/ebv/Functionalcompositionofsoilbiota> <http://w3id.org/ad4gd/ev/ebv/Ecosystemdistributionofoysterreefhabitats> <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterphytobenthos> <http://w3id.org/ad4gd/ev/ebv/Connectivityofterrestrialecosystemhabitattypes> <http://w3id.org/ad4gd/ev/ebv/Speciesdistributionsoffreshwatermammals> <http://w3id.org/ad4gd/ev/ebv/Phenologyoftheemergenceofbutterflies> <http://w3id.org/ad4gd/ev/ebv/Harmfulmarinealgalblooms> <http://w3id.org/ad4gd/ev/ebv/Phenologyofmigrationofmarinebirdsandmammals> <http://w3id.org/ad4gd/ev/ebv/SpeciesdistributionsofinvasivealienterrestrialtaxaofEuropeanconcern> <http://w3id.org/ad4gd/ev/ebv/Harmfulfreshwateralgalblooms> <http://w3id.org/ad4gd/ev/ebv/Phenologyoffloweringandleafsenescence> <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)offreshwaterfish> <http://w3id.org/ad4gd/ev/ebv/Marineprimaryproductivity> <http://w3id.org/ad4gd/ev/ebv/Structuralcomplexityofriparianhabitats> <http://w3id.org/ad4gd/ev/ebv/Verticalstructureofterrestrialvegetation> <http://w3id.org/ad4gd/ev/ebv/EcologicalQualityRatio(EQR)ofphytoplanktoninlakes> ) .
+
+base:ebv a skos:ConceptScheme,
+        dcat:Dataset ;
+    dct:description "Essential Biodiversity Variables (EBVs) are defined as a minimum set of measurements, complementary to one another, that can capture major dimensions of biodiversity change. EBVs are organized in six classes (Genetic composition, Species populations, Species traits, Community composition, Ecosystem functioning, Ecosystem structure) and cover the three realms (Marine/coastal, Terrestrial and Freshwater)"@en ;
+    dct:identifier "EBV"^^rdfs:Literal ;
+    dct:title "Essential Biodiversity Variables - codelist scheme"@en ;
+    rdfs:isDefinedBy <https://geobon.org/ebvs> ;
+    rdfs:seeAlso base:EBV ;
+    skos:definition "Essential Biodiversity Variables (EBVs) are defined as a minimum set of measurements, complementary to one another, that can capture major dimensions of biodiversity change. EBVs are organized in six classes (Genetic composition, Species populations, Species traits, Community composition, Ecosystem functioning, Ecosystem structure) and cover the three realms (Marine/coastal, Terrestrial and Freshwater)"@en ;
+    skos:hasTopConcept <http://w3id.org/ad4gd/ev/ebv/Communitycomposition>,
+        <http://w3id.org/ad4gd/ev/ebv/EcosystemStructure>,
+        <http://w3id.org/ad4gd/ev/ebv/Ecosystemfunction>,
+        <http://w3id.org/ad4gd/ev/ebv/Ecosystemstructure>,
+        <http://w3id.org/ad4gd/ev/ebv/Geneticcomposition>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciespopulations>,
+        <http://w3id.org/ad4gd/ev/ebv/Speciestraits> ;
+    skos:prefLabel "Essential Biodiversity Variables - codelist scheme"@en ;
+    dcat:theme base: .
+
