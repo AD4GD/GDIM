@@ -43,7 +43,7 @@
                             owl:versionIRI <https://w3id.org/ad4gd/model/gdProperty/1.1> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
-                                              foaf:name "Rob Atkinson"
+                                              foaf:name "Alejandro Villar"
                                             ] ;
                             dct:creator [ schema:affiliation [ foaf:name "PSNC"
                                                              ] ;
@@ -51,14 +51,9 @@
                                           foaf:name "Raul Palma"
                                         ] ;
                             owl:imports <https://w3id.org/ad4gd/model/gdCommon> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-1-water-quality-properties.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-1-water-quality-sensor-manufacturers.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-1-water-quality-sensors.ttl> ,
+                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-1-water-quality-properties.ttl> ,                            						
                             						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-air-quality-procedures.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-air-quality-properties.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-air-quality-sensor-manufacturers.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-air-quality-sensor-platforms.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-air-quality-sensors.ttl> ,
+                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-air-quality-properties.ttl> ,                            						
                             						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-ebv.ttl> ,
                             						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/EVs/eav.ttl> ,
                             						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/EVs/ebv.ttl>

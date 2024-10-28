@@ -38,7 +38,7 @@
 @base <https://w3id.org/ad4gd/model/gdCommon/> .
 
 <https://w3id.org/ad4gd/model/gdCommon> a owl:Ontology ;
-                            owl:versionIRI <https://w3id.org/ad4gd/model/gdCommon/1.0> ;
+                            owl:versionIRI <https://w3id.org/ad4gd/model/gdCommon/1.1> ;
                             dct:contributor [ schema:affiliation [ foaf:name "PSNC"
                                                                  ] ;
                                               foaf:name "Bogusz Janiak"
@@ -55,7 +55,7 @@
                             rdfs:label "GDIM GDCommon"@en ;
                             rdfs:comment "The AD4GD - Green Deal Information Model (GDIM) is the common vocabulary in AD4GD project providing the basis for semantic interoperability across solutions related to the green deal domain"@en ;
                             rdfs:comment "The GDCommon ontology is based on the DEMETER Agriculture Information Model (AIM) agriCommon ontology"@en ;
-                            owl:versionInfo "1.0" ;
+                            owl:versionInfo "1.1" ;
                             foaf:maker [ foaf:homepage <https://ad4gd.eu/> ;
                                                       foaf:name "AD4GD project"
                                                     ] .

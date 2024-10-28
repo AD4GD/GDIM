@@ -47,6 +47,7 @@
                                         ] ;
                             owl:imports <https://w3id.org/ad4gd/model/gdCommon>,
                             						<https://w3id.org/ad4gd/model/gdProperty>,
+                            						<https://w3id.org/ad4gd/model/gdSensor>,
                             						<https://w3id.org/ad4gd/model/alignments/gdim-ngsi-ld> ;
                             dct:description "The AD4GD Green Deal profile is a master profile importing all modules of AD4GD - Green Deal Information Model (GDIM)"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
