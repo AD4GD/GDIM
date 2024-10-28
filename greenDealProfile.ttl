@@ -35,7 +35,7 @@
 @base <https://w3id.org/ad4gd/model/> .
 
 <https://w3id.org/ad4gd/model> a owl:Ontology ;
-                            owl:versionIRI <https://w3id.org/ad4gd/model/1.0> ;
+                            owl:versionIRI <https://w3id.org/ad4gd/model/1.1> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
                                               foaf:name "Rob Atkinson"
@@ -54,7 +54,7 @@
                             rdfs:label "Green Deal Information Model (GDIM) ontology"@en ;
                             rdfs:comment "The AD4GD - Green Deal Information Model (GDIM) is the common vocabulary in AD4GD project providing the basis for semantic interoperability across solutions related to the green deal domain"@en ;
                             rdfs:comment "The AD4GD - Green Deal Information Model (GDIM) is based on the DEMETER Agriculture Information Model (AIM)"@en ;
-                            owl:versionInfo "1.0" ;
+                            owl:versionInfo "1.1" ;
                             foaf:maker [ foaf:homepage <https://ad4gd.eu/> ;
                                          foaf:name "AD4GD project"
                                        ] .
