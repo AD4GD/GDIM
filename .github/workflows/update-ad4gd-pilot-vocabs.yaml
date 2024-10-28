@@ -18,7 +18,7 @@ jobs:
           mkdir AD4GD-vocabularies
           
           P1_BASE=https://github.com/AD4GD/pilot-1-water-quality-semantics/raw/refs/heads/master/generic/entailed/
-          for P in properties sensor-manufacturers-sensors ; do
+          for P in properties sensor-manufacturers sensors ; do
             wget "${P1_BASE}${P}.ttl" -O "AD4GD-vocabularies/pilot-1-water-quality-${P}.ttl"
           done
           
