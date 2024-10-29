@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download files
         run: |
-          mkdir AD4GD-vocabularies
+          mkdir -p AD4GD-vocabularies
           
           P1_BASE=https://github.com/AD4GD/pilot-1-water-quality-semantics/raw/refs/heads/master/generic/entailed/
           for P in properties sensor-manufacturers sensors ; do
