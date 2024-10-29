@@ -32,6 +32,8 @@
 @prefix GDProperty: <https://w3id.org/ad4gd/model/GDProperty/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix dwc:  <http://rs.tdwg.org/dwc/terms/> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/> .
+@prefix iadopt: <https://w3id.org/iadopt/ont/> .
 @base <https://w3id.org/ad4gd/model/> .
 
 <https://w3id.org/ad4gd/model> a owl:Ontology ;

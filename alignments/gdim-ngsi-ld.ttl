@@ -106,6 +106,7 @@ prov:invalidatedAtTime rdfs:subPropertyOf ngsi-ld:TemporalProperty .
 qu:PropertyKind rdfs:subClassOf ngsi-ld:Entity .
 qu:QuantityKind rdfs:subClassOf ngsi-ld:Entity .
 geo:SpatialObject rdfs:subClassOf ngsi-ld:Entity .
+geo:SpatialObjectCollection rdfs:subClassOf ngsi-ld:Entity .
 sosa:Result rdfs:subClassOf ngsi-ld:Entity .
 sosa:Sample rdfs:subClassOf ngsi-ld:Entity .
 sosa:ActuatableProperty rdfs:subClassOf ngsi-ld:Entity .
