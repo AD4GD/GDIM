@@ -1,0 +1,57 @@
+--- # Configuration for general mapping solution lakes Berlin
+
+
+cfg:  
+  TEMPLATE_ID: "pilot1/lake/waterlevel/observationCollection/{`ID`}"
+  CONTEXT: ["https://w3id.org/ad4gd/gdim-context.jsonld",            
+            M: "http://qudt.org/vocab/unit/M",
+            wktLiteral: "http://www.opengis.net/ont/geosparql#wktLiteral"]
+  MAIN TYPE:
+    "@type": ["ObservationCollection"]
+    identifier: "waterlevel-{`ID`}|<string>"
+    label: "Water level observation collection for lake {`lake_name`}|<string>"
+    #label: "Water level observation collection for lake {`lake_name`} generated at {`import_date`}|<string>"
+    #generatedAtTime: "`import_date`|<dateTime>"                 
+    madeBySensor: 
+      uri: "http://w3id.org/ad4gd/pilot1/lake/sensor/{`ID`}"
+      "@type": "Sensor"
+      label: "Sensor for lake {`lake_name`}|<string>"
+      identifier: "sensor-{`ID`}|<string>"
+    hasFeatureOfInterest: "http://w3id.org/ad4gd/berlin/lake/{`ID`}"      
+    hasMember:            
+      "@1":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/seaLevel/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Water level above sea level observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "seaLevel-{`ID`}-{`datetime`}|<string>"
+        phenomenonTime: "`datetime`|<dateTime>"
+        resultTime: "`datetime`|<dateTime>"
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/water-level-above-sea-level"
+          "@type": "ObservableProperty"
+          label: "Water level above sea level|<string>"        
+          identifier: "water-level-above-sea-level|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/seaLevel/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`waterlevel_mNHN`} meters|<string>"
+          numericValue: "`waterlevel_mNHN`|<float>"
+          unit: "M"
+      "@2":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/groundLevel/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Water level above ground level observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "groundLevel-{`ID`}-{`datetime`}|<string>"        
+        phenomenonTime: "`datetime`|<dateTime>"
+        resultTime: "`datetime`|<dateTime>"
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/water-level-above-ground-level"
+          "@type": "ObservableProperty"
+          label: "Water level above gound level|<string>"  
+          identifier: "water-level-above-ground-level|<string>"  
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/groundLevel/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`waterlevel_above_sediment`} meters|<string>"
+          numericValue: "`waterlevel_above_sediment`|<float>"
+          unit: "M"

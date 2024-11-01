@@ -1,0 +1,456 @@
+--- # Configuration for general mapping solution lakes Berlin
+
+
+cfg:  
+  TEMPLATE_ID: "pilot1/lake/waterquality/observationCollection/{`ID`}-{`datetime`}"
+  CONTEXT: ["https://w3id.org/ad4gd/gdim-context.jsonld",            
+            M: "http://qudt.org/vocab/unit/M",
+            MilliGM-PER-L" : "http://qudt.org/vocab/unit/MilliGM-PER-L",
+            MilliL-PER-L : "http://qudt.org/vocab/unit/MilliL-PER-L",
+            MicroGM-PER-L : "http://qudt.org/vocab/unit/MicroGM-PER-L",
+            MicroS-PER-CentiM : "http://qudt.org/vocab/unit/MicroS-PER-CentiM",
+            UNITLESS : "http://qudt.org/vocab/unit/UNITLESS",
+            MilliV : "http://qudt.org/vocab/unit/MilliV",
+            DEG_C : "http://qudt.org/vocab/unit/DEG_C",
+            wktLiteral: "http://www.opengis.net/ont/geosparql#wktLiteral"]
+  MAIN TYPE:
+    "@type": ["ObservationCollection"]
+    label: "Water quality observation collection for lake {`lake_name`} at {`datetime`}|<string>"    
+    identifier: "{`ID`}-{`datetime`}|<string>"
+    madeBySensor: 
+      uri: "http://w3id.org/ad4gd/pilot1/lake/sensor/{`ID`}"
+      "@type": "Sensor"
+      label: "Sensor for lake {`lake_name`}|<string>"
+      identifier: "sensor-{`ID`}|<string>"
+    hasFeatureOfInterest: "http://w3id.org/ad4gd/berlin/lake/{`ID`}"
+    phenomenonTime: "`datetime`|<dateTime>"
+    resultTime: "`datetime`|<dateTime>"              
+    hasMember:            
+      "@1":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/totalSuspendedSolids/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Total suspended solids observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "totalSuspendedSolids-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/total-suspended-solids"
+          "@type": "ObservableProperty"
+          label: "Total Suspended Solids|<string>"        
+          identifier: "total-suspended-solids|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/totalSuspendedSolids/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`TSS_mg.l`} mg/l|<string>"
+          numericValue: "`TSS_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@2":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/settlingAgents/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Settling agents observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "settlingAgents-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/settling-agents"
+          "@type": "ObservableProperty"
+          label: "Settling Agents|<string>"        
+          identifier: "settling-agents|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/settlingAgents/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`Settling_agents_mg.l`} ml/l|<string>"
+          numericValue: "`Settling_agents_mg.l`|<float>"
+          unit: "MilliL-PER-L"
+      "@3":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/adsorbableOrganicHalides/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Adsorbable organic halides observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "adsorbableOrganicHalides-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/AOX-adsorbable-organic-halides"
+          "@type": "ObservableProperty"
+          label: "AOX (Adsorbable Organic Halides)|<string>"        
+          identifier: "AOX-adsorbable-organic-halides|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/adsorbableOrganicHalides/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`AOX_ug.l`} ug/l|<string>"
+          numericValue: "`AOX_ug.l`|<float>"
+          unit: "MicroGM-PER-L" 
+      "@4":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/borConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Bor concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "borConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/dissolved-boron-concentration"
+          "@type": "ObservableProperty"
+          label: "Dissolved Boron Concentration|<string>"        
+          identifier: "dissolved-boron-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/borConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`B_mg.l`} mg/l|<string>"
+          numericValue: "`B_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@5":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/biologicalOxygenDemand5d/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Biological oxygen demand in 5 days observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "biologicalOxygenDemand5d-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/biochemical-oxygen-demand-5"
+          "@type": "ObservableProperty"
+          label: "Biochemical Oxygen Demand in 5 Days|<string>"        
+          identifier: "biochemical-oxygen-demand-5|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/biologicalOxygenDemand5d/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`BOD_mg.l`} mg/l|<string>"
+          numericValue: "`BOD_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@6":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/chlorideConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Chloride concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "chlorideConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/dissolved-chloride-concentration"
+          "@type": "ObservableProperty"
+          label: "Dissolved Chloride Concentration|<string>"        
+          identifier: "dissolved-chloride-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/chlorideConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`Cl_mg.l`} mg/l|<string>"
+          numericValue: "`Cl_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@7":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/chemicalOxygenDemand/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Chemical oxygen demand observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "chemicalOxygenDemand-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/COD-chemical-oxygen-demand"
+          "@type": "ObservableProperty"
+          label: "COD (Chemical Oxygen Demand)|<string>"        
+          identifier: "COD-chemical-oxygen-demand|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/chemicalOxygenDemand/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`COD_mg.L`} mg/l|<string>"
+          numericValue: "`COD_mg.L`|<float>"
+          unit: "MilliGM-PER-L"
+      "@8":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/dissolvedOrganicCarbon/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Dissolved organic carbon observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "dissolvedOrganicCarbon-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/DOC-dissolved-organic-carbon"
+          "@type": "ObservableProperty"
+          label: "DOC (Dissolved Organic Carbon)|<string>"        
+          identifier: "DOC-dissolved-organic-carbon|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/dissolvedOrganicCarbon/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`DOC_mg.l`} mg/l|<string>"
+          numericValue: "`DOC_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@9":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/specificConductivity/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Specific conductivity observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "specificConductivity-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/specific-conductivity"
+          "@type": "ObservableProperty"
+          label: "Specific Conductivity|<string>"        
+          identifier: "specific-conductivity|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/specificConductivity/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`spec_conductivity_uS.cm`} uS/cm|<string>"
+          numericValue: "`spec_conductivity_uS.cm`|<float>"
+          unit: "MicroS-PER-CentiM"
+      "@10":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/ironConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Iron concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "ironConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/dissolved-iron3-concentration"
+          "@type": "ObservableProperty"
+          label: "Dissolved Iron3 Concentration|<string>"        
+          identifier: "dissolved-iron3-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/ironConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`Fe_mg.l`} mg/l|<string>"
+          numericValue: "`Fe_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@11":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/silicicAcid/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Silicic acid observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "silicicAcid-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/H4O4Si-silicic-acid"
+          "@type": "ObservableProperty"
+          label: "H4O4Si (Silicic Acid)|<string>"        
+          identifier: "H4O4Si-silicic-acid|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/silicicAcid/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`Silicic_acid_mg.l`} mg/l|<string>"
+          numericValue: "`Silicic_acid_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@12":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/manganeseConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Manganese concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "manganeseConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/dissolved-manganese-concentration"
+          "@type": "ObservableProperty"
+          label: "Dissolved Manganese Concentration|<string>"        
+          identifier: "dissolved-manganese-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/manganeseConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`Mn_mg.l`} mg/l|<string>"
+          numericValue: "`Mn_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@13":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/ammoniumConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Ammonium concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "ammoniumConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/ammonium-concentration"
+          "@type": "ObservableProperty"
+          label: "Ammonium Concentration|<string>"        
+          identifier: "ammonium-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/ammoniumConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`NH4_mg.l`} mg/l|<string>"
+          numericValue: "`NH4_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@14":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/ammoniumConcentrationNitrogen/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Ammonium concentration nitrogen observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "ammoniumConcentrationNitrogen-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/ammonium-concentration" ##does not exists
+          "@type": "ObservableProperty"
+          label: "Ammonium Concentration|<string>"        
+          identifier: "ammonium-concentration|<string>"
+        usedProcedure:
+          uri: "https://w3id.org/ad4gd/water-quality/procedure/concentration-nitrogen"
+          "@type": "Procedure"
+          label: "Measured in nitrogen|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/ammoniumConcentrationNitrogen/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`NH4.N_mg.l`} mg/l|<string>"
+          numericValue: "`NH4.N_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@15":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/nitrateConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Nitrate concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "nitrateConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/nitrate-concentration"
+          "@type": "ObservableProperty"
+          label: "Nitrate Concentration|<string>"        
+          identifier: "nitrate-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/nitrateConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`NO3_mg.l`} mg/l|<string>"
+          numericValue: "`NO3_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@16":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/nitrateConcentrationNitrogen/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Nitrate concentration nitrogen observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "nitrateConcentrationNitrogen-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/nitrate-concentration" ##does not exists
+          "@type": "ObservableProperty"
+          label: "Nitrate Concentration|<string>"        
+          identifier: "nitrate-concentration|<string>"
+        usedProcedure:
+          uri: "https://w3id.org/ad4gd/water-quality/procedure/concentration-nitrogen"
+          "@type": "Procedure"
+          label: "Measured in nitrogen|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/nitrateConcentrationNitrogen/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`NO3.N_mg.l`} mg/l|<string>"
+          numericValue: "`NO3.N_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@17":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/oxygenConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Oxygen concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "oxygenConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/dissolved-oxygen-concentration"
+          "@type": "ObservableProperty"
+          label: "Dissolved Oxygen Concentration|<string>"        
+          identifier: "dissolved-oxygen-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/oxygenConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`X02_mg.l`} ml/l|<string>"
+          numericValue: "`X02_mg.l`|<float>"
+          unit: "MilliL-PER-L"
+      "@18":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/orthophosphateConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Orthophosphate concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "orthophosphateConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/orthophosphate-concentration"
+          "@type": "ObservableProperty"
+          label: "Orthophosphate Concentration|<string>"        
+          identifier: "orthophosphate-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/orthophosphateConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`o.PO4_mg.l`} mg/l|<string>"
+          numericValue: "`o.PO4_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@19":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/orthophosphateConcentrationPhosphate/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Orthophosphate concentration phosphate observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "orthophosphateConcentrationPhosphate-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/orthophosphate-concentration" ##does not exists
+          "@type": "ObservableProperty"
+          label: "Orthophosphate Concentration|<string>"        
+          identifier: "orthophosphate-concentration|<string>"
+        usedProcedure:
+          uri: "https://w3id.org/ad4gd/water-quality/procedure/concentration-phosphate"
+          "@type": "Procedure"
+          label: "Measured in phosphate|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/orthophosphateConcentrationPhosphate/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`o.PO4.P_mg.l`} mg/l|<string>"
+          numericValue: "`o.PO4.P_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@20":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/pHValue/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "pH value observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "pHValue-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/pH"
+          "@type": "ObservableProperty"
+          label: "pH|<string>"        
+          identifier: "pH|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/pHValue/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`pH`}|<string>"
+          numericValue: "`pH`|<float>"
+          unit: "UNITLESS"
+      "@21":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/oxidationReductionPotential/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "oxidation/reduction potential (ORP) observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "oxidationReductionPotential-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/ORP-oxidation-reduction-potential"
+          "@type": "ObservableProperty"
+          label: "ORP (Oxidation-Reduction Potential)|<string>"        
+          identifier: "ORP-oxidation-reduction-potential|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/oxidationReductionPotential/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`ORP_mV`} mV|<string>"
+          numericValue: "`ORP_mV`|<float>"
+          unit: "MilliV"
+      "@22":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/sulphateConcentration/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Sulphate concentration observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "sulphateConcentration-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/sulphate-concentration"
+          "@type": "ObservableProperty"
+          label: "Sulphate Concentration|<string>"        
+          identifier: "sulphate-concentration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/sulphateConcentration/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`SO4_mg.l`} mg/l|<string>"
+          numericValue: "`SO4_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@23":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/waterTemperature/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Water temperature observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "waterTemperature-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/water-temperature"
+          "@type": "ObservableProperty"
+          label: "Water Temperature|<string>"        
+          identifier: "water-temperature|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/waterTemperature/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`Watertemperatur_.C`} °C|<string>"
+          numericValue: "`Watertemperatur_.C`|<float>"
+          unit: "DEG_C"
+      "@24":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/totalNitrogenBound/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Total Nitrogen bound observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "totalNitrogenBound-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/TNb-total-nitrogen-bound"
+          "@type": "ObservableProperty"
+          label: "TNb (Total Nitrogen Bound)|<string>"        
+          identifier: "TNb-total-nitrogen-bound|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/totalNitrogenBound/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`TNb_mg.l`} mg/l|<string>"
+          numericValue: "`TNb_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@25":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/totalOrganicCarbon/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Total organic carbon observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "totalOrganicCarbon-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/total-organic-carbon"
+          "@type": "ObservableProperty"
+          label: "Total Organic Carbon|<string>"        
+          identifier: "total-organic-carbon|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/totalOrganicCarbon/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`TOC_mg.l`} mg/l|<string>"
+          numericValue: "`TOC_mg.l`|<float>"
+          unit: "MilliGM-PER-L"
+      "@26":
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/totalPhosphorous/{`ID`}-{`datetime`}"
+        "@type": "Observation"
+        label: "Total phosphorous observation for lake {`lake_name`} at {`datetime`}|<string>"
+        identifier: "totalPhosphorous-{`ID`}-{`datetime`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/total-phosphorus"
+          "@type": "ObservableProperty"
+          label: "Total Phosphorus|<string>"        
+          identifier: "total-phosphorus|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterquality/observation/totalPhosphorous/result/{`ID`}-{`datetime`}"
+          "@type": "Result"
+          label: "{`TP_mg.l`} mg/l|<string>"
+          numericValue: "`TP_mg.l`|<float>"
+          unit: "MilliGM-PER-L"

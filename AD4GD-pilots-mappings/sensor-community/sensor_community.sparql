@@ -28,11 +28,14 @@ PREFIX dwc-mbg: <http://mmisw.org/ont/ioos/marine_biogeography/>
 CONSTRUCT {
   ?obs_col_URI a sosa:ObservationCollection ;
   	rdfs:label ?obs_col_label ;
-	sosa:madeBySensor ?sensor_URI ;
-	sosa:hasFeatureOfInterest ?feature_URI ;
-	sosa:phenomenonTime ?timestamp_prop ; 
+    dct:identifier ?ident ;
+    sosa:madeBySensor ?sensor_URI ;
+    sosa:hasFeatureOfInterest ?feature_URI ;
+    sosa:phenomenonTime ?timestamp_prop ; 
   	sosa:resultTime ?timestamp_prop ;
-	sosa:usedProcedure ?procedure_URI ;	
+
+	
+		
 	sosa:hasMember ?obs_URI1 ;
 	sosa:hasMember ?obs_URI2 ;
 	sosa:hasMember ?obs_URI3 ;
@@ -42,116 +45,153 @@ CONSTRUCT {
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {		
-	BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/',STR(?timestamp),'/',STR(?sensor_id))) AS ?obs_col_URI)
+	BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observationCollection/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_col_URI)
 	BIND (STRLANG(CONCAT('Sensor community observation collection on: ', STR(?timestamp), ' for sensor: ', STR(?sensor_id),' at location id: ',STR(?location)),"en") AS ?obs_col_label)	    	 
-	BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/sensor/',STR(?sensor_id))) AS ?sensor_URI)
-	BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/location/',STR(?location))) AS ?feature_URI)
-	BIND (xsd:dateTime(?timestamp) AS ?timestamp_prop)	  
-	BIND (URI('http://w3id.org/ad4gd/airquality/sensorcommunity/procedure/sensing') AS ?procedure_URI)
+    BIND (CONCAT(STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location)) AS ?ident)	
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/sensor/',STR(?sensor_id))) AS ?sensor_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/location/',STR(?location))) AS ?feature_URI)
+    BIND (xsd:dateTime(?timestamp) AS ?timestamp_prop)	  			
 	
-	BIND (IF(BOUND(?P1), URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pm1')), ?nothing) AS ?obs_URI1)
-  BIND (IF(BOUND(?P2), URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pm2')), ?nothing) AS ?obs_URI2)
-  BIND (IF(BOUND(?pressure), URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pressure')), ?nothing) AS ?obs_URI3)
-  BIND (IF(BOUND(?pressure_sealevel), URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pressure_sealevel')), ?nothing) AS ?obs_URI4)
-  BIND (IF(BOUND(?temperature), URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/temperature')), ?nothing) AS ?obs_URI5)
-  BIND (IF(BOUND(?humidity), URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/humidity')), ?nothing) AS ?obs_URI6)
+	BIND (IF(BOUND(?P1), URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm1.0/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))), ?nothing) AS ?obs_URI1)
+    BIND (IF(BOUND(?P2), URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm2.5/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))), ?nothing) AS ?obs_URI2)    
+    BIND (IF(BOUND(?pressure), URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))), ?nothing) AS ?obs_URI3)
+    BIND (IF(BOUND(?pressure_sealevel), URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure_sealevel/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))), ?nothing) AS ?obs_URI4)
+    BIND (IF(BOUND(?temperature), URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/temperature/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))), ?nothing) AS ?obs_URI5)
+    BIND (IF(BOUND(?humidity), URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/humidity/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))), ?nothing) AS ?obs_URI6)
+    BIND (IF(BOUND(?P0), URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm10/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))), ?nothing) AS ?obs_URI7)    
 }
 
 
 ### observation 1
 CONSTRUCT {
   ?obs_URI a sosa:Observation ;
-  	rdfs:label ?obs_label ;  	
+  	rdfs:label ?obs_label ;
+    dct:identifier ?ident ;
   	sosa:observedProperty ?property_URI ;
   	sosa:hasResult ?obs_result_URI ;
+    sosa:usedProcedure ?proc_URI ;
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
-	FILTER (BOUND(?P1))
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pm1')) AS ?obs_URI)
-  BIND (STRLANG(CONCAT('Sensor community observation collection for sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: PM1'),"en") AS ?obs_label)	    	 
-  BIND (URI('http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6002') AS ?property_URI)
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pm1/result')) AS ?obs_result_URI)
+    FILTER (BOUND(?P1))
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm1.0/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_URI)
+    BIND (STRLANG(CONCAT('Sensor community observation on: ',STR(?timestamp),' for sensor: ',STR(?sensor_id),' at location id: ',STR(?location),' for property: PM1.0'),"en") AS ?obs_label)	    	 
+    BIND (CONCAT('pm1.0-',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location)) AS ?ident)	
+    BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pm1.0') AS ?property_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm1.0/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)
+    BIND (URI('https://w3id.org/ad4gd/air-quality/procedures/pm-humidity-correction') AS ?proc_URI)  
 }
 
 ### observation 2
 CONSTRUCT {
   ?obs_URI a sosa:Observation ;
-  	rdfs:label ?obs_label ;  	
+  	rdfs:label ?obs_label ; 
+    dct:identifier ?ident ; 	
   	sosa:observedProperty ?property_URI ;
   	sosa:hasResult ?obs_result_URI ;
+    sosa:usedProcedure ?proc_URI ;
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
-	FILTER (BOUND(?P2))
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pm2')) AS ?obs_URI)
-  BIND (STRLANG(CONCAT('Sensor community observation collection for sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: PM2'),"en") AS ?obs_label)	    	 
-  BIND (URI('http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001') AS ?property_URI)
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pm2/result')) AS ?obs_result_URI)
+    FILTER (BOUND(?P2))
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm2.5/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_URI)
+    BIND (STRLANG(CONCAT('Sensor community observation on: ',STR(?timestamp),' for sensor: ',STR(?sensor_id),' at location id: ',STR(?location),' for property: PM2.5'),"en") AS ?obs_label)
+    BIND (CONCAT('pm2.5-',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location)) AS ?ident)	
+    BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pm2.5') AS ?property_URI)    
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm2.5/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)
+    BIND (URI('https://w3id.org/ad4gd/air-quality/procedures/pm-humidity-correction') AS ?proc_URI)  
 }
 
 ### observation 3
 CONSTRUCT {
   ?obs_URI a sosa:Observation ;
-  	rdfs:label ?obs_label ;  	
+  	rdfs:label ?obs_label ;  
+    dct:identifier ?ident ; 		
   	sosa:observedProperty ?property_URI ;
   	sosa:hasResult ?obs_result_URI ;
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
 	FILTER (BOUND(?pressure))
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pressure')) AS ?obs_URI)
-  BIND (STRLANG(CONCAT('Sensor community observation collection for sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: pressure'),"en") AS ?obs_label)	    	 
-  BIND (URI('http://vocab.nerc.ac.uk/collection/P07/current/CFSN0015') AS ?property_URI)
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pressure/result')) AS ?obs_result_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_URI)    
+    BIND (STRLANG(CONCAT('Sensor community observation on: ',STR(?timestamp),' for sensor: ',STR(?sensor_id),' at location id: ',STR(?location),' for property: pressure'),"en") AS ?obs_label)    
+    BIND (CONCAT('pressure-',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location)) AS ?ident)
+    BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pressure') AS ?property_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)    
 }
 
 ### observation 4
 CONSTRUCT {
   ?obs_URI a sosa:Observation ;
   	rdfs:label ?obs_label ;  	
+    dct:identifier ?ident ;
   	sosa:observedProperty ?property_URI ;
   	sosa:hasResult ?obs_result_URI ;
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
 	FILTER (BOUND(?pressure_sealevel))
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pressure_sealevel')) AS ?obs_URI)
-  BIND (STRLANG(CONCAT('Sensor community observation collection for sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: pressure_sealevel'),"en") AS ?obs_label)	    	 
-  BIND (URI('http://vocab.nerc.ac.uk/collection/P07/current/Q9ZYSAOC') AS ?property_URI)
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pressure_sealevel/result')) AS ?obs_result_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure_sealevel/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_URI)    
+    BIND (STRLANG(CONCAT('Sensor community observation on: ',STR(?timestamp),' for sensor: ',STR(?sensor_id),' at location id: ',STR(?location),' for property: pressure_sealevel'),"en") AS ?obs_label)    
+    BIND (CONCAT('pressure_sealevel-',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location)) AS ?ident)
+    BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pressure') AS ?property_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure_sealevel/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)      
 }
 
 ### observation 5
 CONSTRUCT {
   ?obs_URI a sosa:Observation ;
-  	rdfs:label ?obs_label ;  	
+  	rdfs:label ?obs_label ;  
+    dct:identifier ?ident ;	
   	sosa:observedProperty ?property_URI ;
   	sosa:hasResult ?obs_result_URI ;
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
 	FILTER (BOUND(?temperature))
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/temperature')) AS ?obs_URI)
-  BIND (STRLANG(CONCAT('Sensor community observation collection for sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: temperature'),"en") AS ?obs_label)	    	 
-  BIND (URI('http://dd.eionet.europa.eu/vocabulary/aq/meteoparameter/54') AS ?property_URI)
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/temperature/result')) AS ?obs_result_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/temperature/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_URI)    
+    BIND (STRLANG(CONCAT('Sensor community observation on: ',STR(?timestamp),' for sensor: ',STR(?sensor_id),' at location id: ',STR(?location),' for property: temperature'),"en") AS ?obs_label)    
+    BIND (CONCAT('temperature-',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location)) AS ?ident)
+    BIND (URI('https://w3id.org/ad4gd/air-quality/properties/temperature') AS ?property_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/temperature/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)        
 }
 
 ### observation 6
 CONSTRUCT {
   ?obs_URI a sosa:Observation ;
-  	rdfs:label ?obs_label ;  	
+  	rdfs:label ?obs_label ;  
+    dct:identifier ?ident ;	
   	sosa:observedProperty ?property_URI ;
   	sosa:hasResult ?obs_result_URI ;
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
 	FILTER (BOUND(?humidity))
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/humidity')) AS ?obs_URI)
-  BIND (STRLANG(CONCAT('Sensor community observation collection for sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: humidity'),"en") AS ?obs_label)	    	 
-  BIND (URI('http://dd.eionet.europa.eu/vocabulary/aq/meteoparameter/55') AS ?property_URI)
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/humidity/result')) AS ?obs_result_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/humidity/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_URI)    
+    BIND (STRLANG(CONCAT('Sensor community observation on: ',STR(?timestamp),' for sensor: ',STR(?sensor_id),' at location id: ',STR(?location),' for property: humidity'),"en") AS ?obs_label)    
+    BIND (CONCAT('humidity-',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location)) AS ?ident)
+    BIND (URI('https://w3id.org/ad4gd/air-quality/properties/humidity') AS ?property_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/humidity/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)          
+}
+
+### observation 7
+CONSTRUCT {
+  ?obs_URI a sosa:Observation ;
+  	rdfs:label ?obs_label ;  
+    dct:identifier ?ident ;	
+  	sosa:observedProperty ?property_URI ;
+  	sosa:hasResult ?obs_result_URI ;
+    sosa:usedProcedure ?proc_URI ;
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {
+	FILTER (BOUND(?P0))
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm10/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_URI)        
+    BIND (STRLANG(CONCAT('Sensor community observation on: ',STR(?timestamp),' for sensor: ',STR(?sensor_id),' at location id: ',STR(?location),' for property: pm10'),"en") AS ?obs_label)    
+    BIND (CONCAT('pm10-',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location)) AS ?ident)
+    BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pm10') AS ?property_URI)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm10/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)          
+    BIND (URI('https://w3id.org/ad4gd/air-quality/procedures/pm-humidity-correction') AS ?proc_URI)  
 }
 
 
@@ -159,99 +199,142 @@ WHERE {
 CONSTRUCT {
   ?feature_URI a sosa:FeatureOfInterest, wgs84:Point , dct:Location ;
   	rdfs:label ?feature_label ;
+    dct:identifier ?ident ;	
   	wgs84:lat ?lat ;
   	wgs84:long ?lon ;
     wgs84:alt ?altitude ;
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/location/',STR(?location))) AS ?feature_URI)
-  BIND (STRLANG(CONCAT('Feature of interest: location: ', STR(?location)),"en") AS ?feature_label)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/location/',STR(?location))) AS ?feature_URI)    
+    BIND (STRLANG(CONCAT('Feature of interest with location id:', STR(?location)),"en") AS ?feature_label)
+    BIND (CONCAT('location-',STR(?location)) AS ?ident)
 }
 
 ### observed property pm1
-#CONSTRUCT {
-#  ?property_URI a sosa:ObservableProperty ;
-#  	rdfs:label ?property_label ;
-#}  	
-#FROM <file:pereira_comcom_id31_20220321_v2.csv> 
-#WHERE {
-#  FILTER (BOUND(?P1))
-#  BIND (URI('http://w3id.org/ad4gd/model/variables/pm10') AS ?property_URI)
-#  BIND (STRLANG('PM1.0: particles <1 μm in size',"en") AS ?property_label)
-#}
+CONSTRUCT {
+  ?property_URI a sosa:ObservableProperty ;
+  	rdfs:label ?property_label ;
+    dct:identifier ?ident ;	
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {
+    FILTER (BOUND(?P1))
+    BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pm1.0') AS ?property_URI)
+    BIND (STRLANG('Particulate matter < 1 µm',"en") AS ?property_label)
+    BIND ('ad4gd-pm1.0' AS ?ident)
+}
 
 ### observed property pm25
-# CONSTRUCT {
-#   ?property_URI a sosa:ObservableProperty ;
-#   	rdfs:label ?property_label ;
-# }  	
-# FROM <file:pereira_comcom_id31_20220321_v2.csv> 
-# WHERE {
-#   FILTER (BOUND(?P2))
-#   BIND (URI('http://w3id.org/ad4gd/model/variables/pm25') AS ?property_URI)
-#   BIND (STRLANG('PM2.5: particles <2.5 μm in size.',"en") AS ?property_label)
-# }
+ CONSTRUCT {
+   ?property_URI a sosa:ObservableProperty ;
+   	rdfs:label ?property_label ;
+    dct:identifier ?ident ;	
+ }  	
+ FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+ WHERE {
+   FILTER (BOUND(?P2))
+   BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pm2.5') AS ?property_URI)
+   BIND (STRLANG('Particulate matter < 2.5 µm',"en") AS ?property_label)
+   BIND ('ad4gd-pm2.5' AS ?ident)
+ }
 
 ### observed property pressure
-# CONSTRUCT {
-#     ?property_URI a sosa:ObservableProperty ;
-#   	rdfs:label ?property_label ;
-# }  	
-# FROM <file:pereira_comcom_id31_20220321_v2.csv> 
-# WHERE {
-#     FILTER (BOUND(?pressure))
-#     BIND (URI('http://w3id.org/ad4gd/model/variables/pressure') AS ?property_URI)
-#     BIND (STRLANG('pressure',"en") AS ?property_label)
-# }
+ CONSTRUCT {
+     ?property_URI a sosa:ObservableProperty ;
+   	rdfs:label ?property_label ;
+    dct:identifier ?ident ;	
+ }  	
+ FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+ WHERE {
+     FILTER (BOUND(?pressure))
+     BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pressure') AS ?property_URI)
+     BIND (STRLANG('Air Pressure',"en") AS ?property_label)
+     BIND ('ad4gd-pressure' AS ?ident)
+ }
 
 ### observed property pressure_sealevel
-# CONSTRUCT {
-#     ?property_URI a sosa:ObservableProperty ;
-#   	rdfs:label ?property_label ;
-# }  	
-# FROM <file:pereira_comcom_id31_20220321_v2.csv> 
-# WHERE {
-#     FILTER (BOUND(?pressure_sealevel))
-#     BIND (URI('http://w3id.org/ad4gd/model/variables/pressureSealevel') AS ?property_URI)
-#     BIND (STRLANG('pressure sealevel',"en") AS ?property_label)
-# }
+ CONSTRUCT {
+     ?property_URI a sosa:ObservableProperty ;
+   	rdfs:label ?property_label ;
+    dct:identifier ?ident ;	
+ }  	
+ FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+ WHERE {
+     FILTER (BOUND(?pressure_sealevel))
+     BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pressureSeaLevel') AS ?property_URI) ## no exissts
+     BIND (STRLANG('Air Pressure at sea level',"en") AS ?property_label)
+     BIND ('ad4gd-pressure-sealevel' AS ?ident)
+ }
 
 ### observed property temperature
-# CONSTRUCT {
-#   ?property_URI a sosa:ObservableProperty ;
-#   	rdfs:label ?property_label ;
-# }  	
-# FROM <file:pereira_comcom_id31_20220321_v2.csv> 
-# WHERE {
-#     FILTER (BOUND(?temperature))
-#     BIND (URI('http://w3id.org/ad4gd/model/variables/temperature') AS ?property_URI)
-#     BIND (STRLANG('temperature',"en") AS ?property_label)
-# }
+ CONSTRUCT {
+   ?property_URI a sosa:ObservableProperty ;
+   	rdfs:label ?property_label ;
+    dct:identifier ?ident ;	
+ }  	
+ FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+ WHERE {
+     FILTER (BOUND(?temperature))
+     BIND (URI('https://w3id.org/ad4gd/air-quality/properties/temperature') AS ?property_URI)
+     BIND (STRLANG('Air Temperature',"en") AS ?property_label)
+     BIND ('ad4gd-temperature' AS ?ident)
+ }
 
 ### observed property humidity
-# CONSTRUCT {
-#   ?property_URI a sosa:ObservableProperty ;
-#   	rdfs:label ?property_label ;
-# }  	
-# FROM <file:pereira_comcom_id31_20220321_v2.csv> 
-# WHERE {
-#     FILTER (BOUND(?humidity))
-#     BIND (URI('http://w3id.org/ad4gd/model/variables/humidity') AS ?property_URI)
-#     BIND (STRLANG('humidity',"en") AS ?property_label)
-# }
+ CONSTRUCT {
+   ?property_URI a sosa:ObservableProperty ;
+   	rdfs:label ?property_label ;
+    dct:identifier ?ident ;	
+ }  	
+ FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+ WHERE {
+     FILTER (BOUND(?humidity))
+     BIND (URI('https://w3id.org/ad4gd/air-quality/properties/humidity') AS ?property_URI)
+     BIND (STRLANG('Air Humidity',"en") AS ?property_label)
+     BIND ('ad4gd-humidity' AS ?ident)
+ }
+
+### observed property pm10
+ CONSTRUCT {
+   ?property_URI a sosa:ObservableProperty ;
+   	rdfs:label ?property_label ;
+    dct:identifier ?ident ;	
+ }  	
+ FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+ WHERE {
+     FILTER (BOUND(?P0))
+     BIND (URI('https://w3id.org/ad4gd/air-quality/properties/pm10') AS ?property_URI)
+     BIND (STRLANG('Particulate matter < 10 µm',"en") AS ?property_label)
+     BIND ('ad4gd-pm10' AS ?ident)
+ } 
 
 ### simulation sensor
 CONSTRUCT {
   ?sensor_URI a sosa:Sensor ;
-  rdfs:label ?sensor_label ;
-  dct:type ?sensor_type ;
+    rdfs:label ?sensor_label ;
+    dct:identifier ?ident ;
+    dct:type ?sensor_type_url ;  
+}  	
+FROM <file:pereira_comcom_id31_20220321_v2.csv> 
+WHERE {    
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/sensor/',STR(?sensor_id))) AS ?sensor_URI)
+    BIND (STRLANG(CONCAT('Sensor: ',STR(?sensor_id),' type: ',STR(?sensor_type)),"en") AS ?sensor_label)
+    BIND (CONCAT('sensor-',STR(?sensor_id)) AS ?ident)
+    BIND (URI(CONCAT('https://w3id.org/ad4gd/air-quality/sensors/',STR(?sensor_type))) AS ?sensor_type_url)
+}
+
+### simulation sensor type
+CONSTRUCT {
+  ?sensor_type_url a skos:Concept ;
+    rdfs:label ?label ;        
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
-  BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/sensor/',STR(?sensor_id))) AS ?sensor_URI)
-  BIND (STRLANG(CONCAT('Sensor: ',STR(?sensor_id),' type: ',STR(?sensor_type)),"en") AS ?sensor_label)
+    BIND (URI(CONCAT('https://w3id.org/ad4gd/air-quality/sensors/',STR(?sensor_type))) AS ?sensor_type_url)
+    BIND (STR(?sensor_type) AS ?label)  
 }
+
 
 ###  procedure 
 CONSTRUCT {
@@ -260,28 +343,28 @@ CONSTRUCT {
 }  	
 FROM <file:pereira_comcom_id31_20220321_v2.csv> 
 WHERE {
-  BIND (URI('http://w3id.org/ad4gd/airquality/sensorcommunity/procedure/sensing') AS ?location_URI)
-  BIND (STRLANG('Sensing measurements',"en") AS ?procedure_label)
+  BIND (URI('https://w3id.org/ad4gd/air-quality/procedures/pm-humidity-correction') AS ?location_URI)
+  BIND (STRLANG('Humidity correction for Particulate Matter',"en") AS ?procedure_label)
 }
 
 ### observation result 1
 CONSTRUCT {
-  ?results_URI a sosa:Result ;
+  ?obs_result_URI a sosa:Result ;
   	rdfs:label ?result_label ;
 	qudt:numericValue ?P1 ;
 	qudt:unit ?uom ;
 }  	
 FROM <file:5865900_wasserstand_mw_21_12_2013.csv> 
 WHERE {
-    FILTER (BOUND(?P1))
-    BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pm1/result')) AS ?results_URI)
-    BIND (STRLANG(CONCAT('Result for observation of sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: PM1'),"en") AS ?result_label)	    	 
+    FILTER (BOUND(?P1))    
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm1.0/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)
+    BIND (STRLANG(CONCAT(STR(?P1),' ug/m3'),"en") AS ?result_label)	    	 
     BIND (URI('http://qudt.org/vocab/unit/MicroGM-PER-M3') AS ?uom)
 }
 
 ### observation result 2
 CONSTRUCT {
-  ?results_URI a sosa:Result ;
+  ?obs_result_URI a sosa:Result ;
   	rdfs:label ?result_label ;
 	qudt:numericValue ?P2 ;
 	qudt:unit ?uom ;
@@ -289,14 +372,14 @@ CONSTRUCT {
 FROM <file:5865900_wasserstand_mw_21_12_2013.csv> 
 WHERE {
     FILTER (BOUND(?P2))
-    BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pm2/result')) AS ?results_URI)
-    BIND (STRLANG(CONCAT('Result for observation of sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: PM2'),"en") AS ?result_label)	    	 
-    BIND (URI('http://qudt.org/vocab/unit/MicroGM-PER-M3') AS ?uom)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm2.5/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)
+    BIND (STRLANG(CONCAT(STR(?P2),' ug/m3'),"en") AS ?result_label)	    	 
+    BIND (URI('http://qudt.org/vocab/unit/MicroGM-PER-M3') AS ?uom)    
 }
 
 ### observation result 3
 CONSTRUCT {
-  ?results_URI a sosa:Result ;
+  ?obs_result_URI a sosa:Result ;
   	rdfs:label ?result_label ;
 	qudt:numericValue ?pressure ;
 	qudt:unit ?uom ;
@@ -304,14 +387,14 @@ CONSTRUCT {
 FROM <file:5865900_wasserstand_mw_21_12_2013.csv> 
 WHERE {
     FILTER (BOUND(?pressure))
-    BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pressure/result')) AS ?results_URI)
-    BIND (STRLANG(CONCAT('Result for observation of sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: pressure'),"en") AS ?result_label)	    	 
-    BIND (URI('http://qudt.org/vocab/unit/HectoPA') AS ?uom)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)
+    BIND (STRLANG(CONCAT(STR(?pressure),' Pa'),"en") AS ?result_label)	    	 
+    BIND (URI('http://qudt.org/vocab/unit/PA') AS ?uom)     
 }
 
 ### observation result 4
 CONSTRUCT {
-  ?results_URI a sosa:Result ;
+  ?obs_result_URI a sosa:Result ;
   	rdfs:label ?result_label ;
 	qudt:numericValue ?pressure_sealevel ;
 	qudt:unit ?uom ;
@@ -319,14 +402,14 @@ CONSTRUCT {
 FROM <file:5865900_wasserstand_mw_21_12_2013.csv> 
 WHERE {
     FILTER (BOUND(?pressure_sealevel))
-    BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/pressure_sealevel/result')) AS ?results_URI)
-    BIND (STRLANG(CONCAT('Result for observation of sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: pressure_sealevel'),"en") AS ?result_label)	    	 
-    BIND (URI('http://qudt.org/vocab/unit/HectoPA') AS ?uom)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure_sealevel/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)
+    BIND (STRLANG(CONCAT(STR(?pressure_sealevel),' Pa'),"en") AS ?result_label)	    	 
+    BIND (URI('http://qudt.org/vocab/unit/PA') AS ?uom)         
 }
 
 ### observation result 5
 CONSTRUCT {
-  ?results_URI a sosa:Result ;
+  ?obs_result_URI a sosa:Result ;
   	rdfs:label ?result_label ;
 	qudt:numericValue ?temperature ;
 	qudt:unit ?uom ;
@@ -334,14 +417,14 @@ CONSTRUCT {
 FROM <file:5865900_wasserstand_mw_21_12_2013.csv> 
 WHERE {
     FILTER (BOUND(?temperature))
-    BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/temperature/result')) AS ?results_URI)
-    BIND (STRLANG(CONCAT('Result for observation of sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: temperature'),"en") AS ?result_label)	    	 
-    BIND (URI('http://qudt.org/vocab/unit/DEG_C') AS ?uom)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/temperature/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)
+    BIND (STRLANG(CONCAT(STR(?temperature),' °C'),"en") AS ?result_label)	    	 
+    BIND (URI('http://qudt.org/vocab/unit/DEG_C') AS ?uom)             
 }
 
 ### observation result 6
 CONSTRUCT {
-  ?results_URI a sosa:Result ;
+  ?obs_result_URI a sosa:Result ;
   	rdfs:label ?result_label ;
 	qudt:numericValue ?humidity ;
 	qudt:unit ?uom ;
@@ -349,7 +432,22 @@ CONSTRUCT {
 FROM <file:5865900_wasserstand_mw_21_12_2013.csv> 
 WHERE {
     FILTER (BOUND(?humidity))
-    BIND (URI(CONCAT('http://w3id.org/ad4gd/airquality/sensorcommunity/observation/',STR(?timestamp),'/',STR(?sensor_id),'/humidity/result')) AS ?results_URI)
-    BIND (STRLANG(CONCAT('Result for observation of sensor: ',STR(?sensor_id),' location: ',STR(?location),' time: ',STR(?timestamp),' property: humidity'),"en") AS ?result_label)	    	 
-    BIND (URI('http://qudt.org/vocab/unit/PERCENT_RH') AS ?uom)
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/humidity/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)
+    BIND (STRLANG(CONCAT(STR(?humidity),' %RH'),"en") AS ?result_label)	    	 
+    BIND (URI('http://qudt.org/vocab/unit/PERCENT_RH') AS ?uom)                 
+}
+
+### observation result 7
+CONSTRUCT {
+  ?obs_result_URI a sosa:Result ;
+  	rdfs:label ?result_label ;
+	qudt:numericValue ?P0 ;
+	qudt:unit ?uom ;
+}  	
+FROM <file:5865900_wasserstand_mw_21_12_2013.csv> 
+WHERE {
+    FILTER (BOUND(?P0))
+    BIND (URI(CONCAT('http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm10/result/',STR(?timestamp),'-',STR(?sensor_id),'-',STR(?location))) AS ?obs_result_URI)              
+    BIND (STRLANG(CONCAT(STR(?P0),' ug/m3'),"en") AS ?result_label)	    	 
+    BIND (URI('http://qudt.org/vocab/unit/MicroGM-PER-M3') AS ?uom)                 
 }

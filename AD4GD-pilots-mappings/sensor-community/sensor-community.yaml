@@ -1,0 +1,129 @@
+--- # Configuration for general mapping solution lakes Berlin
+
+
+cfg:  
+  TEMPLATE_ID: "pilot3/airquality/sensorcommunity/observationCollection/{`timestamp`}-{`sensor_id`}-{`location`}"
+  CONTEXT: ["https://w3id.org/ad4gd/gdim-context.jsonld",            
+            M: "http://qudt.org/vocab/unit/M",
+            MilliGM-PER-L" : "http://qudt.org/vocab/unit/MilliGM-PER-L",
+            MilliL-PER-L : "http://qudt.org/vocab/unit/MilliL-PER-L",
+            MicroGM-PER-L : "http://qudt.org/vocab/unit/MicroGM-PER-L",
+            MicroS-PER-CentiM : "http://qudt.org/vocab/unit/MicroS-PER-CentiM",
+            MicroGM-PER-M3 : "https://qudt.org/vocab/unit/MicroGM-PER-M3",
+            UNITLESS : "http://qudt.org/vocab/unit/UNITLESS",
+            MilliV : "http://qudt.org/vocab/unit/MilliV",
+            PA : "http://qudt.org/vocab/unit/PA",
+            DEG_C : "http://qudt.org/vocab/unit/DEG_C",
+            PERCENT_RH : "http://qudt.org/vocab/unit/PERCENT_RH",
+            wktLiteral: "http://www.opengis.net/ont/geosparql#wktLiteral"]
+  MAIN TYPE:
+    "@type": ["ObservationCollection"]
+    label: "Sensor community observation collection on: {`timestamp`} for sensor: {`sensor_id`} at location id: {`location`}|<string>"    
+    identifier: "{`timestamp`}-{`sensor_id`}-{`location`}|<string>"
+    madeBySensor: 
+      uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/sensor/{`sensor_id`}"      
+      "@type": "Sensor"      
+      label: "Sensor: {`sensor_id`} type: {`sensor_type`}|<string>"
+      identifier: "sensor-{`sensor_id`}|<string>"
+      resourceType: 
+        uri: "https://w3id.org/ad4gd/air-quality/sensors/{`sensor_type`}"      
+        "@type": "Concept"
+        label: "SDS011|<string>"      
+    hasFeatureOfInterest: 
+      uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/location/{`location`}"
+      "@type": ["FeatureOfInterest", "Point", "Location"]
+      label: "Feature of interest with location id: {`location`}|<string>"
+      identifier: "location-{`location`}|<string>"
+      lat: "`lat`|<float>"
+      long: "`lon`|<float>"       
+    phenomenonTime: "`timestamp`|<dateTime>"
+    resultTime: "`timestamp`|<dateTime>"              
+    hasMember:            
+      "@1":
+        uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm1.0/{`timestamp`}-{`sensor_id`}-{`location`}"
+        "@type": "Observation"
+        label: "Sensor community observation on: {`timestamp`} for sensor: {`sensor_id`} at location id: {`location`} for property: PM1.0|<string>"        
+        identifier: "pm1.0-{`timestamp`}-{`sensor_id`}-{`location`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/air-quality/properties/pm1.0"
+          "@type": "ObservableProperty"
+          label: "Particulate matter < 1 µm|<string>"        
+          identifier: "ad4gd-pm1.0|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm1.0/result/{`timestamp`}-{`sensor_id`}-{`location`}"
+          "@type": "Result"
+          label: "{`P1`} ug/m3|<string>"
+          numericValue: "`P1`|<float>"
+          unit: "MicroGM-PER-M3"
+        usedProcedure: 
+          uri: "https://w3id.org/ad4gd/air-quality/procedures/pm-humidity-correction"
+          "@type": ["Procedure"]
+          label: "Humidity correction for Particulate Matter|<string>"                  
+      "@2":
+        uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm2.5/{`timestamp`}-{`sensor_id`}-{`location`}"
+        "@type": "Observation"
+        label: "Sensor community observation on: {`timestamp`} for sensor: {`sensor_id`} at location id: {`location`} for property: PM2.5|<string>"        
+        identifier: "pm2.5-{`timestamp`}-{`sensor_id`}-{`location`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/air-quality/properties/pm2.5"
+          "@type": "ObservableProperty"
+          label: "Particulate matter < 2.5 µm|<string>"        
+          identifier: "ad4gd-pm2.5|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pm2.5/result/{`timestamp`}-{`sensor_id`}-{`location`}"
+          "@type": "Result"
+          label: "{`P2`} ug/m3|<string>"
+          numericValue: "`P2`|<float>"
+          unit: "MicroGM-PER-M3"
+        usedProcedure: 
+          uri: "https://w3id.org/ad4gd/air-quality/procedures/pm-humidity-correction"
+          "@type": ["Procedure"]
+          label: "Humidity correction for Particulate Matter|<string>" 
+      "@3":
+        uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure/{`timestamp`}-{`sensor_id`}-{`location`}"
+        "@type": "Observation"
+        label: "Sensor community observation on: {`timestamp`} for sensor: {`sensor_id`} at location id: {`location`} for property: pressure|<string>"        
+        identifier: "pressure-{`timestamp`}-{`sensor_id`}-{`location`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/air-quality/properties/pressure"
+          "@type": "ObservableProperty"
+          label: "Air Pressure|<string>"        
+          identifier: "ad4gd-pressure|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/pressure/result/{`timestamp`}-{`sensor_id`}-{`location`}"
+          "@type": "Result"
+          label: "{`pressure`} Pa|<string>"
+          numericValue: "`pressure`|<float>"
+          unit: "PA"        
+      "@4":
+        uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/temperature/{`timestamp`}-{`sensor_id`}-{`location`}"
+        "@type": "Observation"
+        label: "Sensor community observation on: {`timestamp`} for sensor: {`sensor_id`} at location id: {`location`} for property: temperature|<string>"        
+        identifier: "temperature-{`timestamp`}-{`sensor_id`}-{`location`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/air-quality/properties/temperature"
+          "@type": "ObservableProperty"
+          label: "Air Temperature|<string>"        
+          identifier: "ad4gd-temperature|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/temperature/result/{`timestamp`}-{`sensor_id`}-{`location`}"
+          "@type": "Result"
+          label: "{`temperature`} °C|<string>"
+          numericValue: "`temperature`|<float>"
+          unit: "DEG_C"
+      "@5":
+        uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/humidity/{`timestamp`}-{`sensor_id`}-{`location`}"
+        "@type": "Observation"
+        label: "Sensor community observation on: {`timestamp`} for sensor: {`sensor_id`} at location id: {`location`} for property: humidity|<string>"        
+        identifier: "humidity-{`timestamp`}-{`sensor_id`}-{`location`}|<string>"        
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/air-quality/properties/humidity"
+          "@type": "ObservableProperty"
+          label: "Air Humidity|<string>"        
+          identifier: "ad4gd-humidity|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot3/airquality/sensorcommunity/observation/humidity/result/{`timestamp`}-{`sensor_id`}-{`location`}"
+          "@type": "Result"
+          label: "{`humidity`} %RH|<string>"
+          numericValue: "`humidity`|<float>"
+          unit: "PERCENT_RH"
