@@ -1,6 +1,6 @@
 { 
     "@context": {
-			"numericValue": { "@id": "http://qudt.org/schema/qudt/numericValue" },
+		"numericValue": { "@id": "http://qudt.org/schema/qudt/numericValue" },
     	"hasMember": { "@id": "http://www.w3.org/ns/sosa/hasMember", "@type": "@id" },
     	"phenomenonTime": { "@id": "http://www.w3.org/ns/sosa/phenomenonTime", "@type": "http://www.w3.org/2001/XMLSchema#dateTime" },
     	"observedProperty": { "@id": "http://www.w3.org/ns/sosa/observedProperty", "@type": "@id" },
@@ -13,7 +13,7 @@
     	"identifier": { "@id": "http://purl.org/dc/terms/identifier" },
     	"hasFeatureOfInterest": { "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest", "@type": "@id" },
     	"resultTime": { "@id": "http://www.w3.org/ns/sosa/resultTime", "@type": "http://www.w3.org/2001/XMLSchema#dateTime" },
-    	"alt": { "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#alt" } },
+    	"alt": { "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#alt" } 
     },
     "@type": "http://www.w3.org/ns/sosa/ObservationCollection",
     "madeBySensor" :{
