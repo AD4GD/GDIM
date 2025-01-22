@@ -8,7 +8,7 @@
         "unit": { "@id": "http://qudt.org/schema/qudt/unit", "@type": "@id" },
         "hasResult": { "@id": "http://www.w3.org/ns/sosa/hasResult", "@type": "@id" },
         "label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label" },
-        "identifier": { "@id": "http://purl.org/dc/terms/identifier", "@type": "http://www.w3.org/2001/XMLSchema#integer"},
+        "identifier": { "@id": "http://purl.org/dc/terms/identifier" },
         "hasFeatureOfInterest": { "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest", "@type": "@id" },
         "resultTime": { "@id": "http://www.w3.org/ns/sosa/resultTime", "@type": "http://www.w3.org/2001/XMLSchema#dateTime" } 
     },
