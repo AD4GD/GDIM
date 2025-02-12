@@ -24,7 +24,7 @@
         "@type": "http://www.w3.org/ns/sosa/FeatureOfInterest"
     },
     "hasUltimateFeatureOfInterest" : {
-        "@type": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest"
+        "@type": "http://www.w3.org/ns/sosa/FeatureOfInterest"
     },
     "hasMember" : {
         "@type": "http://www.w3.org/ns/sosa/Observation",
