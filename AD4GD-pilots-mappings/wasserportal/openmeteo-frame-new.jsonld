@@ -12,6 +12,7 @@
     	"label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label" },
     	"identifier": { "@id": "http://purl.org/dc/terms/identifier" },
     	"hasFeatureOfInterest": { "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest", "@type": "@id" },
+        "hasUltimateFeatureOfInterest" : { "@id": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest", "@type": "@id" },
     	"resultTime": { "@id": "http://www.w3.org/ns/sosa/resultTime", "@type": "http://www.w3.org/2001/XMLSchema#dateTime" },
     	"alt": { "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#alt" } 
     },
