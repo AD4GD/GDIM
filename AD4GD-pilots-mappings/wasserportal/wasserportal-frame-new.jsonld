@@ -19,11 +19,11 @@
     "hasFeatureOfInterest" : {
         "@type": "http://www.w3.org/ns/sosa/FeatureOfInterest"
     },
-    "hasMember" : {
-        "@type": "http://www.w3.org/ns/sosa/Observation",
-        "observedProperty" : {
+    "observedProperty" : {
             "@type": "http://www.w3.org/ns/sosa/ObservableProperty"
-        },
+    },
+    "hasMember" : {
+        "@type": "http://www.w3.org/ns/sosa/Observation",        
         "hasResult": { 
             "@type": "http://www.w3.org/ns/sosa/Result"
         }
