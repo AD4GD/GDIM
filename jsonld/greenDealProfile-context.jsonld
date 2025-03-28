@@ -1296,7 +1296,8 @@
       "@id" : "https://smartdatamodels.org/dataModel.Weather/dewPoint"
     },
     "hasFeatureOfInterest" : {
-      "@id" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest"
+      "@id" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "@type" : "@id"
     },
     "NumberPerLength" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#NumberPerLength"
