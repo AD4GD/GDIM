@@ -345,6 +345,10 @@
       "@id" : "http://www.opengis.net/ont/geosparql#asWKT",
       "@type" : "http://www.opengis.net/ont/geosparql#wktLiteral"
     },
+    "asGeoJSON" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#asGeoJSON",
+      "@type" : "http://www.opengis.net/ont/geosparql#geoJSONLiteral"
+    },
     "measurementDeterminedBy" : {
       "@id" : "http://rs.tdwg.org/dwc/terms/measurementDeterminedBy"
     },
@@ -446,7 +450,12 @@
       "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium"
     },
     "sfWithin" : {
-      "@id" : "http://www.opengis.net/ont/geosparql#sfWithin"
+      "@id" : "http://www.opengis.net/ont/geosparql#sfWithin",
+      "@type" : "@id"
+    },
+    "hasBoundingBox" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#hasBoundingBox",
+      "@type" : "@id"
     },
     "non-ionic-surfactants" : {
       "@id" : "https://smartdatamodels.org/dataModel.WaterQuality/non-ionic-surfactants"
@@ -1829,6 +1838,9 @@
     },
     "isFeatureOfInterestOf" : {
       "@id" : "http://www.w3.org/ns/sosa/isFeatureOfInterestOf"
+    },
+    "FeatureCollection" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#FeatureCollection"
     }
   }
 }
