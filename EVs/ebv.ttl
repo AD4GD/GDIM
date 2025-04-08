@@ -3303,7 +3303,7 @@
 <http://w3id.org/ad4gd/ev/ebv/entity/totalAmount> a ns1:Property ;
     skos:prefLabel "Total Amount" .
 
-<http://w3id.org/ad4gd/ev/ebv/entity/totalPlantPiomass> a ns1:Property ;
+<http://w3id.org/ad4gd/ev/ebv/entity/totalPlantBiomass> a ns1:Property ;
     skos:prefLabel "Total Plant Biomass per Vegetation Strata" .
 
 <http://w3id.org/ad4gd/ev/ebv/entity/totalWetOrDryWeight> a ns1:Property ;
@@ -4870,7 +4870,7 @@
     skos:prefLabel "Ecosystem vertical profile of terrestrial vegetation total plant biomas" ;
     ns1:hasMatrix <http://w3id.org/ad4gd/ev/ebv/entity/terrestrial> ;
     ns1:hasObjectOfInterest <http://w3id.org/ad4gd/ev/ebv/entity/vegetation> ;
-    ns1:hasProperty <http://w3id.org/ad4gd/ev/ebv/entity/totalPlantPiomass> .
+    ns1:hasProperty <http://w3id.org/ad4gd/ev/ebv/entity/totalPlantBiomass> .
 
 <http://w3id.org/ad4gd/ev/ebv/ES_vert_TER_vegetation_VC> a <http://w3id.org/ad4gd/ev/EBV>,
         skos:Concept,
