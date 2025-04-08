@@ -1,0 +1,19 @@
+#+ summary: "Retrieves concept scheme from Rainbow"
+#+ description: "Retrieves all the concept schemes from Rainbow server. NOTE: make sure response content type is application/json"
+#+ endpoint: "https://defs-dev.opengis.net/fuseki-hosted/query"
+#+ tags: [ "rainbow" ]
+#+ method: "GET"
+#+ pagination: 100
+#+ transform: {
+#+   "id": "?cs",
+#+   "$anchor": "id",
+#+   "label": "?label"
+#+ }
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT DISTINCT ?cs ?label 
+WHERE { 
+  ?cs a skos:ConceptScheme ; 
+  skos:prefLabel ?label 
+} 
+ORDER BY ?label

@@ -1,0 +1,8 @@
+title: OGC Rainbow API generated via URL
+description: endpoints to query terms
+contact:
+  name: Raul Palma
+  url: https://orcid.org/0000-0003-4289-4922
+licence: https://creativecommons.org/licenses/by/4.0/
+queries:
+  - https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/rainbow/cs.rq
