@@ -17,7 +17,7 @@ SELECT DISTINCT ?c ?label
 WHERE { 
   ?c a skos:Concept ; 
   skos:prefLabel ?labellan ; 
-  skos:inScheme ?_cs 
+  skos:inScheme ?_cs_iri . 
   BIND (STR(?labellan)  AS ?label)
   FILTER ( LANGMATCHES(lang(?labellan),"en") || LANGMATCHES(lang(?labellan),"")) 
 }
