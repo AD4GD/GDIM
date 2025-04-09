@@ -2,6 +2,7 @@
 #+ description: "Retrieves all the concept schemes from Rainbow server. NOTE: make sure response content type is application/json"
 #+ endpoint: "https://defs-dev.opengis.net/fuseki-hosted/query"
 #+ tags: [ "rainbow" ]
+#+ endpoint_in_url: False
 #+ method: "GET"
 #+ pagination: 100
 #+ transform: {
