@@ -14,6 +14,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT DISTINCT ?cs ?label 
 WHERE { 
   ?cs a skos:ConceptScheme ; 
-  skos:prefLabel ?label 
+  skos:prefLabel ?labellan
+  BIND (STR(?labellan)  AS ?label) 
 } 
 ORDER BY ?label
