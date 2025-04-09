@@ -1,0 +1,35 @@
+--- # Configuration for general mapping solution lakes Berlin
+
+
+cfg:  
+  TEMPLATE_ID: "pilot1/lake/watertemperature/observationCollection/{`sensor_id`}-{`lake_id`}"
+  CONTEXT: ["https://w3id.org/ad4gd/gdim-context.jsonld",            
+            DEG_C: "http://qudt.org/vocab/unit/DEG_C"]
+  MAIN TYPE:
+    "@type": ["ObservationCollection"]
+    identifier: "watertemperature-{`sensor_id`}-{`lake_id`}|<string>"
+    label: "Water temperature observation collection for lake {`lake_name`} sensor {`sensor_id`} |<string>"    
+    madeBySensor: 
+      uri: "http://w3id.org/ad4gd/pilot1/lake/sensor/{`sensor_id`}"
+      "@type": "Sensor"
+      label: "Sensor {`sensor_id`} for lake {`lake_name`}|<string>"
+      identifier: "sensor-{`sensor_id`}|<string>"
+    hasFeatureOfInterest: "http://w3id.org/ad4gd/berlin/lake/{`lake_id`}"   
+    observedProperty: 
+        uri: "https://w3id.org/ad4gd/water-quality/properties/water-temperature"
+        "@type": "ObservableProperty"
+        label: "Water Temperature|<string>"        
+        identifier: "water-temperature|<string>"   
+    hasMember:                  
+      uri: "http://w3id.org/ad4gd/pilot1/lake/watertemperature/observation/celcius/{`sensor_id`}-{`Datum`}"
+      "@type": "Observation"
+      label: "Water temperature observation for lake {`lake_name`} at {`Datum`}|<string>"
+      identifier: "watertemperature-{`sensor_id`}-{`Datum`}|<string>"
+      phenomenonTime: "`Datum`|<dateTime>"
+      resultTime: "`Datum`|<dateTime>"      
+      hasResult: 
+        uri: "http://w3id.org/ad4gd/pilot1/lake/watertemperature/observation/celcius/result/{`sensor_id`}-{`Datum`}"
+        "@type": "Result"
+        label: "{`Tagesmittelwert`} Celsius|<string>"
+        numericValue: "`Tagesmittelwert`|<float>"
+        unit: "DEG_C"      

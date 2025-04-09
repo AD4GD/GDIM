@@ -1,0 +1,81 @@
+--- # Configuration for general mapping solution lakes Berlin
+
+
+cfg:  
+  TEMPLATE_ID: "pilot1/openmeteo/observationCollection/daily/{`latitude`}-{`longitude`}-{`elevation`}"
+  CONTEXT: ["https://w3id.org/ad4gd/gdim-context.jsonld",            
+            DEG_C: "http://qudt.org/vocab/unit/DEG_C",
+            MilliM: "http://qudt.org/vocab/unit/MilliM"]
+  MAIN TYPE:
+    "@type": ["ObservationCollection"]
+    identifier: "openmeteo-{`latitude`}-{`longitude`}-{`elevation`}|<string>"
+    label: "Open meteo observation collection daily for latitude {`latitude`} longitude {`longitude`} and elevation {`elevation`}|<string>"    
+    madeBySensor: 
+      uri: "http://w3id.org/ad4gd/pilot1/openmeteo/sensor/{`latitude`}-{`longitude`}-{`elevation`}"
+      "@type": "Sensor"
+      label: "Sensor at latitude {`latitude`} longitude {`longitude`} and elevation {`elevation`}|<string>"
+      identifier: "openmeteo-sensor-{`latitude`}-{`longitude`}-{`elevation`}|<string>"
+    hasUltimateFeatureOfInterest: "http://w3id.org/ad4gd/berlin/lake/{`lake_id`}"
+    hasFeatureOfInterest: 
+      uri: "http://w3id.org/ad4gd/pilot1/openmeteo/foi/{`latitude`}-{`longitude`}-{`elevation`}"
+      "@type": ["FeatureOfInterest", "Point", "Location"]
+      label: "Feature of interest with latitude {`latitude`} longitude {`longitude`} and elevation {`elevation`}|<string>"
+      identifier: "openmeteo-foi-{`latitude`}-{`longitude`}-{`elevation`}|<string>"
+      lat: "`latitude`|<float>"
+      long: "`longitude`|<float>"
+      alt: "`elevation`|<float>"       
+    hasMember:
+      "@1":              
+        uri: "http://w3id.org/ad4gd/pilot1/openmeteo/observation/daily/temperature2m/{`latitude`}-{`longitude`}-{`elevation`}-{`time`}"
+        "@type": "Observation"
+        label: "Open meteo temperature 2m daily mean observation on {`time`}|<string>"
+        identifier: "temperature2m-{`latitude`}-{`longitude`}-{`elevation`}-{`time`}|<string>"
+        phenomenonTime: "`time`|<dateTime>"
+        resultTime: "`time`|<dateTime>"
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/air-quality/properties/temperature"
+          "@type": "ObservableProperty"
+          label: "Air Temperature|<string>"        
+          identifier: "air-temperature|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/daily/temperature2m/result/{`latitude`}-{`longitude`}-{`elevation`}-{`time`}"
+          "@type": "Result"
+          label: "{`temperature_2m_mean_(AdegC)`} celcius|<string>"
+          numericValue: "`temperature_2m_mean_(AdegC)`|<float>"
+          unit: "DEG_C"   
+      "@2":   
+        uri: "http://w3id.org/ad4gd/pilot1/openmeteo/observation/daily/precipitation/{`latitude`}-{`longitude`}-{`elevation`}-{`time`}"
+        "@type": "Observation"
+        label: "Open meteo precipitation daily sum observation on {`time`}|<string>"
+        identifier: "precipitation-{`latitude`}-{`longitude`}-{`elevation`}-{`time`}|<string>"
+        phenomenonTime: "`time`|<dateTime>"
+        resultTime: "`time`|<dateTime>"
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/precipitation"
+          "@type": "ObservableProperty"
+          label: "Precipitation|<string>"        
+          identifier: "precipitation|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/daily/precipitation/result/{`latitude`}-{`longitude`}-{`elevation`}-{`time`}"
+          "@type": "Result"
+          label: "{`precipitation_sum_(mm)`} mm|<string>"
+          numericValue: "`precipitation_sum_(mm)`|<float>"
+          unit: "MilliM"
+      "@3":   
+        uri: "http://w3id.org/ad4gd/pilot1/openmeteo/observation/daily/evapotranspiration/{`latitude`}-{`longitude`}-{`elevation`}-{`time`}"
+        "@type": "Observation"
+        label: "Open meteo reference evapotranspiration daily observation on {`time`}|<string>"
+        identifier: "precipitation-{`latitude`}-{`longitude`}-{`elevation`}-{`time`}|<string>"
+        phenomenonTime: "`time`|<dateTime>"
+        resultTime: "`time`|<dateTime>"
+        observedProperty: 
+          uri: "https://w3id.org/ad4gd/water-quality/properties/reference-evapotranspiration"
+          "@type": "ObservableProperty"
+          label: "Reference-Evapotranspiration|<string>"        
+          identifier: "reference-evapotranspiration|<string>"
+        hasResult: 
+          uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/daily/evapotranspiration/result/{`latitude`}-{`longitude`}-{`elevation`}-{`time`}"
+          "@type": "Result"
+          label: "{`et0_fao_evapotranspiration_(mm)`} mm|<string>"
+          numericValue: "`et0_fao_evapotranspiration_(mm)`|<float>"
+          unit: "MilliM"

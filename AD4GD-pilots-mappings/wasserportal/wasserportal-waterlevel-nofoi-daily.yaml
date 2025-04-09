@@ -1,0 +1,35 @@
+--- # Configuration for general mapping solution lakes Berlin
+
+
+cfg:  
+  TEMPLATE_ID: "pilot1/lake/waterlevel/observationCollection/{`sensor_id`}-{`lake_id`}"
+  CONTEXT: ["https://w3id.org/ad4gd/gdim-context.jsonld",            
+            CentiM: "http://qudt.org/vocab/unit/CentiM"]
+  MAIN TYPE:
+    "@type": ["ObservationCollection"]
+    identifier: "waterlevel-{`sensor_id`}-{`lake_id`}|<string>"
+    label: "Water level observation collection for lake {`lake_name`} sensor {`sensor_id`} |<string>"    
+    madeBySensor: 
+      uri: "http://w3id.org/ad4gd/pilot1/lake/sensor/{`sensor_id`}"
+      "@type": "Sensor"
+      label: "Sensor {`sensor_id`} for lake {`lake_name`}|<string>"
+      identifier: "sensor-{`sensor_id`}|<string>"
+    hasFeatureOfInterest: "http://w3id.org/ad4gd/berlin/lake/{`lake_id`}" 
+    observedProperty: 
+        uri: "https://w3id.org/ad4gd/water-quality/properties/water-level-above-sea-level"
+        "@type": "ObservableProperty"
+        label: "Water level above sea level|<string>"        
+        identifier: "water-level-above-sea-level|<string>"     
+    hasMember:                  
+      uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/seaLevel/{`sensor_id`}-{`Datum`}"
+      "@type": "Observation"
+      label: "Water level above sea level observation for lake {`lake_name`} at {`Datum`}|<string>"
+      identifier: "seaLevel-{`sensor_id`}-{`Datum`}|<string>"
+      phenomenonTime: "`Datum`|<dateTime>"
+      resultTime: "`Datum`|<dateTime>"      
+      hasResult: 
+        uri: "http://w3id.org/ad4gd/pilot1/lake/waterlevel/observation/seaLevel/result/{`sensor_id`}-{`Datum`}"
+        "@type": "Result"
+        label: "{`Tagesmittelwert`} cm|<string>"
+        numericValue: "`Tagesmittelwert`|<float>"
+        unit: "CentiM"      

@@ -1,0 +1,223 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX iadopt: <https://w3id.org/iadopt/ont/> 
+PREFIX gdim: <https://w3id.org/ad4gd/model/> 
+PREFIX qudt: <http://qudt.org/schema/qudt/> 
+PREFIX ad4gd: <https://w3id.org/ad4gd/individual/> 
+PREFIX unit: <http://qudt.org/vocab/unit/> 
+PREFIX ebv: <http://w3id.org/ad4gd/ev/ebv/> 
+PREFIX base:  <http://w3id.org/ad4gd/ev/> 
+PREFIX ro: <http://purl.obolibrary.org/obo/> 
+
+
+### concept scheme
+CONSTRUCT {
+  base:ebv a skos:ConceptScheme, dcat:Dataset ;
+    dct:description "Essential Biodiversity Variables (EBVs) are defined as a minimum set of measurements, complementary to one another, that can capture major dimensions of biodiversity change. EBVs are organized in six classes (Genetic composition, Species populations, Species traits, Community composition, Ecosystem functioning, Ecosystem structure) and cover the three realms (Marine/coastal, Terrestrial and Freshwater)"@en ;
+    dct:identifier "EBV"^^rdfs:Literal ;
+    dct:title "Essential Biodiversity Variables - codelist scheme"@en ;
+    rdfs:isDefinedBy <https://geobon.org/ebvs> ;  
+    skos:definition "Essential Biodiversity Variables (EBVs) are defined as a minimum set of measurements, complementary to one another, that can capture major dimensions of biodiversity change. EBVs are organized in six classes (Genetic composition, Species populations, Species traits, Community composition, Ecosystem functioning, Ecosystem structure) and cover the three realms (Marine/coastal, Terrestrial and Freshwater)"@en ;
+    skos:prefLabel "Essential Biodiversity Variables - codelist scheme"@en ;
+    dcat:theme <http://w3id.org/ad4gd/ev/> ;
+    rdfs:seeAlso base:EBV
+} 
+FROM <file:EAVs.csv> 
+WHERE {}
+
+### topConcept 
+CONSTRUCT {
+  base:ebv skos:hasTopConcept ?EBV_Class_URI
+} 
+FROM <file:EAVs.csv> 
+WHERE {
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', REPLACE(?EBV_Class," ","_"))) AS ?EBV_Class_URI)
+}
+
+### class
+CONSTRUCT {
+  base:EBV a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Essential Biodiversity Variables - codelist class"@en ;
+    rdfs:comment "Essential Biodiversity Variables (EBVs) are defined as a minimum set of measurements, complementary to one another, that can capture major dimensions of biodiversity change. EBVs are organized in six classes (Genetic composition, Species populations, Species traits, Community composition, Ecosystem functioning, Ecosystem structure) and cover the three realms (Marine/coastal, Terrestrial and Freshwater)"@en ;
+    rdfs:isDefinedBy <https://geobon.org/ebvs> ;  
+    rdfs:seeAlso base:ebv
+} 
+FROM <file:EAVs.csv> 
+WHERE {}
+
+### oneof 
+CONSTRUCT {
+  base:EBV owl:oneOf ?URI
+} 
+FROM <file:EAVs.csv> 
+WHERE {
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/eav/', REPLACE(?EAV," ",""))) AS ?URI)
+}
+
+### EBV_Class
+CONSTRUCT {
+  ?EBV_Class_URI a skos:Concept , iadopt:VariableSet, base:EBV ;
+    dct:identifier ?EBV_Class_ident ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ; 
+    skos:prefLabel ?EBV_Class    
+} 
+FROM <file:EAVs.csv> 
+WHERE {
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', REPLACE(?EBV_Class," ","_"))) AS ?EBV_Class_URI)
+  BIND (REPLACE(?EBV_Class," ","_") AS ?EBV_Class_ident)
+}
+
+### EBV_Class narrowers
+
+CONSTRUCT {
+  ?EBV_Class_URI ro:hasMember  ?EBV_High_Level_URI ;
+    skos:narrower ?EBV_High_Level_URI     
+} 
+FROM <file:EAVs.csv> 
+WHERE {
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', REPLACE(?EBV_Class," ","_"))) AS ?EBV_Class_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', REPLACE(?EBV_High_Level," ","_"))) AS ?EBV_High_Level_URI)
+}
+
+### EBV_High_Level
+
+CONSTRUCT {
+  ?EBV_High_Level_URI a skos:Concept , iadopt:VariableSet, base:EBV ;
+    dct:identifier ?EBV_High_Level_ident ;
+    rdfs:isDefinedBy <https://github.com/EuropaBON/EBV-Descriptions/wiki/Master-EBV-List> ;
+    skos:inScheme base:ebv ; 
+    skos:prefLabel ?EBV_High_Level ;
+    skos:broader ?EBV_Class_URI
+} 
+FROM <file:EAVs.csv> 
+WHERE {
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', REPLACE(?EBV_High_Level," ","_"))) AS ?EBV_High_Level_URI)
+  BIND (REPLACE(?EBV_High_Level," ","_") AS ?EBV_High_Level_ident)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', REPLACE(?EBV_Class," ","_"))) AS ?EBV_Class_URI)
+}
+
+
+### EBV_High_Level narrowers
+
+CONSTRUCT {
+  ?EBV_High_Level_URI ro:hasMember ?EBV_URI ;
+    skos:narrower ?EBV_URI     
+} 
+FROM <file:EAVs.csv> 
+WHERE {  
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', REPLACE(?EBV_High_Level," ","_"))) AS ?EBV_High_Level_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', ?EBV_Variable_ID)) AS ?EBV_URI)
+}
+
+### EBV variable
+CONSTRUCT {
+  ?EBV_URI a skos:Concept, iadopt:Variable, base:EBV ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel ?EBV_Prefered_Label ;
+    skos:definition ?EBV_Description ;
+    iadopt:hasContextObject ?contextObject_URI ;
+    iadopt:hasProperty ?property_URI ;
+    iadopt:hasObjectOfInterest ?objectofInterest_URI ;
+    iadopt:hasConstraint ?constraint_URI ;
+    iadopt:hasMatrix ?matrix_URI ;
+    skos:broader ?EBV_High_Level_URI
+} 
+FROM <file:EAVs.csv> 
+WHERE {
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', ?EBV_Variable_ID)) AS ?EBV_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasContextObject)) AS ?contextObject_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasProperty)) AS ?property_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasObjectOfInterest)) AS ?objectofInterest_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasConstraint)) AS ?constraint_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasMatrix)) AS ?matrix_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', REPLACE(?EBV_High_Level," ","_"))) AS ?EBV_High_Level_URI)
+}
+
+
+### EBV contextobject
+CONSTRUCT {
+  ?contextObject_URI a iadopt:Entity ;
+    skos:prefLabel ?EBV_hasContextObject_Label
+} 
+FROM <file:EAVs.csv> 
+WHERE {  
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasContextObject)) AS ?contextObject_URI)
+}
+
+### EBV property
+CONSTRUCT {
+  ?property_URI a iadopt:Property ;
+    skos:prefLabel ?EBV_hasProperty_Label
+} 
+FROM <file:EAVs.csv> 
+WHERE {  
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasProperty)) AS ?property_URI)
+}
+
+### EBV objectofinterest
+CONSTRUCT {
+  ?objectofInterest_URI a iadopt:Entity ;
+    skos:prefLabel ?EBV_hasObjectOfInterest_Label
+} 
+FROM <file:EAVs.csv> 
+WHERE {  
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasObjectOfInterest)) AS ?objectofInterest_URI)
+}
+
+### EBV constraint
+CONSTRUCT {
+  ?constraint_URI a iadopt:Constraint ;
+    skos:prefLabel ?EBV_hasConstraint_Label ;
+    iadopt:constrains ?objectofInterest_URI
+} 
+FROM <file:EAVs.csv> 
+WHERE {  
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasConstraint)) AS ?constraint_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasObjectOfInterest)) AS ?objectofInterest_URI)
+}
+
+### EBV constraint
+CONSTRUCT {
+  ?matrix_URI a iadopt:Entity ;
+    skos:prefLabel ?EBV_hasMatrix_Label     
+} 
+FROM <file:EAVs.csv> 
+WHERE {  
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/entity/', ?EBV_hasMatrix)) AS ?matrix_URI)  
+}
+
+### EBV narrowers
+CONSTRUCT {
+  ?EBV_URI skos:narrower ?EBV_Product_URI       
+} 
+FROM <file:EAVs.csv> 
+WHERE {  
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', ?EBV_Variable_ID)) AS ?EBV_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', ?Product_ID)) AS ?EBV_Product_URI) 
+}
+
+### EBV product
+CONSTRUCT {
+  ?EBV_Product_URI a skos:Concept, gdim:Product , base:EBV ;
+    skos:inScheme base:ebv ;
+    skos:prefLabel ?Product_Label ;
+    gdim:measures ?EBV_URI ;    
+    dcat:temporalResolution ?Product_temporalResolution ;
+    gdim:spatialResolution ?Product_spatialResolution ;
+    gdim:higherSpatialResolution   ?Product_higherSpatialResolution ;
+    gdim:lowerSpatialResolution   ?Product_lowerSpatialResolution  ;
+    gdim:temporalResolutionStart  ?Product_temporalResolutionStart ;
+    gdim:temporalResolutionEnd  ?Product_temporalResolutionEnd ;
+    skos:broader ?EBV_URI
+} 
+FROM <file:EAVs.csv> 
+WHERE {
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', ?Product_ID)) AS ?EBV_Product_URI)
+  BIND (URI(CONCAT('http://w3id.org/ad4gd/ev/ebv/', ?EBV_Variable_ID)) AS ?EBV_URI)  
+}
