@@ -24,9 +24,9 @@ jobs:
           
           wget https://github.com/AD4GD/pilot-2-ebv/raw/refs/heads/master/entailed/ebv-iadopt.ttl -O AD4GD-vocabularies/pilot-2-ebv.ttl
           
-          P2_BASE=https://github.com/AD4GD/pilot-3-air-quality/raw/refs/heads/main/rainbow/generic/entailed/
+          P3_BASE=https://github.com/AD4GD/pilot-3-air-quality/raw/refs/heads/main/rainbow/generic/entailed/
           for P in procedures properties sensor-manufacturers sensor-platforms sensors ; do
-            wget "${P2_BASE}${P}.ttl" -O "AD4GD-vocabularies/pilot-2-air-quality-${P}.ttl"
+            wget "${P3_BASE}${P}.ttl" -O "AD4GD-vocabularies/pilot-3-air-quality-${P}.ttl"
           done
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
