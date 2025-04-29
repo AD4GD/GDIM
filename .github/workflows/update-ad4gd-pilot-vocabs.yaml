@@ -22,7 +22,7 @@ jobs:
             wget "${P1_BASE}${P}.ttl" -O "AD4GD-vocabularies/pilot-1-water-quality-${P}.ttl"
           done
           
-          wget https://github.com/AD4GD/pilot-2-biodiversity/raw/refs/heads/master/rainbow-data/entailed/ebv-iadopt.ttl -O AD4GD-vocabularies/pilot-2-ebv.ttl
+          wget https://github.com/AD4GD/pilot-2-biodiversity/raw/refs/heads/main/rainbow-data/entailed/ebv-iadopt.ttl -O AD4GD-vocabularies/pilot-2-ebv.ttl
           
           P3_BASE=https://github.com/AD4GD/pilot-3-air-quality/raw/refs/heads/main/rainbow-data/generic/entailed/
           for P in procedures properties sensor-manufacturers sensor-platforms sensors ; do
