@@ -28,17 +28,17 @@
     "@type": "http://www.w3.org/ns/sosa/ObservationCollection",
     "madeBySensor" :{
         "@type": "http://www.w3.org/ns/sosa/Sensor",
-        "@embed": "@once"
+        "@embed": "@never"
     },
     "hasFeatureOfInterest" : {
         "@type": "http://www.w3.org/ns/sosa/FeatureOfInterest",
-        "@embed": "@once"
+        "@embed": "@never"
     },
     "hasMember" : {
         "@type": "http://www.w3.org/ns/sosa/Observation",
         "observedProperty" : {
             "@type": "http://www.w3.org/ns/sosa/ObservableProperty",
-            "@embed": "@once"
+            "@embed": "@never"
         },
         "hasResult": { 
             "@type": "http://www.w3.org/ns/sosa/Result"
