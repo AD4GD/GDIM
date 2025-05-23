@@ -1,0 +1,44 @@
+{ 
+    "@context": {
+		"numericValue": { "@id": "http://qudt.org/schema/qudt/numericValue" },
+    	"hasMember": { "@id": "http://www.w3.org/ns/sosa/hasMember", "@type": "@id" },
+    	"phenomenonTime": { "@id": "http://www.w3.org/ns/sosa/phenomenonTime", "@type": "http://www.w3.org/2001/XMLSchema#dateTime" },
+    	"observedProperty": { "@id": "http://www.w3.org/ns/sosa/observedProperty", "@type": "@id" },
+    	"lat": { "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat" },
+    	"long": { "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#long" },
+    	"madeBySensor": { "@id": "http://www.w3.org/ns/sosa/madeBySensor", "@type": "@id" },
+    	"unit": { "@id": "http://qudt.org/schema/qudt/unit", "@type": "@id" },
+    	"hasResult": { "@id": "http://www.w3.org/ns/sosa/hasResult", "@type": "@id" },
+    	"label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label" },
+    	"identifier": { "@id": "http://purl.org/dc/terms/identifier" },
+    	"hasFeatureOfInterest": { "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest", "@type": "@id" },
+    	"resultTime": { "@id": "http://www.w3.org/ns/sosa/resultTime", "@type": "http://www.w3.org/2001/XMLSchema#dateTime" },
+    	"alt": { "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#alt" },
+        "ObservationCollection" : {"@id" : "http://www.w3.org/ns/sosa/ObservationCollection" },
+        "Sensor" : { "@id" : "http://www.w3.org/ns/sosa/Sensor" },
+        "FeatureOfInterest" : { "@id" : "http://www.w3.org/ns/sosa/FeatureOfInterest" },
+        "Observation" : { "@id" : "http://www.w3.org/ns/sosa/Observation" },
+        "ObservableProperty" : { "@id" : "http://www.w3.org/ns/sosa/ObservableProperty" },
+        "Result" : { "@id" : "http://www.w3.org/ns/sosa/Result" },
+        "Location": { "@id" : "http://purl.org/dc/terms/Location" },
+        "Point": { "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#Point" },
+        "active" : { "@id": "https://w3id.org/demeter/agri/ext/neuropublic/active" },
+        "toponym" : { "@id": "https://w3id.org/demeter/agri/ext/neuropublic/toponym" }
+    },
+    "@type": "http://www.w3.org/ns/sosa/ObservationCollection",
+    "madeBySensor" :{
+        "@type": "http://www.w3.org/ns/sosa/Sensor"
+    },
+    "hasFeatureOfInterest" : {
+        "@type": "http://www.w3.org/ns/sosa/FeatureOfInterest"
+    },
+    "hasMember" : {
+        "@type": "http://www.w3.org/ns/sosa/Observation",
+        "observedProperty" : {
+            "@type": "http://www.w3.org/ns/sosa/ObservableProperty"
+        },
+        "hasResult": { 
+            "@type": "http://www.w3.org/ns/sosa/Result"
+        }
+	}
+}
