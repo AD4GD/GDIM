@@ -17,14 +17,14 @@ jobs:
         run: |
           mkdir -p AD4GD-vocabularies
           
-          P1_BASE=https://github.com/AD4GD/pilot-1-water-quality-semantics/raw/refs/heads/master/generic/entailed/
+          P1_BASE=https://github.com/AD4GD/pilot-1-water-quality/raw/refs/heads/master/rainbow-data/generic/entailed/
           for P in properties sensor-manufacturers sensors ; do
             wget "${P1_BASE}${P}.ttl" -O "AD4GD-vocabularies/pilot-1-water-quality-${P}.ttl"
           done
           
-          wget https://github.com/AD4GD/pilot-2-ebv/raw/refs/heads/master/entailed/ebv-iadopt.ttl -O AD4GD-vocabularies/pilot-2-ebv.ttl
+          wget https://github.com/AD4GD/pilot-2-biodiversity/raw/refs/heads/main/rainbow-data/entailed/ebv-iadopt.ttl -O AD4GD-vocabularies/pilot-2-ebv.ttl
           
-          P3_BASE=https://github.com/AD4GD/pilot-3-air-quality/raw/refs/heads/main/rainbow/generic/entailed/
+          P3_BASE=https://github.com/AD4GD/pilot-3-air-quality/raw/refs/heads/main/rainbow-data/generic/entailed/
           for P in procedures properties sensor-manufacturers sensor-platforms sensors ; do
             wget "${P3_BASE}${P}.ttl" -O "AD4GD-vocabularies/pilot-3-air-quality-${P}.ttl"
           done
