@@ -1,4 +1,4 @@
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <foaf:> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,59 +8,59 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/generic/entailed/procedures.ttl> a prov:Entity ;
-    dct:format "text/turtle" ;
-    dct:hasVersion "git:b179d7ef9e4fdc812747694cefa34b78a0481011" ;
-    prov:wasAttributedTo _:N682033b29af94b4ea7b88696dafb3328 ;
+    dcterms:format "text/turtle" ;
+    dcterms:hasVersion "git:89d39b0c0d133a55d6075f726699b2e5a7a88faf" ;
+    prov:wasAttributedTo _:N58e1040ba03241509cab1815734e0dca ;
     prov:wasGeneratedBy [ a prov:Activity ;
             rdfs:label "Entailment and validation" ;
             rdfs:comment "python ogc.na.update_vocabs -w ./rainbow-data rainbow-data/catalog.ttl --use-git-status --update --graph-store https://defs-hosted.opengis.net/fuseki-hosted/data" ;
-            prov:endedAtTime "2025-07-09T10:01:24.953443"^^xsd:dateTime ;
-            prov:startedAtTime "2025-07-09T10:01:15.928314"^^xsd:dateTime ;
+            prov:endedAtTime "2025-07-21T12:28:16.048238"^^xsd:dateTime ;
+            prov:startedAtTime "2025-07-21T12:28:07.137908"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
-                    rdfs:seeAlso <http://www.opengis.net/def/metamodel/profiles/skos_shared> ],
-                [ a prov:Entity ;
-                    dct:format "text/turtle" ;
-                    dct:hasVersion "git:b179d7ef9e4fdc812747694cefa34b78a0481011" ;
+                    dcterms:format "text/turtle" ;
+                    dcterms:hasVersion "git:89d39b0c0d133a55d6075f726699b2e5a7a88faf" ;
                     rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/generic/procedures.ttl> ],
                 [ a prov:Entity ;
-                    dct:format "text/turtle" ;
-                    dct:hasVersion "git:b179d7ef9e4fdc812747694cefa34b78a0481011" ;
-                    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/catalog.ttl> ],
+                    rdfs:seeAlso <http://www.opengis.net/def/metamodel/profiles/skos_shared> ],
                 [ a prov:Entity ;
-                    rdfs:seeAlso <https://datashapes.org/dash.ttl> ] ;
-            prov:wasAssociatedWith _:N682033b29af94b4ea7b88696dafb3328 ;
-            prov:wasInformedBy [ dct:identifier "ff6b99fb-fe40-4437-9188-33c8a355cbe0" ] ] .
+                    rdfs:seeAlso <https://datashapes.org/dash.ttl> ],
+                [ a prov:Entity ;
+                    dcterms:format "text/turtle" ;
+                    dcterms:hasVersion "git:89d39b0c0d133a55d6075f726699b2e5a7a88faf" ;
+                    rdfs:seeAlso <https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/catalog.ttl> ] ;
+            prov:wasAssociatedWith _:N58e1040ba03241509cab1815734e0dca ;
+            prov:wasInformedBy [ dcterms:identifier "139d8bbf-aee2-4b15-8fb6-dcfbf0d7cfe9" ] ] .
 
 <https://w3id.org/ad4gd/air-quality/procedures/pm-humidity-correction> a skos:Concept,
         sosa:Procedure ;
-    dct:source [ ns1:homepage <https://ad4gd.eu/> ;
+    dcterms:source [ ns1:homepage <https://ad4gd.eu/> ;
             skos:prefLabel "AD4GD" ] ;
     skos:definition "Humidity correction for particulate matter (PM) refers to adjustments made to PM measurements to account for the effects of water vapor on particle size and concentration." ;
     skos:inScheme <https://w3id.org/ad4gd/air-quality/procedures> ;
     skos:prefLabel "Humidity correction for Particulate Matter" .
 
 <https://w3id.org/ad4gd/air-quality/procedures> a skos:ConceptScheme ;
-    dct:source <https://ad4gd.eu/> ;
+    dcterms:source <https://ad4gd.eu/> ;
     skos:prefLabel "AD4GD air quality observation procedures" .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2025-07-09T10:01:14.346338"^^xsd:dateTime ;
-    prov:startedAtTime "2025-07-09T10:01:14.292917"^^xsd:dateTime ;
+    prov:endedAtTime "2025-07-21T12:28:05.461204"^^xsd:dateTime ;
+    prov:startedAtTime "2025-07-21T12:28:05.407367"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
-            dct:format "application/json" ;
-            dct:hasVersion "git:b179d7ef9e4fdc812747694cefa34b78a0481011" ;
+            dcterms:format "application/json" ;
+            dcterms:hasVersion "git:89d39b0c0d133a55d6075f726699b2e5a7a88faf" ;
             rdfs:seeAlso <file:///home/runner/work/pilot-3-air-quality/pilot-3-air-quality/rainbow-data/generic/procedures.yml> ] ;
     prov:wasAssociatedWith [ a prov:Agent,
                 schema:SoftwareApplication ;
             rdfs:label "OGC-NA tools" ;
-            dct:hasVersion "0.4" ;
+            dcterms:hasVersion "0.5.dev3+g1871e64" ;
             rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> ] ;
-    prov:wasInformedBy [ dct:identifier "a7d93859-2455-482d-bc90-e11a6f873272" ] .
+    prov:wasInformedBy [ dcterms:identifier "db27fbd5-838e-43e2-b2c7-e8bbeecc9ec9" ] .
 
-_:N682033b29af94b4ea7b88696dafb3328 a prov:Agent,
+_:N58e1040ba03241509cab1815734e0dca a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
-    dct:hasVersion "0.4" ;
-    rdfs:comment "ogc.na.update_vocabs version 0.4" ;
+    dcterms:hasVersion "0.5.dev3+g1871e64" ;
+    rdfs:comment "ogc.na.update_vocabs version 0.5.dev3+g1871e64" ;
     rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
 
