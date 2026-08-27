@@ -51,12 +51,15 @@
                                           foaf:name "Raul Palma"
                                         ] ;
                             owl:imports <https://w3id.org/ad4gd/model/gdCommon> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-1-water-quality-properties.ttl> ,                            						
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-air-quality-procedures.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-air-quality-properties.ttl> ,                            						
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-ebv.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/EVs/eav.ttl> ,
-                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/EVs/ebv.ttl>
+                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-1-water-quality-properties.ttl> ,
+                                        <https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-1-water-quality-sensor-manufacturers.ttl> ,
+                                        <https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-1-water-quality-properties.ttl> ,
+                                        <https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-2-ebv.ttl> ,
+                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-3-air-quality-sensors.ttl> ,
+                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-3-air-quality-sensor-platforms.ttl> ,
+                                        <https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-3-air-quality-sensor-manufacturers.ttl> ,
+                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/AD4GD-vocabularies/pilot-3-air-quality-procedures.ttl> ,
+                            						<https://raw.githubusercontent.com/AD4GD/GDIM/refs/heads/main/EVs/eav.ttl>                             						
                             						;
                             dct:description "The GDProperty module is one of the modules of the AD4GD - Green Deal Information Model (GDIM). This ontology module was created by reusing and aligning well-known ontologies and vocabularies"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
